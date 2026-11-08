@@ -65,6 +65,15 @@ h1{font-family:var(--f-head);font-weight:700;font-size:clamp(22px,4.4vw,30px);li
 .lvs{display:flex;gap:6px;flex-wrap:wrap}
 .lvs .lv{font-size:13px;padding:6px 9px}
 .variants{color:var(--muted);font-size:13.5px;width:100%;margin-top:-4px}
+.speak{flex:none;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--accent);cursor:pointer;padding:0;align-self:center}
+.speak svg{width:19px;height:19px;fill:currentColor;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.speak svg .w{fill:none}
+.speak:hover{border-color:var(--accent)}
+.speak.on{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.ex .speak{width:30px;height:30px}
+.ex .speak svg{width:16px;height:16px}
+.exrow{display:flex;align-items:flex-start;gap:10px}
+.exrow .en{flex:1;min-width:0}
 .demo{font:500 11.5px var(--f-mono);color:var(--muted);border:1px dashed var(--line);border-radius:5px;padding:3px 7px;margin-left:auto}
 section h3{font:500 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
 .senses{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;counter-reset:s}
@@ -259,10 +268,36 @@ const out = document.getElementById("out");
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const lvBadge = (l, long) => l ? `<span class="lv lv${l}">${long ? "Level " : "L"}${l}</span>` : `<span class="lv lv0">詞表外</span>`;
 
+/* ---------- pronunciation (browser speech synthesis) ---------- */
+const TTS = "speechSynthesis" in window && typeof SpeechSynthesisUtterance !== "undefined";
+let enVoice = null;
+function pickVoice() {
+  try {
+    const vs = speechSynthesis.getVoices();
+    enVoice = vs.find(v => v.lang === "en-US" && /Samantha|Google US|Aria|Jenny|Ava|Allison/i.test(v.name))
+      || vs.find(v => v.lang === "en-US") || vs.find(v => /^en[-_]/i.test(v.lang)) || null;
+  } catch { enVoice = null; }
+}
+if (TTS) { pickVoice(); try { speechSynthesis.addEventListener("voiceschanged", pickVoice); } catch {} }
+const SPK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path class="w" d="M15.5 8.8a4.5 4.5 0 0 1 0 6.4M18 6.3a8 8 0 0 1 0 11.4"/></svg>';
+const speakBtn = (text, label) => TTS ? `<button class="speak" type="button" data-say="${esc(text)}" aria-label="${label}" title="${label}">${SPK}</button>` : "";
+function speak(text, btn) {
+  try {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = "en-US"; u.rate = text.includes(" ") && text.split(" ").length > 3 ? 0.92 : 0.85;
+    if (enVoice) u.voice = enVoice;
+    document.querySelectorAll(".speak.on").forEach(b => b.classList.remove("on"));
+    if (btn) { btn.classList.add("on"); u.onend = u.onerror = () => btn.classList.remove("on"); }
+    speechSynthesis.speak(u);
+  } catch {}
+}
+
 function headHTML(key, entries, demo) {
   const lv = [...new Set(entries.map(e => e.l))].sort();
   const forms = [...new Set(entries.map(e => e.w))].filter(w => w.toLowerCase() !== key);
-  return `<div class="headrow"><h2 class="hw">${esc(key)}</h2><div class="lvs">${lv.map(l => lvBadge(l, true)).join("")}</div>${demo ? '<span class="demo">範例</span>' : ""}
+  const say = entries.flatMap(e => e.w.split("/")).map(f => f.trim()).flatMap(f => { const m = f.match(/^(.+?)\(([a-z]+)\)(.*)$/i); return m ? [m[1] + m[3], m[1] + m[2] + m[3]] : [f.replace(/[()]/g, "")]; }).find(f => norm(f) === key) || key;
+  return `<div class="headrow"><h2 class="hw">${esc(key)}</h2>${speakBtn(say, "唸出單字")}<div class="lvs">${lv.map(l => lvBadge(l, true)).join("")}</div>${demo ? '<span class="demo">範例</span>' : ""}
     ${forms.length ? `<div class="variants">詞表寫法：${forms.map(esc).join("、")}</div>` : ""}</div>`;
 }
 function markWord(en, key) {
@@ -274,7 +309,7 @@ function markWord(en, key) {
 }
 function bodyHTML(key, d) {
   const senses = d.senses.slice(0, 6).map(s => `<li><div class="sline"><span class="pos">${esc(s.pos)}</span><span class="zh">${esc(s.zh)}</span>${s.level ? lvBadge(+s.level) : ""}</div>${s.note ? `<div class="note">${esc(s.note)}</div>` : ""}</li>`).join("");
-  const ex = d.example && d.example.en ? `<section><h3>例句</h3><div class="ex"><div class="en">${markWord(d.example.en, key)}</div><div class="cn">${esc(d.example.zh)}</div></div></section>` : "";
+  const ex = d.example && d.example.en ? `<section><h3>例句</h3><div class="ex"><div class="exrow"><div class="en">${markWord(d.example.en, key)}</div>${speakBtn(d.example.en, "唸出例句")}</div><div class="cn">${esc(d.example.zh)}</div></div></section>` : "";
   const rel = Array.isArray(d.related) && d.related.length ? `<section><h3>相關字</h3><div class="rel">${d.related.slice(0, 8).map(r => {
     const lv = levelsOf(r.w); const inList = lv.length > 0;
     const inner = `<span class="cw">${esc(r.w)}</span>${inList ? lv.map(l => lvBadge(l)).join("") : ""}<span class="ct">${esc(r.type)}・${esc(r.zh)}</span>`;
@@ -311,6 +346,8 @@ function showMiss(key) {
   out.innerHTML = `<article class="card miss"><h2>${esc(key)}</h2><p class="none">這個字不在 Level 1–6 詞表裡${near.length ? "。你可能要找：" : "，請檢查拼字。"}</p>${near.length ? `<div class="rel">${near.map(k => `<button class="chip" type="button" data-go="${esc(k)}"><span class="cw">${esc(k)}</span>${levelsOf(k).map(l => lvBadge(l)).join("")}</button>`).join("")}</div>` : ""}</article>`;
 }
 out.addEventListener("click", ev => {
+  const sp = ev.target.closest("[data-say]");
+  if (sp) { speak(sp.dataset.say, sp); return; }
   const go = ev.target.closest("[data-go]");
   if (go) { q.value = go.dataset.go; show(go.dataset.go); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
 });
