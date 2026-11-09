@@ -3,10 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="大考中心高中英文參考詞彙表 Level 1–6 共 6,371 詞條：級別、一字多義、例句、相關字與字根拆解。">
+<meta name="description" content="大考中心高中英文參考詞彙表 Level 1–6 共 6,371 詞條：級別、一字多義、例句、相關字、字根，還能存單字本用字卡複習。">
 <meta property="og:title" content="學測七千單字查詢">
 <meta property="og:description" content="輸入英文單字，查大考 Level 1–6 級別、詞義、例句、相關字與字根。">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d5a6b'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='700' fill='white' text-anchor='middle'%3EAa%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#1d5a6b">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="七千單字">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>學測七千單字查詢</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -116,6 +123,66 @@ button.chip:hover{border-color:var(--accent)}
 .miss h2{font-family:var(--f-head);font-size:24px;margin:0}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 @media (max-width:480px){.ladder b{display:none}}
+/* ---------- word book / review ---------- */
+.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tbtn{display:inline-flex;align-items:center;gap:8px;font:500 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:7px 14px;cursor:pointer;min-height:38px}
+.tbtn:hover{border-color:var(--accent)}
+.tbtn b{font:500 12.5px var(--f-mono);font-variant-numeric:tabular-nums;background:var(--soft);border-radius:999px;padding:2px 8px}
+.tbtn .due{font:500 12px var(--f-body);color:var(--accent-fg);background:var(--accent);border-radius:999px;padding:2px 8px}
+.tbtn.on{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.tbtn.on b{background:color-mix(in srgb,var(--accent-fg) 22%,transparent)}
+.tbtn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.star{flex:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:36px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;padding:0 12px;font:500 13px var(--f-body);align-self:center}
+.star svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round}
+.star[aria-pressed="true"]{color:#b7791f;border-color:color-mix(in srgb,#d69e2e 55%,var(--line));background:color-mix(in srgb,#f6e05e 18%,var(--surface))}
+.star[aria-pressed="true"] svg{fill:#ecc94b;stroke:#b7791f}
+.bhead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.bhead h2{font-family:var(--f-head);font-size:26px;margin:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat{border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;background:var(--bg)}
+.stat b{font:500 22px/1.2 var(--f-mono);font-variant-numeric:tabular-nums}
+.stat span{font-size:12.5px;color:var(--muted)}
+.blist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.blist li{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line);min-width:0}
+.blist li:first-child{border-top:0}
+.bopen{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;background:none;border:0;padding:0;text-align:left;color:var(--fg);cursor:pointer;font:inherit}
+.bopen .bw{display:flex;align-items:center;gap:8px;font-family:var(--f-head);font-weight:700;font-size:17px}
+.bopen .bz{font-size:13.5px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pill{font:500 11.5px var(--f-body);border-radius:999px;padding:2px 8px;white-space:nowrap}
+.pill.due{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
+.pill.learn{background:var(--soft);color:var(--muted)}
+.pill.done{background:color-mix(in srgb,#38a169 16%,transparent);color:#2f855a}
+.bdel{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid transparent;background:none;color:var(--muted);cursor:pointer;font-size:18px;line-height:1}
+.bdel:hover{border-color:var(--line);color:var(--fg)}
+.empty{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.empty p{margin:0;color:var(--muted)}
+.backup{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:16px}
+.backup h3{margin:0}
+.backup textarea{width:100%;min-height:76px;font:12.5px/1.4 var(--f-mono);border:1px solid var(--line);border-radius:8px;padding:10px;background:var(--bg);color:var(--fg);resize:vertical;word-break:break-all}
+.okmsg{font-size:13.5px;color:#2f855a;margin:0}
+.rv{display:flex;flex-direction:column;gap:18px}
+.rvtop{display:flex;align-items:center;justify-content:space-between;gap:10px;font:500 13px var(--f-mono);color:var(--muted)}
+.bar{height:6px;border-radius:99px;background:var(--soft);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);transition:width .25s}
+.fc{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:26px 8px 8px}
+.fc .hw{font-size:clamp(34px,9vw,48px)}
+.fc .row{justify-content:center}
+.back{display:flex;flex-direction:column;gap:16px;border-top:1px dashed var(--line);padding-top:18px}
+.grade{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grade .btn{padding:13px 10px;font-size:16px;border-radius:10px}
+.btn.big{padding:13px 18px;font-size:16px;border-radius:10px;width:100%}
+.btn.no{border-color:color-mix(in srgb,#c05621 45%,var(--line));color:#c05621}
+.btn.yes{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.done h2{font-family:var(--f-head);font-size:26px;margin:0}
+.sheet{position:fixed;inset:0;z-index:50;background:rgba(8,20,26,.55);display:flex;align-items:flex-end;justify-content:center;padding:0 max(12px,env(safe-area-inset-right,0px)) 0 max(12px,env(safe-area-inset-left,0px))}
+.sheet .panel{background:var(--surface);color:var(--fg);width:100%;max-width:520px;border-radius:16px 16px 0 0;padding:22px 20px calc(22px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:14px;max-height:88vh;overflow-y:auto}
+.sheet h2{font-family:var(--f-head);font-size:21px;margin:0}
+.sheet ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:10px;font-size:15px}
+.sheet p{margin:0;color:var(--muted);font-size:14px}
+.ico{display:inline-flex;vertical-align:-4px;width:22px;height:22px;border:1px solid var(--line);border-radius:6px;align-items:center;justify-content:center;background:var(--bg)}
+.ico svg{width:15px;height:15px;fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.lineBar{display:flex;flex-direction:column;gap:6px}
+.lineBar b{color:var(--fg)}
 </style>
 </head>
 <body>
@@ -124,6 +191,11 @@ button.chip:hover{border-color:var(--accent)}
     <h1>學測七千單字查詢</h1>
     <p class="sub">收錄大考中心高中英文參考詞彙表 Level 1–6，共 <span id="total"></span> 個詞條。輸入英文單字即可查級別、詞義、例句、相關字與字根。</p>
     <div class="ladder" id="ladder" aria-label="各級字數"></div>
+    <div class="tools">
+      <button class="tbtn" type="button" id="bookBtn" aria-label="我的單字本"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></svg>單字本 <b id="bookCount">0</b><span class="due" id="dueBadge" hidden></span></button>
+      <button class="tbtn" type="button" id="installBtn" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M12 7v7m-3-3 3 3 3-3"/></svg>安裝到手機</button>
+    </div>
+    <p class="msg lineBar" id="lineBar" hidden><b>你正在 LINE 裡開啟這個網站。</b>請點右上角「⋯」→「用預設瀏覽器開啟」，才能把網站加入主畫面，單字本也才不會遺失。</p>
   </header>
 
   <div class="search" role="combobox" aria-expanded="false" aria-haspopup="listbox" id="combo">
@@ -133,6 +205,7 @@ button.chip:hover{border-color:var(--accent)}
   </div>
 
   <main id="out"></main>
+  <div class="sheet" id="sheet" hidden role="dialog" aria-modal="true"><div class="panel" id="sheetPanel"></div></div>
 
   <div class="foot">
     <span>級別依據：大考中心《高中英文參考詞彙表》（Level 1–6）</span>
@@ -297,7 +370,7 @@ function headHTML(key, entries, demo) {
   const lv = [...new Set(entries.map(e => e.l))].sort();
   const forms = [...new Set(entries.map(e => e.w))].filter(w => w.toLowerCase() !== key);
   const say = entries.flatMap(e => e.w.split("/")).map(f => f.trim()).flatMap(f => { const m = f.match(/^(.+?)\(([a-z]+)\)(.*)$/i); return m ? [m[1] + m[3], m[1] + m[2] + m[3]] : [f.replace(/[()]/g, "")]; }).find(f => norm(f) === key) || key;
-  return `<div class="headrow"><h2 class="hw">${esc(key)}</h2>${speakBtn(say, "唸出單字")}<div class="lvs">${lv.map(l => lvBadge(l, true)).join("")}</div>${demo ? '<span class="demo">範例</span>' : ""}
+  return `<div class="headrow"><h2 class="hw">${esc(key)}</h2>${speakBtn(say, "唸出單字")}${starBtn(key)}<div class="lvs">${lv.map(l => lvBadge(l, true)).join("")}</div>${demo ? '<span class="demo">範例</span>' : ""}
     ${forms.length ? `<div class="variants">詞表寫法：${forms.map(esc).join("、")}</div>` : ""}</div>`;
 }
 function markWord(en, key) {
@@ -327,7 +400,8 @@ let seq = 0;
 async function show(key, opts = {}) {
   key = norm(key);
   const entries = IDX.get(key);
-  hideSugg();
+  hideSugg(); setView("lookup"); session = null;
+  if (entries) lastKey = key;
   if (!entries) return showMiss(key);
   const my = ++seq;
   if (!opts.keepHash) try { history.replaceState(null, "", /^[a-z-]+$/.test(key) ? "#" + key : location.pathname + location.search); } catch {}
@@ -348,6 +422,10 @@ function showMiss(key) {
 out.addEventListener("click", ev => {
   const sp = ev.target.closest("[data-say]");
   if (sp) { speak(sp.dataset.say, sp); return; }
+  const st = ev.target.closest("[data-star]");
+  if (st) { toggleStar(st.dataset.star, st); return; }
+  const act = ev.target.closest("[data-act]");
+  if (act) { onAct(act.dataset.act, act); return; }
   const go = ev.target.closest("[data-go]");
   if (go) { q.value = go.dataset.go; show(go.dataset.go); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
 });
@@ -386,6 +464,192 @@ sugg.addEventListener("mousedown", e => e.preventDefault());
 sugg.addEventListener("click", e => { const b = e.target.closest("[data-k]"); if (b) { q.value = b.dataset.k; show(b.dataset.k); } });
 q.addEventListener("blur", () => setTimeout(hideSugg, 120));
 q.addEventListener("focus", () => { if (q.value) renderSugg(); });
+
+/* ---------- word book (stored in this browser) ---------- */
+const BK = "vocab7000.book.v1", FLAG = "vocab7000.flags.v1";
+const INTERVAL = [0, 1, 3, 7];           // days after the 1st / 2nd / 3rd "會了"
+const lsGet = (k, d) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } };
+const lsSet = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch { return false; } };
+let book = lsGet(BK, {});                // key -> { a: added, b: box 0–4, d: due date | null }
+if (!book || typeof book !== "object" || Array.isArray(book)) book = {};
+const flags = lsGet(FLAG, {}) || {};
+const today = () => { const t = new Date(); return t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0"); };
+const addDays = n => { const t = new Date(); t.setDate(t.getDate() + n); return t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0"); };
+const status = it => it.b >= 3 ? (it.b === 3 && it.d && it.d <= today() ? "due" : "done") : (it.d && it.d <= today() ? "due" : "learn");
+const dueKeys = () => Object.keys(book).filter(k => IDX.has(k) && status(book[k]) === "due");
+const STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.2 2.7 5.6 6.1.8-4.5 4.2 1.1 6-5.4-2.9-5.4 2.9 1.1-6-4.5-4.2 6.1-.8z"/></svg>';
+const starBtn = key => `<button class="star" type="button" data-star="${esc(key)}" aria-pressed="${book[key] ? "true" : "false"}">${STAR}<span>${book[key] ? "已加入" : "加入單字本"}</span></button>`;
+function saveBook() { lsSet(BK, book); updateBookBtn(); }
+function updateBookBtn() {
+  const n = Object.keys(book).length, due = dueKeys().length;
+  document.getElementById("bookCount").textContent = n;
+  const db = document.getElementById("dueBadge");
+  db.hidden = !due; db.textContent = `今天 ${due} 個`;
+}
+function toggleStar(key, btn) {
+  if (book[key]) delete book[key];
+  else {
+    book[key] = { a: today(), b: 0, d: today() };
+    if (!flags.iosTip && PWA && IS_IOS && !STANDALONE && !IN_LINE) { flags.iosTip = 1; lsSet(FLAG, flags); setTimeout(() => openSheet(iosGuide(true)), 350); }
+  }
+  saveBook();
+  const on = !!book[key];
+  document.querySelectorAll(`[data-star="${CSS.escape(key)}"]`).forEach(b => { b.setAttribute("aria-pressed", on); b.querySelector("span").textContent = on ? "已加入" : "加入單字本"; });
+}
+
+let view = "lookup";
+const bookBtn = document.getElementById("bookBtn");
+bookBtn.addEventListener("click", () => view === "book" ? (showDemoOrLast()) : showBook());
+function setView(v) { view = v; bookBtn.classList.toggle("on", v === "book" || v === "review"); }
+let lastKey = null;
+function showDemoOrLast() { setView("lookup"); if (lastKey) show(lastKey); else showDemo(); }
+
+async function firstZh(key) {
+  const entries = IDX.get(key); if (!entries) return "";
+  const r = await fetchEntry(key, entries);
+  return r.data ? r.data.senses.slice(0, 2).map(s => s.zh).join("；") : "";
+}
+async function showBook(msg) {
+  setView("book"); seq++;
+  try { history.replaceState(null, "", location.pathname + location.search); } catch {}
+  const keys = Object.keys(book).filter(k => IDX.has(k)).sort((x, y) => (book[y].a || "").localeCompare(book[x].a || "") || x.localeCompare(y));
+  const c = { due: 0, learn: 0, done: 0 }; keys.forEach(k => c[status(book[k])]++);
+  const head = `<div class="bhead"><h2>我的單字本</h2>${c.due ? `<button class="btn primary" type="button" data-act="review">開始複習（${c.due}）</button>` : ""}</div>
+    <div class="stats"><div class="stat"><b>${c.due}</b><span>今天要複習</span></div><div class="stat"><b>${c.learn}</b><span>學習中</span></div><div class="stat"><b>${c.done}</b><span>已熟記</span></div></div>`;
+  const pill = s => s === "due" ? '<span class="pill due">待複習</span>' : s === "done" ? '<span class="pill done">已熟記</span>' : '<span class="pill learn">學習中</span>';
+  const list = keys.length ? `<ul class="blist">${keys.map(k => `<li><button class="bopen" type="button" data-act="open" data-k="${esc(k)}"><span class="bw">${esc(k)} ${levelsOf(k).map(l => lvBadge(l)).join("")} ${pill(status(book[k]))}</span><span class="bz" data-zh="${esc(k)}">　</span></button><button class="bdel" type="button" data-act="del" data-k="${esc(k)}" aria-label="從單字本移除 ${esc(k)}">×</button></li>`).join("")}</ul>`
+    : `<div class="empty"><p>單字本還是空的。</p><p>查單字時按標題旁的「☆ 加入單字本」，不會的字就會存在這裡，之後可以用字卡複習。</p></div>`;
+  const nothingDue = keys.length && !c.due ? `<p class="okmsg">今天沒有要複習的字了。新加入的字當天就會出現在複習裡。</p>` : "";
+  out.innerHTML = `<article class="card">${head}${msg ? `<p class="okmsg">${esc(msg)}</p>` : ""}${nothingDue}${list}${backupHTML()}</article>`;
+  for (const k of keys) firstZh(k).then(z => { const el = out.querySelector(`[data-zh="${CSS.escape(k)}"]`); if (el) el.textContent = z || "　"; });
+}
+function backupHTML() {
+  return `<section class="backup"><h3>備份與還原</h3>
+    <p class="note">單字本只存在這支手機的瀏覽器裡。換手機或清除瀏覽器資料前，先按「產生備份代碼」，把代碼傳到自己的 LINE 存起來；之後在新手機貼上代碼按「還原」即可。</p>
+    <div class="row"><button class="btn" type="button" data-act="mkbackup">產生備份代碼</button></div>
+    <div id="bkOut" hidden><textarea id="bkCode" readonly aria-label="備份代碼"></textarea><div class="row"><button class="btn primary" type="button" data-act="copy">複製代碼</button><span class="note" id="copyMsg"></span></div></div>
+    <textarea id="rsCode" placeholder="在這裡貼上備份代碼" aria-label="貼上備份代碼"></textarea>
+    <div class="row"><button class="btn" type="button" data-act="restore">還原</button><span class="note" id="rsMsg"></span></div></section>`;
+}
+const b64e = s => btoa(unescape(encodeURIComponent(s))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+const b64d = s => decodeURIComponent(escape(atob(s.replace(/-/g, "+").replace(/_/g, "/"))));
+function makeCode() { return "V7K1." + b64e(JSON.stringify(book)); }
+function restoreCode(code) {
+  const m = code.trim().replace(/\s+/g, "").match(/^V7K1\.([A-Za-z0-9_-]+)$/);
+  if (!m) throw new Error("代碼格式不對，請確認有完整複製（開頭是 V7K1.）。");
+  let data; try { data = JSON.parse(b64d(m[1])); } catch { throw new Error("代碼不完整或已損壞，請重新複製一次。"); }
+  if (!data || typeof data !== "object") throw new Error("代碼內容無法辨識。");
+  let added = 0, updated = 0;
+  for (const [k, it] of Object.entries(data)) {
+    if (!IDX.has(k) || !it || typeof it !== "object") continue;
+    const clean = { a: String(it.a || today()).slice(0, 10), b: Math.max(0, Math.min(4, +it.b || 0)), d: it.d ? String(it.d).slice(0, 10) : null };
+    if (!book[k]) { book[k] = clean; added++; }
+    else if (clean.b > book[k].b) { book[k] = clean; updated++; }
+  }
+  saveBook(); return { added, updated };
+}
+
+let session = null;
+function startReview() {
+  const keys = dueKeys().sort(() => Math.random() - .5);
+  if (!keys.length) return showBook();
+  session = { queue: keys, total: keys.length, done: 0, right: 0, again: 0, cur: null, flipped: false };
+  setView("review"); nextCard();
+}
+async function nextCard() {
+  const s = session; seq++;
+  if (!s.queue.length) return finishReview();
+  s.cur = s.queue.shift(); s.flipped = false;
+  const key = s.cur, entries = IDX.get(key);
+  const say = (headHTML(key, entries).match(/data-say="([^"]*)"/) || [])[1];
+  out.innerHTML = `<article class="card rv">${rvTop()}<div class="fc"><h2 class="hw">${esc(key)}</h2><div class="row">${speakBtn(say ? say.replace(/&quot;/g, '"').replace(/&amp;/g, "&") : key, "唸出單字")}${levelsOf(key).map(l => lvBadge(l, true)).join("")}</div></div>
+    <div id="rvBack"><button class="btn big" type="button" data-act="flip">顯示答案</button></div></article>`;
+  if (TTS) { const b = out.querySelector(".fc .speak"); if (b) speak(b.dataset.say, b); }
+}
+function rvTop() {
+  const s = session, pct = Math.round(s.done / Math.max(1, s.total) * 100);
+  return `<div class="rvtop"><span>複習 ${Math.min(s.done + 1, s.total)} / ${s.total}</span><button class="btn" type="button" data-act="endrv">結束</button></div><div class="bar"><i style="width:${pct}%"></i></div>`;
+}
+async function flipCard() {
+  const s = session; if (!s || s.flipped) return; s.flipped = true;
+  const key = s.cur, r = await fetchEntry(key, IDX.get(key));
+  const d = r.data;
+  const senses = d ? `<ol class="senses">${d.senses.slice(0, 4).map(x => `<li><div class="sline"><span class="pos">${esc(x.pos)}</span><span class="zh">${esc(x.zh)}</span></div>${x.note ? `<div class="note">${esc(x.note)}</div>` : ""}</li>`).join("")}</ol>` : `<p class="none">這個字只有級別資料。</p>`;
+  const ex = d && d.example && d.example.en ? `<div class="ex"><div class="exrow"><div class="en">${markWord(d.example.en, key)}</div>${speakBtn(d.example.en, "唸出例句")}</div><div class="cn">${esc(d.example.zh)}</div></div>` : "";
+  document.getElementById("rvBack").innerHTML = `<div class="back">${senses}${ex}<div class="grade"><button class="btn no" type="button" data-act="again">還不會</button><button class="btn yes" type="button" data-act="good">會了</button></div></div>`;
+}
+function grade(ok) {
+  const s = session, it = book[s.cur];
+  if (it) {
+    if (ok) { it.b = (it.b || 0) + 1; it.d = it.b >= 4 ? null : addDays(INTERVAL[it.b]); s.right++; }
+    else { it.b = 0; it.d = today(); s.again++; s.queue.push(s.cur); s.total++; }
+    saveBook();
+  }
+  s.done++; nextCard();
+}
+function finishReview() {
+  const s = session; session = null; setView("review");
+  out.innerHTML = `<article class="card done"><h2>今天的複習完成了</h2><p class="none">答對 ${s.right} 次，還不會 ${s.again} 次。答錯的字明天會再出現；會了的字會隔 1 天、3 天、7 天再出現，連續答對 3 次就算熟記。</p><div class="row"><button class="btn primary" type="button" data-act="tobook">回單字本</button></div></article>`;
+  updateBookBtn();
+}
+function onAct(a, el) {
+  if (a === "review") return startReview();
+  if (a === "flip") return flipCard();
+  if (a === "good") return grade(true);
+  if (a === "again") return grade(false);
+  if (a === "endrv" || a === "tobook") { session = null; return showBook(); }
+  if (a === "open") { setView("lookup"); q.value = el.dataset.k; show(el.dataset.k); window.scrollTo({ top: 0 }); return; }
+  if (a === "del") { delete book[el.dataset.k]; saveBook(); return showBook(); }
+  if (a === "mkbackup") { document.getElementById("bkOut").hidden = false; const t = document.getElementById("bkCode"); t.value = makeCode(); t.focus(); t.select(); return; }
+  if (a === "copy") {
+    const t = document.getElementById("bkCode"), m = document.getElementById("copyMsg");
+    const fallback = () => { t.focus(); t.select(); m.textContent = "已選取代碼，請長按或按 ⌘C／Ctrl+C 複製。"; };
+    try { navigator.clipboard.writeText(t.value).then(() => { m.textContent = "已複製，貼到 LINE 傳給自己存起來。"; }, fallback); } catch { fallback(); }
+    return;
+  }
+  if (a === "restore") {
+    const m = document.getElementById("rsMsg");
+    try { const r = restoreCode(document.getElementById("rsCode").value); showBook(`還原完成：新增 ${r.added} 個字${r.updated ? `，更新 ${r.updated} 個字的進度` : ""}。`); }
+    catch (e) { m.textContent = e.message; }
+  }
+}
+
+/* ---------- install to phone (PWA) ---------- */
+const UA = navigator.userAgent || "";
+const IS_IOS = /iPhone|iPad|iPod/.test(UA) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const IS_ANDROID = /Android/i.test(UA);
+const IN_LINE = /\bLine\//.test(UA);
+const STANDALONE = (window.matchMedia && matchMedia("(display-mode: standalone)").matches) || navigator.standalone === true;
+const PWA = (location.protocol === "https:" && /\.github\.io$/.test(location.hostname)) || location.hostname === "localhost";
+let installEvt = null;
+const installBtn = document.getElementById("installBtn");
+const sheet = document.getElementById("sheet"), sheetPanel = document.getElementById("sheetPanel");
+const SHARE = '<span class="ico"><svg viewBox="0 0 24 24"><path d="M12 15V3m-4 4 4-4 4 4"/><path d="M6 11H5v10h14V11h-1"/></svg></span>';
+const PLUS = '<span class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg></span>';
+function iosGuide(fromStar) {
+  return `<h2>${fromStar ? "先把網站加到主畫面" : "安裝到 iPhone"}</h2>
+    ${fromStar ? "<p>iPhone 的 Safari 會清掉 7 天沒開的網站資料。加入主畫面之後，單字本就不會被清掉，還能像 App 一樣打開、沒有網路也能查。</p>" : ""}
+    <ol><li>點 Safari 下方的「分享」${SHARE}</li><li>往下滑，點「加入主畫面」${PLUS}</li><li>點右上角「新增」</li></ol>
+    <p>之後請從主畫面的「七千單字」圖示打開，單字本才會在同一個地方。</p>
+    <button class="btn primary big" type="button" data-close>知道了</button>`;
+}
+const androidGuide = () => `<h2>安裝到 Android 手機</h2><ol><li>點 Chrome 右上角的「⋮」</li><li>點「安裝應用程式」或「加到主畫面」</li><li>點「安裝」</li></ol><p>安裝後從主畫面的「七千單字」圖示打開，單字本不會遺失，沒有網路也能查。</p><button class="btn primary big" type="button" data-close>知道了</button>`;
+const lineGuide = () => `<h2>請先用瀏覽器開啟</h2><p>LINE 裡面的瀏覽器不能把網站加入主畫面，單字本也可能跟一般瀏覽器分開存。</p><ol><li>點右上角的「⋯」</li><li>點「用預設瀏覽器開啟」</li><li>在 Safari 或 Chrome 裡再按一次「安裝到手機」</li></ol><button class="btn primary big" type="button" data-close>知道了</button>`;
+function openSheet(html) { sheetPanel.innerHTML = html; sheet.hidden = false; sheetPanel.querySelector("button")?.focus(); }
+function closeSheet() { sheet.hidden = true; }
+sheet.addEventListener("click", e => { if (e.target === sheet || e.target.closest("[data-close]")) closeSheet(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !sheet.hidden) closeSheet(); });
+window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); installEvt = e; if (PWA && !STANDALONE) installBtn.hidden = false; });
+window.addEventListener("appinstalled", () => { installBtn.hidden = true; installEvt = null; });
+installBtn.addEventListener("click", async () => {
+  if (IN_LINE) return openSheet(lineGuide());
+  if (installEvt) { installEvt.prompt(); try { await installEvt.userChoice; } catch {} installEvt = null; return; }
+  openSheet(IS_IOS ? iosGuide(false) : androidGuide());
+});
+if (PWA && !STANDALONE && (IS_IOS || IS_ANDROID || IN_LINE)) installBtn.hidden = false;
+if (PWA && IN_LINE) document.getElementById("lineBar").hidden = false;
+if (PWA && "serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+updateBookBtn();
 
 /* ---------- start ---------- */
 const DEMO = {"senses":[{"pos":"v.","zh":"運送；運輸","level":3,"note":"transport A to B 把 A 運到 B"},{"pos":"n.","zh":"運輸；交通工具","level":3,"note":"public transport 大眾運輸（英式；美式多用 transportation）"}],
