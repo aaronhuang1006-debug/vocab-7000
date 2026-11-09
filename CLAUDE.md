@@ -6,6 +6,8 @@
 ## 檔案
 - `index.html`：整個網頁（搜尋、排版、發音），詞表與級別以 `RAW` 字串內嵌在 script 裡（每行 `headword|level|同形異義標記`，共 6,371 行）。
 - `L1.txt`–`L6.txt`：各級單字內容，網頁依查詢的級別用 `fetch("L{n}.txt")` 載入並解析。
+- `sw.js`、`manifest.webmanifest`、`icon-*.png`、`apple-touch-icon.png`：讓網站可加入手機主畫面（PWA）並離線使用。
+- 單字本存在學生瀏覽器的 localStorage（`vocab7000.book.v1`），沒有伺服器。不要改這個 key 或網站網址，否則學生的單字本會消失。
 - 詞表來源是大考中心高中英文參考詞彙表的舊版（每級約 1,080 字）。不要換成 111 學年度新版。
 
 ## 內容格式（每個字一段，段與段之間空一行）
@@ -24,6 +26,7 @@ headword | L級別
 
 ## 工作流程
 - 改動網頁或內容後，先用 `python3 -m http.server` 在本機開 http://localhost:8000 測試（直接雙擊 index.html 會因為無法 fetch 而查不到詞義）。
+- **改了任何網站檔案（尤其 L?.txt、index.html）都要把 `sw.js` 的 `VERSION` 加 1**，否則已安裝到主畫面的學生會一直看到舊的快取內容。
 - 咨翰確認後再 commit 並 push 到 main；GitHub Pages 約 1–2 分鐘後更新，學生端即生效。
 - 學生正在使用這個網站：push 前要確認所有查詢仍正常，不要推上未經確認的改動。
 
