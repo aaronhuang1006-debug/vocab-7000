@@ -182,6 +182,19 @@ button.chip:hover{border-color:var(--accent)}
 .ico{display:inline-flex;vertical-align:-4px;width:22px;height:22px;border:1px solid var(--line);border-radius:6px;align-items:center;justify-content:center;background:var(--bg)}
 .ico svg{width:15px;height:15px;fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .lineBar{display:flex;flex-direction:column;gap:6px}
+.exams{display:flex;flex-direction:column;gap:12px}
+.exams h3{margin:0}
+.exsum{margin:0;font-size:14.5px}
+.exsum b{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.exyears{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.exyears li{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:8px;padding:5px 10px;background:var(--bg);font-size:13px}
+.exyears b{font:500 13px var(--f-mono);color:var(--accent)}
+.exyears i{font-style:normal;color:var(--muted);font-family:var(--f-mono)}
+.exlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.exlist li{display:flex;flex-direction:column;gap:3px;padding-left:12px;border-left:2px solid var(--line);min-width:0}
+.extag{font:500 12px var(--f-mono);color:var(--muted)}
+.exsen{font-family:var(--f-head);font-size:15.5px;line-height:1.55;overflow-wrap:anywhere}
+.exsen mark{background:color-mix(in srgb,var(--accent) 16%,transparent);color:inherit;font-weight:700;border-radius:3px;padding:0 2px}
 .lineBar b{color:var(--fg)}
 </style>
 </head>
@@ -394,7 +407,45 @@ function bodyHTML(key, d) {
     const fam = Array.isArray(d.root.family) && d.root.family.length ? `<div class="fam">同字根：${d.root.family.map(w => { const lv = levelsOf(w); return lv.length ? `<button class="chip" type="button" data-go="${esc(norm(w))}"><span class="cw">${esc(w)}</span>${lvBadge(lv[0])}</button>` : `<span class="chip"><span class="cw">${esc(w)}</span></span>`; }).join("")}</div>` : "";
     root = `<section><h3>字根拆解</h3><div class="root"><div class="parts">${parts}</div>${d.root.explain ? `<p class="rootx">${esc(d.root.explain)}</p>` : ""}${fam}</div></section>`;
   } else root = `<section><h3>字根拆解</h3><p class="none">基礎字，沒有明顯的字根可拆。</p></section>`;
-  return `<section><h3>詞義</h3><ol class="senses">${senses}</ol></section>${ex}${rel}${root}`;
+  return `<section><h3>詞義</h3><ol class="senses">${senses}</ol></section>${ex}${rel}${root}<section class="exams" data-exams="${esc(key)}"><h3>歷屆試題</h3><p class="none">載入中⋯</p></section>`;
+}
+
+/* ---------- past exams (exams.json) ---------- */
+let EXAMS = null, exLoading = null;
+function loadExams() {
+  if (!exLoading) exLoading = fetch("exams.json").then(r => r.ok ? r.json() : null).then(d => (EXAMS = d)).catch(() => null);
+  return exLoading;
+}
+function markAll(text, key) {
+  const words = key.split(" ");
+  if (words.length > 1) {
+    const re = new RegExp("\\b(" + words.map((w, i) => i === 0 ? w.slice(0, Math.max(2, w.length - 1)) + "[a-z]*" : w).join("\\s+") + ")\\b", "gi");
+    return esc(text).replace(re, "<mark>$1</mark>");
+  }
+  const base = key.replace(/[^a-z'-]/gi, ""); if (base.length < 2) return esc(text);
+  const stem = base.length > 4 ? base.slice(0, base.length - (/[ey]$/.test(base) ? 1 : 0) - (base.length > 6 ? 1 : 0)) : base;
+  const re = new RegExp("\\b(" + stem.replace(/[-']/g, m => "\\" + m) + "[a-z]*)", "gi");
+  const out = esc(text).replace(re, "<mark>$1</mark>");
+  return out.includes("<mark>") ? out : esc(text);
+}
+async function fillExams(key) {
+  const d = await loadExams();
+  const box = out.querySelector(`[data-exams="${CSS.escape(key)}"]`); if (!box) return;
+  if (!d) { box.innerHTML = `<h3>歷屆試題</h3><p class="none">歷屆試題資料載入失敗，請重新整理再試一次。</p>`; return; }
+  if ((d.skip || []).includes(key)) { box.innerHTML = `<h3>歷屆試題</h3><p class="none">基礎功能字（冠詞、代名詞、介系詞、連接詞等）幾乎每篇文章都會出現，不列出歷屆試題。</p>`; return; }
+  const ids = (d.index[key] || []).slice().sort((a, b) => d.sentences[b][0] - d.sentences[a][0] || a - b);
+  const range = `${d.years[0]}–${d.years[d.years.length - 1]}`;
+  if (!ids.length) { box.innerHTML = `<h3>歷屆試題</h3><p class="none">${range} 學測都沒有出現過這個字。</p>`; return; }
+  const byYear = new Map();
+  for (const i of ids) { const [y, s] = d.sentences[i]; if (!byYear.has(y)) byYear.set(y, new Map()); const m = byYear.get(y); m.set(s, (m.get(s) || 0) + 1); }
+  const yearsHTML = [...byYear].map(([y, m]) => `<li><b>${d.years[y]}</b><span>${[...m].map(([s, n]) => `${d.sections[s]}${n > 1 ? ` <i>×${n}</i>` : ""}`).join("、")}</span></li>`).join("");
+  const sent = i => { const [y, s, t] = d.sentences[i]; return `<li><span class="extag">${d.years[y]}｜${d.sections[s]}</span><span class="exsen">${markAll(t, key)}</span></li>`; };
+  const SHOW = 4;
+  box.innerHTML = `<h3>歷屆試題</h3><p class="exsum">${range} 學測共出現 <b>${ids.length}</b> 次，分布在 <b>${byYear.size}</b> 個年度</p>
+    <ul class="exyears">${yearsHTML}</ul>
+    <ul class="exlist">${ids.slice(0, SHOW).map(sent).join("")}</ul>
+    ${ids.length > SHOW ? `<button class="btn" type="button" data-act="exall" data-k="${esc(key)}">顯示全部 ${ids.length} 句</button>` : ""}`;
+  box._all = () => { box.querySelector(".exlist").innerHTML = ids.map(sent).join(""); box.querySelector("[data-act=exall]")?.remove(); };
 }
 let seq = 0;
 async function show(key, opts = {}) {
@@ -411,6 +462,7 @@ async function show(key, opts = {}) {
   const card = out.querySelector(".card");
   if (r.data) {
     card.innerHTML = headHTML(key, entries) + bodyHTML(key, r.data);
+    fillExams(key);
   } else {
     card.innerHTML = headHTML(key, entries) + `<p class="msg">這個字的詞義、例句與字根還在整理中，目前只能查級別。</p>`;
   }
@@ -593,6 +645,7 @@ function finishReview() {
   updateBookBtn();
 }
 function onAct(a, el) {
+  if (a === "exall") { el.closest(".exams")?._all?.(); return; }
   if (a === "review") return startReview();
   if (a === "flip") return flipCard();
   if (a === "good") return grade(true);
@@ -659,6 +712,7 @@ const DEMO = {"senses":[{"pos":"v.","zh":"運送；運輸","level":3,"note":"tra
 function showDemo() {
   const key = "transport", entries = IDX.get(key);
   out.innerHTML = `<article class="card">${headHTML(key, entries, true)}${bodyHTML(key, DEMO)}</article>`;
+  fillExams(key);
 }
 function fromHash() {
   const h = decodeURIComponent(location.hash.slice(1));
@@ -668,7 +722,7 @@ function fromHash() {
 if (!fromHash()) showDemo();
 window.addEventListener("hashchange", fromHash);
 /* 背景預載各級資料：使用者還在打字時就先下載，第一次查詢不必等 */
-const prefetchAll = () => { for (let l = 1; l <= 6; l++) loadLevel(l); };
+const prefetchAll = () => { for (let l = 1; l <= 6; l++) loadLevel(l); loadExams(); };
 q.addEventListener("focus", prefetchAll, { once: true });
 if ("requestIdleCallback" in window) requestIdleCallback(prefetchAll, { timeout: 1500 }); else setTimeout(prefetchAll, 300);
 
