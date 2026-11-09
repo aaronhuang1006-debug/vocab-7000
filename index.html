@@ -51,9 +51,12 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15
 header{display:flex;flex-direction:column;gap:10px}
 h1{font-family:var(--f-head);font-weight:700;font-size:clamp(22px,4.4vw,30px);line-height:1.2;margin:0;text-wrap:balance;letter-spacing:.01em}
 .sub{color:var(--muted);font-size:13.5px;margin:0}
-.ladder{display:flex;height:30px;border-radius:6px;overflow:hidden;font-family:var(--f-mono);font-size:11.5px;font-variant-numeric:tabular-nums}
-.ladder span{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;min-width:0}
-.ladder b{font-weight:500;opacity:.75}
+.ladder{display:flex;gap:4px;font-family:var(--f-mono);font-size:13px;font-variant-numeric:tabular-nums}
+.ladder button{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-width:0;height:48px;border:0;border-radius:8px;cursor:pointer;font:inherit;box-shadow:inset 0 -3px 0 rgba(0,0,0,.12);transition:transform .12s}
+.ladder button:hover{transform:translateY(-1px)}
+.ladder button[aria-current="true"]{outline:2px solid var(--fg);outline-offset:2px}
+.ladder b{font-weight:500;font-size:11px;opacity:.8}
+.ladhint{margin:-4px 0 0;font-size:12.5px;color:var(--muted)}
 .search{position:relative}
 .search input{width:100%;font:500 20px/1.3 var(--f-head);padding:14px 16px 14px 46px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--fg);outline:none}
 .search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
@@ -122,7 +125,36 @@ button.chip:hover{border-color:var(--accent)}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:12px}
 .miss h2{font-family:var(--f-head);font-size:24px;margin:0}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-@media (max-width:480px){.ladder b{display:none}}
+/* ---------- level word list ---------- */
+.lvhead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.lvhead h2{font-family:var(--f-head);font-size:26px;margin:0;display:flex;align-items:center;gap:10px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg button{border:0;background:var(--surface);color:var(--fg);font:500 13.5px var(--f-body);padding:7px 14px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg)}
+.az{display:flex;flex-wrap:wrap;gap:4px;position:sticky;top:env(safe-area-inset-top,0px);z-index:3;background:var(--surface);padding:6px 0;border-bottom:1px solid var(--line)}
+.az button{width:30px;height:30px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);font:500 13px var(--f-mono);cursor:pointer;padding:0}
+.az button:hover{border-color:var(--accent);color:var(--accent)}
+.wl{list-style:none;margin:0;padding:0}
+.wl li{border-top:1px solid var(--line);content-visibility:auto;contain-intrinsic-size:auto 56px}
+.wl li:first-child{border-top:0}
+.wl .letter{font:500 12px var(--f-mono);color:var(--muted);letter-spacing:.12em;padding:14px 0 4px;border-top:0;scroll-margin-top:52px}
+.wl button{display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:2px 12px;width:100%;background:none;border:0;padding:10px 0;text-align:left;color:var(--fg);cursor:pointer;font:inherit}
+.wl button:hover .ww{color:var(--accent)}
+.ww{font-family:var(--f-head);font-weight:700;font-size:16.5px;overflow-wrap:anywhere}
+.ww .sv{color:#d69e2e;font-size:13px;margin-left:4px}
+.wz{font-size:13.5px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.wc{font:500 12px var(--f-mono);font-variant-numeric:tabular-nums;color:var(--accent);white-space:nowrap}
+.wc.z{color:var(--line)}
+.rank{font:500 12px var(--f-mono);color:var(--muted);min-width:2.2em;display:inline-block}
+.lvtools{display:flex;flex-wrap:wrap;gap:8px}
+.chk{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:7px 14px;font:500 13.5px var(--f-body);cursor:pointer}
+.chk .box{width:16px;height:16px;border:1.5px solid var(--muted);border-radius:4px;display:inline-flex;align-items:center;justify-content:center}
+.chk[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
+.chk[aria-pressed="true"] .box{background:var(--accent);border-color:var(--accent)}
+.chk[aria-pressed="true"] .box::after{content:"";width:8px;height:4px;border-left:2px solid var(--accent-fg);border-bottom:2px solid var(--accent-fg);transform:rotate(-45deg) translate(1px,-1px)}
+.backlv{align-self:flex-start;background:none;border:0;padding:0;color:var(--accent);font:500 14px var(--f-body);cursor:pointer}
+.backlv:hover{text-decoration:underline}
+@media (max-width:480px){.ladder b{display:none}.ladder button{height:42px}.wl button{grid-template-columns:1fr auto}.wz{grid-column:1/-1;order:3}}
 /* ---------- word book / review ---------- */
 .tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .tbtn{display:inline-flex;align-items:center;gap:8px;font:500 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:7px 14px;cursor:pointer;min-height:38px}
@@ -203,7 +235,8 @@ button.chip:hover{border-color:var(--accent)}
   <header>
     <h1>學測七千單字查詢</h1>
     <p class="sub">收錄大考中心高中英文參考詞彙表 Level 1–6，共 <span id="total"></span> 個詞條。輸入英文單字即可查級別、詞義、例句、相關字與字根。</p>
-    <div class="ladder" id="ladder" aria-label="各級字數"></div>
+    <div class="ladder" id="ladder" role="group" aria-label="各級單字表"></div>
+    <p class="ladhint">點 L1–L6 看該級完整單字表</p>
     <div class="tools">
       <button class="tbtn" type="button" id="bookBtn" aria-label="我的單字本"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></svg>單字本 <b id="bookCount">0</b><span class="due" id="dueBadge" hidden></span></button>
       <button class="tbtn" type="button" id="installBtn" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M12 7v7m-3-3 3 3 3-3"/></svg>安裝到手機</button>
@@ -253,9 +286,11 @@ const counts = [0,0,0,0,0,0,0]; E.forEach(e => counts[e.l]++);
 document.getElementById("total").textContent = E.length.toLocaleString();
 const lad = document.getElementById("ladder");
 for (let l = 1; l <= 6; l++) {
-  const s = document.createElement("span"); s.className = "lv" + l; s.style.flex = counts[l];
-  s.innerHTML = `L${l}<b>${counts[l].toLocaleString()}</b>`; lad.append(s);
+  const s = document.createElement("button"); s.type = "button"; s.className = "lv" + l; s.dataset.level = l;
+  s.setAttribute("aria-label", `Level ${l} 單字表，${counts[l]} 個字`);
+  s.innerHTML = `L${l}<b>${counts[l].toLocaleString()} 字</b>`; lad.append(s);
 }
+lad.addEventListener("click", e => { const b = e.target.closest("[data-level]"); if (b) showLevel(+b.dataset.level); });
 
 function lemmaCandidates(q) {
   const c = [];
@@ -447,24 +482,73 @@ async function fillExams(key) {
     ${ids.length > SHOW ? `<button class="btn" type="button" data-act="exall" data-k="${esc(key)}">顯示全部 ${ids.length} 句</button>` : ""}`;
   box._all = () => { box.querySelector(".exlist").innerHTML = ids.map(sent).join(""); box.querySelector("[data-act=exall]")?.remove(); };
 }
+/* ---------- level word list ---------- */
+let levelCtx = null;            // { l, sort, y } of the list the student came from
+let backTo = null;
+const markLevel = l => document.querySelectorAll("#ladder [data-level]").forEach(b => b.setAttribute("aria-current", +b.dataset.level === l ? "true" : "false"));
+async function showLevel(l, opts = {}) {
+  const sort = opts.sort || (levelCtx && levelCtx.l === l ? levelCtx.sort : "az");
+  const onlyTested = opts.tested ?? (levelCtx && levelCtx.l === l ? levelCtx.tested : false);
+  setView("level"); session = null; backTo = null; hideSugg(); markLevel(l); q.value = "";
+  const my = ++seq;
+  try { history.replaceState(null, "", "#L" + l); } catch {}
+  if (!opts.restore) window.scrollTo({ top: 0 });
+  out.innerHTML = `<article class="card"><div class="lvhead"><h2>${lvBadge(l, true)} 單字表</h2></div><div class="state"><div class="sk" style="width:60%"></div><div class="sk" style="width:85%"></div><p class="note">載入中⋯</p></div></article>`;
+  await Promise.all([loadLevel(l), loadExams()]);
+  if (my !== seq) return;
+  const ex = EXAMS, skip = new Set((ex && ex.skip) || []);
+  const rows = E.filter(e => e.l === l).map(e => {
+    const key = norm(e.keys[0]);
+    const d = DATA.get(e.w + "|" + e.l);
+    const ids = ex && ex.index[key] ? ex.index[key] : [];
+    const n = skip.has(key) ? -1 : ids.length;
+    const y = n > 0 ? new Set(ids.map(i => ex.sentences[i][0])).size : 0;
+    return { e, key, zh: d ? [...new Set(d.senses.flatMap(s => s.zh.split("；")))].slice(0, 4).join("；") : "", n, y };
+  });
+  if (sort === "freq") rows.sort((a, b) => b.y - a.y || b.n - a.n || a.e.w.localeCompare(b.e.w, "en", { sensitivity: "base" }));
+  else rows.sort((a, b) => a.e.w.localeCompare(b.e.w, "en", { sensitivity: "base" }));
+  const tested = rows.filter(r => r.n > 0).length, total = rows.length;
+  const shown = onlyTested ? rows.filter(r => r.n > 0) : rows;
+  const cnt = r => r.n < 0 ? `<span class="wc z">—</span>` : r.n ? `<span class="wc">${r.y} 年 ${r.n} 次</span>` : `<span class="wc z">未考</span>`;
+  let html = "", letter = "", letters = [];
+  shown.forEach((r, i) => {
+    if (sort === "az") {
+      const L = (r.e.w[0] || "").toUpperCase();
+      if (L !== letter) { letter = L; letters.push(L); html += `<li class="letter" id="lv-${L}">${L}</li>`; }
+    }
+    html += `<li><button type="button" data-act="lvopen" data-k="${esc(r.key)}"><span class="ww">${sort === "freq" ? `<span class="rank">${i + 1}</span>` : ""}${esc(r.e.w)}${book[r.key] ? '<span class="sv" aria-label="已加入單字本">★</span>' : ""}</span><span class="wz">${esc(r.zh)}</span>${cnt(r)}</button></li>`;
+  });
+  out.innerHTML = `<article class="card">
+    <div class="lvhead"><h2>${lvBadge(l, true)} 單字表</h2>
+      <div class="seg" role="group" aria-label="排序"><button type="button" data-act="lvsort" data-sort="az" aria-pressed="${sort === "az"}">字母順序</button><button type="button" data-act="lvsort" data-sort="freq" aria-pressed="${sort === "freq"}">最常考</button></div></div>
+    <div class="lvtools"><button class="chk" type="button" data-act="lvtested" aria-pressed="${onlyTested}"><span class="box" aria-hidden="true"></span>只看考過的字</button></div>
+    <p class="note">${onlyTested ? `顯示 ${tested} 個在 108–115 學測出現過的字（全級共 ${total.toLocaleString()} 個）。` : `共 ${total.toLocaleString()} 個字，其中 ${tested} 個在 108–115 學測出現過。`}${sort === "freq" ? "「最常考」先比出現在幾個年度，再比總次數；只在單一篇文章裡反覆出現的字不會排在前面。" : ""}點單字看完整解釋。</p>
+    ${sort === "az" ? `<nav class="az" aria-label="依字母跳轉">${letters.map(L => `<button type="button" data-act="lvjump" data-l="${L}">${L}</button>`).join("")}</nav>` : ""}
+    <ul class="wl">${html}</ul></article>`;
+  levelCtx = { l, sort, tested: onlyTested, y: 0 };
+  if (opts.restore && opts.y != null) requestAnimationFrame(() => window.scrollTo({ top: opts.y }));
+}
+
 let seq = 0;
 async function show(key, opts = {}) {
   key = norm(key);
   const entries = IDX.get(key);
-  hideSugg(); setView("lookup"); session = null;
+  hideSugg(); setView("lookup"); session = null; markLevel(0);
+  backTo = opts.fromLevel && levelCtx ? { ...levelCtx } : null;
   if (entries) lastKey = key;
   if (!entries) return showMiss(key);
   const my = ++seq;
   if (!opts.keepHash) try { history.replaceState(null, "", /^[a-z-]+$/.test(key) ? "#" + key : location.pathname + location.search); } catch {}
-  out.innerHTML = `<article class="card">${headHTML(key, entries)}<div class="state" id="st"><div class="sk" style="width:55%"></div><div class="sk" style="width:80%"></div><div class="sk" style="width:68%"></div><p class="note">載入中⋯</p></div></article>`;
+  const back = backTo ? `<button class="backlv" type="button" data-act="backlv">← 回到 Level ${backTo.l} 單字表</button>` : "";
+  out.innerHTML = `<article class="card">${back}${headHTML(key, entries)}<div class="state" id="st"><div class="sk" style="width:55%"></div><div class="sk" style="width:80%"></div><div class="sk" style="width:68%"></div><p class="note">載入中⋯</p></div></article>`;
   const r = await fetchEntry(key, entries);
   if (my !== seq) return;
   const card = out.querySelector(".card");
   if (r.data) {
-    card.innerHTML = headHTML(key, entries) + bodyHTML(key, r.data);
+    card.innerHTML = back + headHTML(key, entries) + bodyHTML(key, r.data);
     fillExams(key);
   } else {
-    card.innerHTML = headHTML(key, entries) + `<p class="msg">這個字的詞義、例句與字根還在整理中，目前只能查級別。</p>`;
+    card.innerHTML = back + headHTML(key, entries) + `<p class="msg">這個字的詞義、例句與字根還在整理中，目前只能查級別。</p>`;
   }
 }
 function showMiss(key) {
@@ -646,6 +730,11 @@ function finishReview() {
 }
 function onAct(a, el) {
   if (a === "exall") { el.closest(".exams")?._all?.(); return; }
+  if (a === "lvopen") { if (levelCtx) levelCtx.y = window.scrollY; q.value = el.dataset.k; show(el.dataset.k, { fromLevel: true }); window.scrollTo({ top: 0 }); return; }
+  if (a === "backlv") { const b = backTo; if (b) showLevel(b.l, { sort: b.sort, tested: b.tested, restore: true, y: b.y }); return; }
+  if (a === "lvsort") { if (levelCtx) showLevel(levelCtx.l, { sort: el.dataset.sort }); return; }
+  if (a === "lvtested") { if (levelCtx) showLevel(levelCtx.l, { tested: !levelCtx.tested }); return; }
+  if (a === "lvjump") { document.getElementById("lv-" + el.dataset.l)?.scrollIntoView({ block: "start" }); return; }
   if (a === "review") return startReview();
   if (a === "flip") return flipCard();
   if (a === "good") return grade(true);
@@ -716,6 +805,8 @@ function showDemo() {
 }
 function fromHash() {
   const h = decodeURIComponent(location.hash.slice(1));
+  const lm = h.match(/^L([1-6])$/);
+  if (lm) { showLevel(+lm[1]); return true; }
   if (h && IDX.has(norm(h))) { q.value = norm(h); show(norm(h), { keepHash: true }); return true; }
   return false;
 }

@@ -34,13 +34,21 @@ for grp in IRREG.replace('\n', '').split('|'):
     base = ws[0]
     for f in ws[1:]: IRR.setdefault(f, set()).add(base)
 
+# Irregular forms that are also headwords: which reading to credit.
+PREFER_BASE = {'found', 'felt', 'fell', 'saw', 'spoke', 'bore', 'rose', 'left', 'lit', 'lain', 'ate', 'drew', 'flew', 'meant', 'sang'}
+PREFER_SELF = {'ground', 'bound', 'wound', 'lay', 'better', 'best', 'more', 'most', 'less', 'least', 'data', 'media'}
+
 def lemmas(t):
     """Candidate headword keys for a lowercase token (the token itself first)."""
     out = []
     def add(x):
         if x and x in KEYS and x not in out: out.append(x)
+    if t in PREFER_BASE and any(b in KEYS for b in IRR.get(t, ())):
+        for b in IRR[t]: add(b)
+        return out
     add(t)
-    for b in IRR.get(t, ()): add(b)
+    if t not in PREFER_SELF:
+        for b in IRR.get(t, ()): add(b)
     if t.endswith("'s"): add(t[:-2])
     if t.endswith('ies'): add(t[:-3] + 'y')
     if t.endswith('es'): add(t[:-2])
@@ -53,6 +61,8 @@ def lemmas(t):
         add(t[:-3]); add(t[:-3] + 'e')
         if re.search(r'(.)\1ing$', t): add(t[:-4])
         if t.endswith('ying'): add(t[:-4] + 'ie')
+    if t in KEYS or len(t) <= 4:      # 'ever' is not eve+er, 'only' is not on+ly
+        return out
     if t.endswith('ier'): add(t[:-3] + 'y')
     if t.endswith('iest'): add(t[:-4] + 'y')
     if t.endswith('er'):
@@ -134,20 +144,37 @@ def parse_exam(txt):
 def tokens(s):
     return [norm(t) for t in re.findall(r"[A-Za-z]+(?:[-'’][A-Za-z]+)*", s)]
 
+BOILER = re.compile(r'''(?ix)
+    \b(?:in|of|to|from|for)?\s*(?:the\s+)?(?:first|second|third|fourth|fifth|last|final|next|previous|following|opening|closing|\d+(?:st|nd|rd|th)?)?\s*paragraphs?(?:\s+\d+(?:\s*(?:and|to|-)\s*\d+)?)?\b
+  | \baccording\s+to\s+the\s+(?:passage|article|text|author|reading|information|story|chart|table|graph|letter|email|ad|advertisement|poster|notice|website|survey|report)\b
+  | \b(?:in|from|of|by)\s+the\s+(?:passage|article|text|reading|selection)\b
+  | \bthe\s+(?:passage|article|text|author|writer)\b
+  | \bwhich\s+of\s+the\s+following\b
+  | \bthe\s+following\b
+  | \bis\s+(?:not\s+)?(?:true|false|mentioned|implied|stated|inferred)\b
+  | \bcan\s+be\s+inferred\b
+  | \bbest\s+(?:title|describes?|summary|summarizes?)\b
+  | \bmain\s+(?:idea|purpose|point)\b
+  | \bclosest\s+in\s+meaning\b
+  | \bmost\s+(?:likely|suitable|appropriate)\b
+''')
+
 def match_sentence(s):
-    toks = tokens(s); hits = set()
+    s = BOILER.sub(' ', s)
+    toks = tokens(s); hits = set(); covered = set()
+    for i in range(len(toks)):                       # phrases first, e.g. 'according to'
+        for n in range(MAXN, 1, -1):
+            if i + n > len(toks): continue
+            rest = ' '.join(toks[i + 1:i + n])
+            for f in (lemmas(toks[i]) or []) + [toks[i]]:
+                if f + ' ' + rest in MULTI:
+                    hits.add(f + ' ' + rest); covered.update(range(i, i + n))
     for i, t in enumerate(toks):
+        if i in covered and t not in KEYS: continue  # don't also count 'according' as 'accord'
         for k in lemmas(t): hits.add(k)
         if '-' in t:
             for part in t.split('-'):
                 for k in lemmas(part): hits.add(k)
-        for n in range(2, MAXN + 1):
-            if i + n > len(toks): break
-            first = lemmas(toks[i]) or [toks[i]]
-            rest = ' '.join(toks[i + 1:i + n])
-            for f in first + [toks[i]]:
-                cand = f + ' ' + rest
-                if cand in MULTI: hits.add(cand)
     return hits
 
 def build(exam_dir, out_path):
