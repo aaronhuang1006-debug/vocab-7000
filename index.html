@@ -219,6 +219,13 @@ button.chip:hover{border-color:var(--accent)}
 .ico svg{width:15px;height:15px;fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .lineBar{display:flex;flex-direction:column;gap:6px}
 h1 a{color:inherit;text-decoration:none}
+.updbar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--fg);color:var(--bg);border-radius:12px;padding:10px 12px 10px 16px;font-size:14.5px}
+.notice{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;background:var(--warn-bg);color:var(--warn);border-radius:10px;padding:10px 12px;font-size:14px;margin:0}
+.notice .btn{padding:5px 10px;font-size:13px}
+button.part{cursor:pointer;font:inherit;color:var(--fg)}
+button.part:hover{border-color:var(--accent)}
+.rootm{display:flex;flex-wrap:wrap;gap:6px}
+.rootm span{border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:13.5px;background:var(--bg)}
 .floatnav{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;align-items:center;gap:8px}
 .pospill{background:var(--fg);color:var(--bg);font:500 13px var(--f-mono);font-variant-numeric:tabular-nums;border-radius:999px;padding:8px 13px;box-shadow:0 6px 18px rgba(10,30,40,.22);white-space:nowrap}
 .pospill b{font-family:var(--f-head);font-size:15px;margin-right:6px}
@@ -244,7 +251,6 @@ h1 a{color:inherit;text-decoration:none}
 <div class="wrap">
   <header>
     <h1><a href="./" id="homeLink">學測七千單字查詢</a></h1>
-    <p class="sub">收錄大考中心高中英文參考詞彙表 Level 1–6 共 <span id="total"></span> 個詞條，另有 <span id="ptotal"></span> 個學測常考片語。輸入英文單字或片語，即可查級別、詞義、例句、相關字、字根與歷屆試題。</p>
     <div class="ladder" id="ladder" role="group" aria-label="各級單字表"></div>
     <p class="ladhint">點 L1–L6 看該級完整單字表，點「片語」看學測常考片語</p>
     <div class="tools">
@@ -261,6 +267,7 @@ h1 a{color:inherit;text-decoration:none}
     <div class="sugg" id="sugg" role="listbox" hidden></div>
   </div>
 
+  <div class="updbar" id="updBar" hidden role="status"><span>網站有新版本</span><button class="btn primary" type="button" id="updBtn">點這裡更新</button></div>
   <main id="out"></main>
   <div class="floatnav" id="floatNav" hidden><span class="pospill" id="posPill" aria-live="off"></span><button class="totop" type="button" id="toTop" aria-label="回到最頂端"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></button></div>
   <div class="sheet" id="sheet" hidden role="dialog" aria-modal="true"><div class="panel" id="sheetPanel"></div></div>
@@ -295,8 +302,6 @@ for (const e of E) for (const k of e.keys) { const n = norm(k); if (!IDX.has(n))
 const KEYS = [...IDX.keys()].sort();
 
 const counts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, P: 0 }; E.forEach(e => counts[e.l]++);
-document.getElementById("total").textContent = (E.length - counts.P).toLocaleString();
-document.getElementById("ptotal").textContent = counts.P.toLocaleString();
 const lad = document.getElementById("ladder");
 for (let l = 1; l <= 6; l++) {
   const s = document.createElement("button"); s.type = "button"; s.className = "lv" + l; s.dataset.level = l;
@@ -477,7 +482,7 @@ function bodyHTML(key, d) {
   }).join("")}</div></section>` : "";
   let root;
   if (d.root && Array.isArray(d.root.parts) && d.root.parts.length) {
-    const parts = d.root.parts.map(p => `<div class="part"><span class="p">${esc(p.p)}</span><span class="m">${esc(p.m)}</span></div>`).join('<span class="plus">+</span>');
+    const parts = d.root.parts.map(p => `<button class="part" type="button" data-act="root" data-p="${esc(normPart(p.p))}" data-from="${esc(key)}" aria-label="看所有含 ${esc(p.p)} 的字"><span class="p">${esc(p.p)}</span><span class="m">${esc(p.m)}</span></button>`).join('<span class="plus">+</span>');
     const fam = Array.isArray(d.root.family) && d.root.family.length ? `<div class="fam">同字根：${d.root.family.map(w => { const lv = levelsOf(w); return lv.length ? `<button class="chip" type="button" data-go="${esc(norm(w))}"><span class="cw">${esc(w)}</span>${lvBadge(lv[0])}</button>` : `<span class="chip"><span class="cw">${esc(w)}</span></span>`; }).join("")}</div>` : "";
     root = `<section><h3>字根拆解</h3><div class="root"><div class="parts">${parts}</div>${d.root.explain ? `<p class="rootx">${esc(d.root.explain)}</p>` : ""}${fam}</div></section>`;
   } else root = `<section><h3>字根拆解</h3><p class="none">基礎字，沒有明顯的字根可拆。</p></section>`;
@@ -528,6 +533,7 @@ async function showLevel(l, opts = {}) {
   const my = ++seq;
   try { history.replaceState(null, "", "#L" + l); } catch {}
   if (!opts.restore) window.scrollTo({ top: 0 });
+  track("list-L" + l, l === "P" ? "片語表" : `Level ${l} 單字表`);
   const unit = l === "P" ? "個片語" : "個字", title = l === "P" ? "學測常考片語" : `${lvBadge(l, true)} 單字表`;
   out.innerHTML = `<article class="card"><div class="lvhead"><h2>${title}</h2></div><div class="state"><div class="sk" style="width:60%"></div><div class="sk" style="width:85%"></div><p class="note">載入中⋯</p></div></article>`;
   await Promise.all([loadLevel(l), loadExams()]);
@@ -576,6 +582,7 @@ async function show(key, opts = {}) {
   if (!entries) return showMiss(key);
   const my = ++seq;
   if (!opts.keepHash) try { history.replaceState(null, "", /^[a-z-]+$/.test(key) ? "#" + key : location.pathname + location.search); } catch {}
+  track((entries.some(e => e.l === "P") ? "phrase-" : "word-") + key.replace(/\s+/g, "-"), key);
   const back = backTo ? `<button class="backlv" type="button" data-act="backlv">← 回到${backTo.l === "P" ? "片語表" : ` Level ${backTo.l} 單字表`}</button>` : "";
   out.innerHTML = `<article class="card">${back}${headHTML(key, entries)}<div class="state" id="st"><div class="sk" style="width:55%"></div><div class="sk" style="width:80%"></div><div class="sk" style="width:68%"></div><p class="note">載入中⋯</p></div></article>`;
   const r = await fetchEntry(key, entries);
@@ -663,6 +670,7 @@ function toggleStar(key, btn) {
   if (book[key]) delete book[key];
   else {
     book[key] = { a: today(), b: 0, d: today() };
+    askPersist();
     if (!flags.iosTip && PWA && IS_IOS && !STANDALONE && !IN_LINE) { flags.iosTip = 1; lsSet(FLAG, flags); setTimeout(() => openSheet(iosGuide(true)), 350); }
   }
   saveBook();
@@ -693,7 +701,7 @@ async function showBook(msg) {
   const list = keys.length ? `<ul class="blist">${keys.map(k => `<li><button class="bopen" type="button" data-act="open" data-k="${esc(k)}"><span class="bw">${esc(k)} ${levelsOf(k).map(l => lvBadge(l)).join("")} ${pill(status(book[k]))}</span><span class="bz" data-zh="${esc(k)}">　</span></button><button class="bdel" type="button" data-act="del" data-k="${esc(k)}" aria-label="從單字本移除 ${esc(k)}">×</button></li>`).join("")}</ul>`
     : `<div class="empty"><p>單字本還是空的。</p><p>查單字時按標題旁的「☆ 加入單字本」，不會的字就會存在這裡，之後可以用字卡複習。</p></div>`;
   const nothingDue = keys.length && !c.due ? `<p class="okmsg">今天沒有要複習的字了。新加入的字當天就會出現在複習裡。</p>` : "";
-  out.innerHTML = `<article class="card">${head}${msg ? `<p class="okmsg">${esc(msg)}</p>` : ""}${nothingDue}${list}${backupHTML()}</article>`;
+  out.innerHTML = `<article class="card">${head}${msg ? `<p class="okmsg">${esc(msg)}</p>` : ""}${bookNotices(keys.length)}${nothingDue}${list}${backupHTML()}</article>`;
   for (const k of keys) firstZh(k).then(z => { const el = out.querySelector(`[data-zh="${CSS.escape(k)}"]`); if (el) el.textContent = z || "　"; });
 }
 function backupHTML() {
@@ -724,6 +732,7 @@ function restoreCode(code) {
 
 let session = null;
 function startReview() {
+  track("review", "字卡複習");
   const keys = dueKeys().sort(() => Math.random() - .5);
   if (!keys.length) return showBook();
   session = { queue: keys, total: keys.length, done: 0, right: 0, again: 0, cur: null, flipped: false };
@@ -766,8 +775,11 @@ function finishReview() {
   updateBookBtn();
 }
 function onAct(a, el) {
+  if (a === "root") { showRoot(el.dataset.p, el.dataset.from); return; }
+  if (a === "rootback") { const k = el.dataset.k; q.value = k; show(k); window.scrollTo({ top: 0 }); return; }
+  if (a === "gobackup") { document.querySelector(".backup")?.scrollIntoView({ block: "start" }); return; }
   if (a === "exall") { el.closest(".exams")?._all?.(); return; }
-  if (a === "lvopen") { if (levelCtx) levelCtx.y = window.scrollY; q.value = el.dataset.k; show(el.dataset.k, { fromLevel: true }); window.scrollTo({ top: 0 }); return; }
+  if (a === "lvopen") { const fromLv = view === "level"; if (fromLv && levelCtx) levelCtx.y = window.scrollY; q.value = el.dataset.k; show(el.dataset.k, { fromLevel: fromLv }); window.scrollTo({ top: 0 }); return; }
   if (a === "backlv") { const b = backTo; if (b) showLevel(b.l, { sort: b.sort, tested: b.tested, restore: true, y: b.y }); return; }
   if (a === "lvsort") { if (levelCtx) showLevel(levelCtx.l, { sort: el.dataset.sort }); return; }
   if (a === "lvtested") { if (levelCtx) showLevel(levelCtx.l, { tested: !levelCtx.tested }); return; }
@@ -779,7 +791,7 @@ function onAct(a, el) {
   if (a === "endrv" || a === "tobook") { session = null; return showBook(); }
   if (a === "open") { setView("lookup"); q.value = el.dataset.k; show(el.dataset.k); window.scrollTo({ top: 0 }); return; }
   if (a === "del") { delete book[el.dataset.k]; saveBook(); return showBook(); }
-  if (a === "mkbackup") { document.getElementById("bkOut").hidden = false; const t = document.getElementById("bkCode"); t.value = makeCode(); t.focus(); t.select(); return; }
+  if (a === "mkbackup") { flags.lastBackup = today(); flags.backupN = Object.keys(book).length; lsSet(FLAG, flags); document.getElementById("bkOut").hidden = false; const t = document.getElementById("bkCode"); t.value = makeCode(); t.focus(); t.select(); return; }
   if (a === "copy") {
     const t = document.getElementById("bkCode"), m = document.getElementById("copyMsg");
     const fallback = () => { t.focus(); t.select(); m.textContent = "已選取代碼，請長按或按 ⌘C／Ctrl+C 複製。"; };
@@ -827,8 +839,85 @@ installBtn.addEventListener("click", async () => {
 });
 if (PWA && !STANDALONE && (IS_IOS || IS_ANDROID || IN_LINE)) installBtn.hidden = false;
 if (PWA && IN_LINE) document.getElementById("lineBar").hidden = false;
-if (PWA && "serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+if (PWA && "serviceWorker" in navigator) {
+  const hadController = !!navigator.serviceWorker.controller;
+  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").then(reg => {
+    document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") reg.update().catch(() => {}); });
+  }).catch(() => {}));
+  navigator.serviceWorker.addEventListener("controllerchange", () => { if (hadController) document.getElementById("updBar").hidden = false; });
+}
+document.getElementById("updBtn").addEventListener("click", () => location.reload());
+if (PWA && STANDALONE && !Object.keys(book).length && !flags.appTip) {
+  flags.appTip = 1; lsSet(FLAG, flags);
+  setTimeout(() => openSheet(`<h2>歡迎使用七千單字 App</h2><p>主畫面 App 的單字本和 Safari 是分開存的。如果你之前在 Safari 存過單字：</p><ol><li>回到 Safari 打開這個網站，進「單字本」</li><li>按「產生備份代碼」並複製</li><li>回到這個 App 的「單字本」，貼上代碼按「還原」</li></ol><p>之後請都從主畫面的圖示打開。</p><button class="btn primary big" type="button" data-close>知道了</button>`), 600);
+}
 updateBookBtn();
+
+/* ---------- usage statistics (GoatCounter; off until GC_CODE is set) ---------- */
+const GC_CODE = "vocab7000";
+function track(path, title) {
+  try { if (GC_CODE && PWA && window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path, title: title || path, event: true }); } catch {}
+}
+if (GC_CODE && PWA) {
+  const s = document.createElement("script"); s.async = true; s.src = "https://gc.zgo.at/count.js";
+  s.dataset.goatcounter = `https://${GC_CODE}.goatcounter.com/count`; document.head.appendChild(s);
+}
+
+/* ---------- keep the word book safe ---------- */
+let persistAsked = false;
+function askPersist() {
+  if (persistAsked) return; persistAsked = true;
+  try { navigator.storage && navigator.storage.persist && navigator.storage.persisted().then(p => p || navigator.storage.persist()).catch(() => {}); } catch {}
+}
+if (Object.keys(book).length) askPersist();
+function bookNotices(n) {
+  const out = [];
+  if (PWA && IS_IOS && !STANDALONE && !IN_LINE && n)
+    out.push(`<p class="notice">你現在是用 Safari 開啟。加入主畫面之後，App 裡的單字本是空的；請先在這裡「產生備份代碼」，再到 App 裡「還原」。</p>`);
+  const days = flags.lastBackup ? Math.floor((new Date(today()) - new Date(flags.lastBackup)) / 864e5) : null;
+  const grown = n - (flags.backupN || 0);
+  if (n >= 15 && (days === null || (days >= 14 && grown > 0) || grown >= 30))
+    out.push(`<p class="notice"><span>${days === null ? `單字本已經有 ${n} 個字，還沒備份過。` : `距離上次備份 ${days} 天，多了 ${grown} 個字。`}建議備份一下，換手機或資料被清掉時才救得回來。</span><button class="btn" type="button" data-act="gobackup">去備份</button></p>`);
+  return out.join("");
+}
+
+/* ---------- browse by word root ---------- */
+const normPart = p => String(p || "").toLowerCase().replace(/[‐‑–—]/g, "-").replace(/\s+/g, "").trim();
+let ROOTS = null;
+async function rootIndex() {
+  if (ROOTS) return ROOTS;
+  await Promise.all([1, 2, 3, 4, 5, 6].map(loadLevel));
+  ROOTS = new Map();
+  for (const e of E) {
+    if (e.l === "P") continue;
+    const d = DATA.get(e.w + "|" + e.l); if (!d || !d.root) continue;
+    for (const part of d.root.parts) {
+      const k = normPart(part.p); if (!k || k.length < 2) continue;
+      if (!ROOTS.has(k)) ROOTS.set(k, []);
+      ROOTS.get(k).push({ e, key: norm(e.keys[0]), m: part.m, zh: [...new Set(d.senses.flatMap(s => s.zh.split("；")))].slice(0, 4).join("；") });
+    }
+  }
+  return ROOTS;
+}
+async function showRoot(part, fromKey) {
+  track("root-" + part, "字根 " + part);
+  setView("root"); session = null; backTo = null; hideSugg(); markLevel(""); seq++;
+  const my = seq;
+  out.innerHTML = `<article class="card"><div class="state"><div class="sk" style="width:50%"></div><p class="note">載入中⋯</p></div></article>`;
+  window.scrollTo({ top: 0 });
+  const idx = await rootIndex(); if (my !== seq) return;
+  const list = (idx.get(part) || []).slice().sort((a, b) => a.e.l - b.e.l || a.e.w.localeCompare(b.e.w, "en", { sensitivity: "base" }));
+  const seen = new Set(), rows = list.filter(r => !seen.has(r.key) && seen.add(r.key));
+  const means = {}; rows.forEach(r => { if (r.m) means[r.m] = (means[r.m] || 0) + 1; });
+  const top = Object.entries(means).sort((a, b) => b[1] - a[1]).slice(0, 3).map(x => x[0]);
+  const kind = /-$/.test(part) ? "字首" : /^-/.test(part) ? "字尾" : "字根";
+  out.innerHTML = `<article class="card">
+    ${fromKey ? `<button class="backlv" type="button" data-act="rootback" data-k="${esc(fromKey)}">← 回到 ${esc(fromKey)}</button>` : ""}
+    <div class="lvhead"><h2>${kind} ${esc(part)}</h2></div>
+    ${top.length ? `<div class="rootm">${top.map(m => `<span>${esc(m)}</span>`).join("")}</div>` : ""}
+    <p class="note">七千單字裡共有 ${rows.length} 個字的字根拆解含有「${esc(part)}」，依級別排列。點單字看完整解釋。</p>
+    <ul class="wl">${rows.map(r => `<li><button type="button" data-act="lvopen" data-k="${esc(r.key)}"><span class="ww">${esc(r.e.w)}</span><span class="wz">${esc(r.zh)}</span>${lvBadge(r.e.l)}</button></li>`).join("")}</ul></article>`;
+}
 
 /* ---------- home, back-to-top, scroll position ---------- */
 function goHome() {
