@@ -6,7 +6,8 @@
 ## 檔案
 - `index.html`：整個網頁（搜尋、排版、發音），詞表與級別以 `RAW` 字串內嵌在 script 裡（每行 `headword|level|同形異義標記`，共 6,371 行）。
 - `L1.txt`–`L6.txt`：各級單字內容，網頁依查詢的級別用 `fetch("L{n}.txt")` 載入並解析。
-- `exams.json`：108–115 學測歷屆試題比對結果（每個詞條出現在哪一年、哪個大題、哪一句），由 exam_index.py 從試卷 PDF 文字產生；170 個功能詞（冠詞、代名詞、介系詞、連接詞、be／助動詞等）列在 `skip`，不列出歷屆試題。
+- `LP.txt`：591 個學測常考片語的內容（headword 行寫成 `phrase | P`，沒有字根行）。片語清單在 `tools/phrases_list.txt`，也以 `phrase|P|` 的形式加在 `index.html` 的 `RAW` 詞表後面；網頁把片語當成等級「P」處理，所以搜尋、單字本、字卡、單字表都通用。片語 headword 裡的 sb／sth／one's／oneself 只放在兩段固定字之間。
+- `exams.json`：108–115 學測歷屆試題比對結果（每個詞條出現在哪一年、哪個大題、哪一句），由 tools/exam_index.py 從試卷 PDF 文字產生（`python3 exam_index.py <試卷txt資料夾> exams.json phrases_list.txt`，需要旁邊有 words.json）；比對時略過閱讀測驗題目固定句型；170 個功能詞（冠詞、代名詞、介系詞、連接詞、be／助動詞等）列在 `skip`，不列出歷屆試題。
 - `sw.js`、`manifest.webmanifest`、`icon-*.png`、`apple-touch-icon.png`：讓網站可加入手機主畫面（PWA）並離線使用。
 - 單字本存在學生瀏覽器的 localStorage（`vocab7000.book.v1`），沒有伺服器。不要改這個 key 或網站網址，否則學生的單字本會消失。
 - 詞表來源是大考中心高中英文參考詞彙表的舊版（每級約 1,080 字）。不要換成 111 學年度新版。

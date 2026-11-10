@@ -177,7 +177,45 @@ def match_sentence(s):
                 for k in lemmas(part): hits.add(k)
     return hits
 
-def build(exam_dir, out_path):
+# ---------- phrases ----------
+INV = {}
+for grp in IRREG.replace('\n', '').split('|'):
+    ws = grp.split()
+    if ws: INV.setdefault(ws[0], set()).update(ws[1:])
+
+def verb_forms(v):
+    f = {v, v + 's', v + 'es', v + 'ed', v + 'd', v + 'ing'} | INV.get(v, set())
+    if v.endswith('e'): f |= {v[:-1] + 'ing', v + 'd'}
+    if v.endswith('y'): f |= {v[:-1] + 'ies', v[:-1] + 'ied'}
+    if v.endswith('ie'): f |= {v[:-2] + 'ying'}
+    if re.search(r'[^aeiou][aeiou][bdgklmnprt]$', v): f |= {v + v[-1] + 'ed', v + v[-1] + 'ing'}
+    return f
+
+BE = r"(?:am|is|are|was|were|be|been|being|'s|'re|'m)"
+POSS = r"(?:my|your|his|her|its|our|their|one's|[a-z]+'s)"
+SELF = r"(?:myself|yourself|himself|herself|itself|ourselves|yourselves|themselves|oneself)"
+GAP = r"(?:[a-z0-9'-]+ ){0,4}?[a-z0-9'-]+"
+
+def phrase_regex(ph):
+    toks = ph.split(); parts = []; first_content = True
+    for t in toks:
+        if t == 'be': parts.append(BE); continue
+        if t == "one's": parts.append(POSS); continue
+        if t == 'oneself': parts.append(SELF); continue
+        if t in ('sb', 'sth'): parts.append(GAP); continue
+        if first_content:
+            parts.append('(?:' + '|'.join(sorted(map(re.escape, verb_forms(t)), key=len, reverse=True)) + ')'); first_content = False
+        else:
+            parts.append(re.escape(t))
+    return re.compile(r'(?<![a-z])' + ' '.join(parts) + r'(?![a-z])')
+
+def phrase_text(s):
+    s = BOILER.sub(' ', s).lower().replace('’', "'")
+    return ' '.join(re.findall(r"[a-z0-9]+(?:['-][a-z0-9]+)*", s))
+
+def build(exam_dir, out_path, phrase_file=None):
+    phrases = [l.strip() for l in open(phrase_file, encoding='utf-8') if l.strip()] if phrase_file else []
+    PRX = [(ph, phrase_regex(ph)) for ph in phrases]
     years = sorted(int(os.path.basename(p)[:-4]) for p in glob.glob(os.path.join(exam_dir, '*.txt')) if os.path.basename(p)[:-4].isdigit())
     sentences, index = [], {}
     report = {}
@@ -188,8 +226,11 @@ def build(exam_dir, out_path):
             si = SECTIONS.index(sec)
             for s in sents:
                 sid = len(sentences); sentences.append([yi, si, s])
-                for k in match_sentence(s):
-                    if k not in FUNCTION_WORDS: index.setdefault(k, []).append(sid)
+                hits = {k for k in match_sentence(s) if k not in FUNCTION_WORDS}
+                pt = phrase_text(s)
+                for ph, rx in PRX:
+                    if rx.search(pt): hits.add(ph)
+                for k in hits: index.setdefault(k, []).append(sid)
     used = set(i for ids in index.values() for i in ids)
     remap = {old: new for new, old in enumerate(sorted(used))}
     sentences = [sentences[i] for i in sorted(used)]
@@ -200,6 +241,6 @@ def build(exam_dir, out_path):
     return data, report
 
 if __name__ == '__main__':
-    d, rep = build(sys.argv[1], sys.argv[2])
+    d, rep = build(sys.argv[1], sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else None)
     print('years', d['years']); print(json.dumps(rep, ensure_ascii=False))
     print('sentences', len(d['sentences']), 'headwords hit', len(d['index']), 'of', len(KEYS), 'bytes', os.path.getsize(sys.argv[2]))
