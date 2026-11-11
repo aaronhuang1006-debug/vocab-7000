@@ -1,5 +1,5 @@
 /* 學測七千單字查詢：離線快取。改動網站檔案後，把 VERSION 加 1，學生下次開啟就會更新。 */
-const VERSION = "v6";
+const VERSION = "v7";
 const CACHE = "vocab7000-" + VERSION;
 const FILES = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "icon-512.png", "apple-touch-icon.png",
   "L1.txt", "L2.txt", "L3.txt", "L4.txt", "L5.txt", "L6.txt", "LP.txt", "exams.json"];

@@ -259,6 +259,7 @@ button.part:hover{border-color:var(--accent)}
     <div class="ladder" id="ladder" role="group" aria-label="各級單字表"></div>
     <p class="ladhint">點 L1–L6 看該級完整單字表，點「片語」看學測常考片語</p>
     <div class="tools">
+      <button class="tbtn" type="button" id="backBtn" aria-label="回上一頁" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>上一頁</button>
       <button class="tbtn" type="button" id="homeBtn" aria-label="回首頁"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5"/><path d="M6.5 10v9h11v-9"/></svg>首頁</button>
       <button class="tbtn" type="button" id="bookBtn" aria-label="我的單字本"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></svg>單字本 <b id="bookCount">0</b><span class="due" id="dueBadge" hidden></span></button>
       <button class="tbtn" type="button" id="installBtn" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M12 7v7m-3-3 3 3 3-3"/></svg>安裝到手機</button>
@@ -570,17 +571,42 @@ async function fillExams(key) {
   box._all = () => { box.querySelector(".exlist").innerHTML = ids.map(sent).join(""); box.querySelector("[data-act=exall]")?.remove(); };
 }
 /* ---------- level word list ---------- */
+/* ---------- 上一頁：每換一個畫面就記一筆瀏覽紀錄，手機返回手勢、Android 返回鍵和「上一頁」按鈕都能用 ---------- */
+const sig = st => [st.v, st.k, st.l, st.q, st.part].join("|");
+function nav(st, url, opts = {}) {
+  try {
+    const cur = history.state || {};
+    if (opts.nopush) { history.replaceState({ ...st, d: cur.d || 0, y: cur.y || 0 }, "", url); }
+    else if (cur.v && (sig(cur) === sig(st) || (cur.v === "review" && st.v === "book"))) { history.replaceState({ ...st, d: cur.d || 0 }, "", url); }
+    else { history.replaceState({ ...cur, y: window.scrollY }, ""); history.pushState({ ...st, d: (cur.d || 0) + 1 }, "", url); }
+  } catch {}
+  updBack();
+}
+function updBack() { const b = document.getElementById("backBtn"); if (b) b.hidden = !(history.state && history.state.d > 0); }
+function goBack() { if (history.state && history.state.d > 0) { history.back(); return true; } return false; }
+async function renderState(st) {
+  const o = { restore: true, nopush: true, y: st.y || 0 };
+  if (st.v === "level") await showLevel(st.l, { ...o, sort: st.sort, tested: st.tested });
+  else if (st.v === "zh") await showZh(st.q, o);
+  else if (st.v === "word") { q.value = st.k; await show(st.k, { ...o, backTo: st.backTo || null, fromZh: st.zhBack || null }); }
+  else if (st.v === "book" || st.v === "review") { session = null; await showBook(null, o); }
+  else if (st.v === "root") await showRoot(st.part, st.from, o);
+  else goHome(o);
+  requestAnimationFrame(() => window.scrollTo({ top: st.y || 0 }));
+}
+window.addEventListener("popstate", e => { if (e.state && e.state.v) renderState(e.state); else fromHash(); updBack(); });
+
 let levelCtx = null;            // { l, sort, y } of the list the student came from
 let backTo = null;
 const markLevel = l => document.querySelectorAll("#ladder [data-level]").forEach(b => b.setAttribute("aria-current", b.dataset.level === String(l) ? "true" : "false"));
 async function showLevel(l, opts = {}) {
   const sort = opts.sort || (levelCtx && levelCtx.l === l ? levelCtx.sort : "az");
   const onlyTested = opts.tested ?? (levelCtx && levelCtx.l === l ? levelCtx.tested : false);
+  nav({ v: "level", l, sort, tested: onlyTested }, "#L" + l, opts);
   setView("level"); session = null; backTo = null; hideSugg(); markLevel(l); q.value = "";
   const my = ++seq;
-  try { history.replaceState(null, "", "#L" + l); } catch {}
   if (!opts.restore) window.scrollTo({ top: 0 });
-  track("list-L" + l, l === "P" ? "片語表" : `Level ${l} 單字表`);
+  if (!opts.nopush) track("list-L" + l, l === "P" ? "片語表" : `Level ${l} 單字表`);
   const unit = l === "P" ? "個片語" : "個字", title = l === "P" ? "學測常考片語" : `${lvBadge(l, true)} 單字表`;
   out.innerHTML = `<article class="card"><div class="lvhead"><h2>${title}</h2></div><div class="state"><div class="sk" style="width:60%"></div><div class="sk" style="width:85%"></div><p class="note">載入中⋯</p></div></article>`;
   await Promise.all([loadLevel(l), loadExams()]);
@@ -622,9 +648,9 @@ async function showLevel(l, opts = {}) {
 let seq = 0, zhBack = null;
 async function showZh(v, opts = {}) {
   v = v.trim(); if (!v) return;
+  nav({ v: "zh", q: v }, "#zh=" + encodeURIComponent(v), opts);
   setView("lookup"); session = null; backTo = null; zhBack = null; hideSugg(); markLevel(0); q.value = v;
   const my = ++seq;
-  try { history.replaceState(null, "", "#zh=" + encodeURIComponent(v)); } catch {}
   if (!opts.restore) { window.scrollTo({ top: 0 }); track("zh-" + v, "中文查詢：" + v); }
   out.innerHTML = `<article class="card"><div class="lvhead"><h2>「${esc(v)}」的英文</h2></div><div class="state"><div class="sk" style="width:60%"></div><div class="sk" style="width:85%"></div><p class="note">載入中⋯</p></div></article>`;
   await zhIndex();
@@ -642,13 +668,14 @@ let zhCtx = null;
 async function show(key, opts = {}) {
   key = norm(key);
   const entries = IDX.get(key);
+  const bt = "backTo" in opts ? opts.backTo : (opts.fromLevel && levelCtx ? { ...levelCtx } : null);
+  nav({ v: "word", k: key, backTo: bt, zhBack: opts.fromZh || null }, /^[a-z-]+$/.test(key) && entries ? "#" + key : location.pathname + location.search, opts.keepHash ? { ...opts, nopush: true } : opts);
   hideSugg(); setView("lookup"); session = null; markLevel(0);
-  backTo = opts.fromLevel && levelCtx ? { ...levelCtx } : null;
+  backTo = bt;
   zhBack = opts.fromZh || null;
   if (entries) lastKey = key;
   if (!entries) return showMiss(key);
   const my = ++seq;
-  if (!opts.keepHash) try { history.replaceState(null, "", /^[a-z-]+$/.test(key) ? "#" + key : location.pathname + location.search); } catch {}
   track((entries.some(e => e.l === "P") ? "phrase-" : "word-") + key.replace(/\s+/g, "-"), key);
   const back = backTo ? `<button class="backlv" type="button" data-act="backlv">← 回到${backTo.l === "P" ? "片語表" : ` Level ${backTo.l} 單字表`}</button>`
     : zhBack ? `<button class="backlv" type="button" data-act="backzh">← 回到「${esc(zhBack.v)}」的搜尋結果</button>` : "";
@@ -788,9 +815,9 @@ async function firstZh(key) {
   const r = await fetchEntry(key, entries);
   return r.data ? r.data.senses.slice(0, 2).map(s => s.zh).join("；") : "";
 }
-async function showBook(msg) {
+async function showBook(msg, opts = {}) {
+  nav({ v: "book" }, location.pathname + location.search, opts);
   setView("book"); seq++;
-  try { history.replaceState(null, "", location.pathname + location.search); } catch {}
   const keys = Object.keys(book).filter(k => IDX.has(k)).sort((x, y) => (book[y].a || "").localeCompare(book[x].a || "") || x.localeCompare(y));
   const c = { due: 0, learn: 0, done: 0 }; keys.forEach(k => c[status(book[k])]++);
   const head = `<div class="bhead"><h2>我的單字本</h2>${c.due ? `<button class="btn primary" type="button" data-act="review">開始複習（${c.due}）</button>` : ""}</div>
@@ -834,6 +861,7 @@ function startReview() {
   const keys = dueKeys().sort(() => Math.random() - .5);
   if (!keys.length) return showBook();
   session = { queue: keys, total: keys.length, done: 0, right: 0, again: 0, cur: null, flipped: false };
+  nav({ v: "review" }, location.pathname + location.search);
   setView("review"); nextCard();
 }
 async function nextCard() {
@@ -874,11 +902,13 @@ function finishReview() {
 }
 function onAct(a, el) {
   if (a === "root") { showRoot(el.dataset.p, el.dataset.from); return; }
+  if (a === "rootback" && goBack()) return;
   if (a === "rootback") { const k = el.dataset.k; q.value = k; show(k); window.scrollTo({ top: 0 }); return; }
   if (a === "gobackup") { document.querySelector(".backup")?.scrollIntoView({ block: "start" }); return; }
   if (a === "exall") { el.closest(".exams")?._all?.(); return; }
   if (a === "lvopen") { const fromLv = view === "level"; if (fromLv && levelCtx) levelCtx.y = window.scrollY; q.value = el.dataset.k; show(el.dataset.k, { fromLevel: fromLv }); window.scrollTo({ top: 0 }); return; }
   if (a === "zhopen") { if (zhCtx) zhCtx.y = window.scrollY; q.value = el.dataset.k; show(el.dataset.k, { fromZh: zhCtx ? { ...zhCtx } : null }); window.scrollTo({ top: 0 }); return; }
+  if ((a === "backzh" || a === "backlv") && goBack()) return;
   if (a === "backzh") { const b = zhBack; if (b) showZh(b.v, { restore: true, y: b.y }); return; }
   if (a === "backlv") { const b = backTo; if (b) showLevel(b.l, { sort: b.sort, tested: b.tested, restore: true, y: b.y }); return; }
   if (a === "lvsort") { if (levelCtx) showLevel(levelCtx.l, { sort: el.dataset.sort }); return; }
@@ -999,8 +1029,9 @@ async function rootIndex() {
   }
   return ROOTS;
 }
-async function showRoot(part, fromKey) {
-  track("root-" + part, "字根 " + part);
+async function showRoot(part, fromKey, opts = {}) {
+  nav({ v: "root", part, from: fromKey || null }, location.pathname + location.search, opts);
+  if (!opts.nopush) track("root-" + part, "字根 " + part);
   setView("root"); session = null; backTo = null; hideSugg(); markLevel(""); seq++;
   const my = seq;
   out.innerHTML = `<article class="card"><div class="state"><div class="sk" style="width:50%"></div><p class="note">載入中⋯</p></div></article>`;
@@ -1020,13 +1051,14 @@ async function showRoot(part, fromKey) {
 }
 
 /* ---------- home, back-to-top, scroll position ---------- */
-function goHome() {
+function goHome(opts = {}) {
+  nav({ v: "home" }, location.pathname + location.search, opts.nopush ? opts : {});
   session = null; backTo = null; zhBack = null; lastKey = null; setView("lookup"); markLevel(""); q.value = ""; hideSugg(); seq++;
-  try { history.replaceState(null, "", location.pathname + location.search); } catch {}
-  showDemo(); window.scrollTo({ top: 0 }); updateFloat();
+  showDemo(); if (!opts.restore) window.scrollTo({ top: 0 }); updateFloat();
 }
-document.getElementById("homeBtn").addEventListener("click", goHome);
+document.getElementById("homeBtn").addEventListener("click", () => goHome());
 document.getElementById("homeLink").addEventListener("click", e => { e.preventDefault(); goHome(); });
+document.getElementById("backBtn").addEventListener("click", () => { if (!goBack()) goHome(); });
 const floatNav = document.getElementById("floatNav"), posPill = document.getElementById("posPill");
 document.getElementById("toTop").addEventListener("click", () => window.scrollTo({ top: 0, behavior: window.scrollY > 2500 || matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
 let floatTick = false;
@@ -1058,13 +1090,15 @@ function showDemo() {
 function fromHash() {
   const h = decodeURIComponent(location.hash.slice(1));
   const lm = h.match(/^L([1-6P])$/);
-  if (lm) { showLevel(lm[1] === "P" ? "P" : +lm[1]); return true; }
-  if (h.startsWith("zh=") && isZh(h.slice(3))) { showZh(h.slice(3)); return true; }
+  if (lm) { showLevel(lm[1] === "P" ? "P" : +lm[1], { nopush: true }); return true; }
+  if (h.startsWith("zh=") && isZh(h.slice(3))) { showZh(h.slice(3), { nopush: true }); return true; }
   if (h && IDX.has(norm(h))) { q.value = norm(h); show(norm(h), { keepHash: true }); return true; }
   return false;
 }
-if (!fromHash()) showDemo();
-window.addEventListener("hashchange", fromHash);
+if (history.state && history.state.v && history.state.v !== "review") renderState(history.state);
+else if (!fromHash()) goHome({ nopush: true, restore: true });
+window.addEventListener("hashchange", () => { if (!(history.state && history.state.v)) fromHash(); });
+updBack();
 /* 背景預載各級資料：使用者還在打字時就先下載，第一次查詢不必等 */
 const prefetchAll = () => { for (let l = 1; l <= 6; l++) loadLevel(l); loadLevel("P"); loadExams(); };
 q.addEventListener("focus", prefetchAll, { once: true });
