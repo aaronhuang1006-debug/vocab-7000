@@ -209,7 +209,7 @@ n. 警報；警戒 | on the alert 保持警戒
 allowance/pocket money | L4
 n. 零用錢；津貼 | weekly allowance 每週零用錢；make allowances for 體諒
 例: My parents give me a weekly allowance of five hundred dollars. | 我爸媽每週給我五百元零用錢。
-相關: allow(衍生字,允許) / pocket money(同義字,零用錢) / salary(相關字,薪水) / make allowances for(片語,體諒)
+相關: allow(衍生字,允許) / salary(相關字,薪水) / make allowances for(片語,體諒)
 
 aluminum | L4
 n. 鋁 | aluminum can 鋁罐；英式拼法 aluminium
@@ -315,7 +315,7 @@ v. 約定；指定（時間地點） | at the appointed time 在約定時間
 n. 約會；預約（appointment） | make an appointment with 跟⋯約定時間；易混：date 指男女約會
 n. 任命；職位（appointment） | the appointment of a new principal 新校長的任命
 例: She was appointed captain of the volleyball team this year. | 她今年被任命為排球隊隊長。
-相關: appointment(衍生字,約會；任命) / nominate(同義字,提名) / assign(同義字,指派) / make an appointment(片語,預約)
+相關: nominate(同義字,提名) / assign(同義字,指派) / make an appointment(片語,預約)
 
 appreciation | L4
 n. 欣賞；感激；增值 | in appreciation of 為感謝⋯；music appreciation 音樂欣賞
@@ -403,7 +403,7 @@ assign(ment) | L4
 v. 分配；指派 | assign sth. to sb. 把某事分派給某人；assign sb. to V 指派某人做⋯
 n. 作業；任務（assignment） | hand in an assignment 交作業
 例: The teacher assigned each group a different topic for the report. | 老師分配給每一組不同的報告主題。
-相關: assignment(衍生字,作業；任務) / allocate(同義字,分配) / appoint(同義字,指派) / homework(相關字,家庭作業)
+相關: allocate(同義字,分配) / appoint(同義字,指派) / homework(相關字,家庭作業)
 字根: as-(朝向) + sign(標記) | 標記給某人 | signal, design
 
 assistance | L4
@@ -474,7 +474,7 @@ attach(ment) | L4
 v. 附上；貼上；使依戀 | attach A to B 把 A 附在 B 上；be attached to 依戀
 n. 附件；依戀（attachment） | an e-mail attachment 電子郵件附件
 例: Please attach a recent photo to your application form. | 請在申請表上貼一張近照。
-相關: attachment(衍生字,附件；依戀) / fasten(同義字,繫上) / connect(同義字,連接) / detach(反義字,拆下)
+相關: fasten(同義字,繫上) / connect(同義字,連接) / detach(反義字,拆下)
 
 attraction | L4
 n. 吸引（力）；吸引人的事物；景點 | tourist attraction 觀光景點
@@ -2129,7 +2129,7 @@ enforce(ment) | L4
 v. 執行；實施；強迫 | enforce the law 執法
 n. 執行；實施（enforcement） | law enforcement 執法
 例: The police are strictly enforcing the new drunk driving laws. | 警方正嚴格執行新的酒駕法規。
-相關: enforcement(衍生字,執行) / carry out(片語,實行) / impose(同義字,強制實施) / implement(同義字,實施)
+相關: carry out(片語,實行) / impose(同義字,強制實施) / implement(同義字,實施)
 字根: en-(使) + force(力量) | 用力量使其實行 | reinforce, force
 
 engineering | L4
@@ -2176,7 +2176,7 @@ equip(ment) | L4
 v. 裝備；使具備 | be equipped with 配備⋯；equip sb. with skills 使某人具備技能
 n. 設備；器材（equipment） | 不可數；a piece of equipment 一件設備
 例: All the classrooms are equipped with air conditioners and projectors. | 所有教室都配有冷氣和投影機。
-相關: equipment(衍生字,設備) / supply(同義字,供給) / furnish(同義字,配備) / gear(同義字,裝備)
+相關: supply(同義字,供給) / furnish(同義字,配備) / gear(同義字,裝備)
 
 era | L4
 n. 時代；紀元 | a new era 新時代；the digital era 數位時代
@@ -3434,7 +3434,7 @@ invest(ment) | L4
 v. 投資；投入（時間、金錢） | invest (money) in 投資於⋯；invest time in 投入時間
 n. 投資（investment） | a good investment 划算的投資
 例: Learning a second language is a good investment in your future. | 學第二外語是對未來很好的投資。
-相關: investor(衍生字,投資者) / investment(衍生字,投資) / stock(相關字,股票) / profit(相關字,利潤)
+相關: investor(衍生字,投資者) / stock(相關字,股票) / profit(相關字,利潤)
 字根: in-(在內) + vest(衣服) | 原意「穿衣」，引申為把錢包裝進事業 | vest, investor
 
 investigation | L4
@@ -3447,7 +3447,7 @@ involve(ment) | L4
 v. 包含；牽涉；使參與 | be involved in 參與；牽涉；involve V-ing 包含做⋯
 n. 參與；牽涉（involvement） | involvement in ⋯的參與
 例: Many students are involved in volunteer work during the summer. | 許多學生在暑假參與志工服務。
-相關: involvement(衍生字,參與) / include(同義字,包含) / participate(同義字,參與) / be involved in(片語,參與)
+相關: include(同義字,包含) / participate(同義字,參與) / be involved in(片語,參與)
 字根: in-(進入) + volve(捲) | 捲進去 | evolve, revolve
 
 isolate | L4
@@ -4489,7 +4489,7 @@ adj. 物質的；物理的 | the physical world 物質世界
 physician/doctor | L4
 n. 內科醫師；醫生 | consult a physician 就醫
 例: You should consult a physician if the pain doesn't go away. | 如果疼痛持續，你應該去看醫生。
-相關: surgeon(相關字,外科醫師) / physicist(易混淆字,物理學家) / doctor(同義字,醫生) / patient(相關字,病人)
+相關: surgeon(相關字,外科醫師) / physicist(易混淆字,物理學家) / patient(相關字,病人)
 字根: physic(自然；醫術) + -ian(人) | 懂醫術的人 | physical, physics
 
 physicist | L4
@@ -5213,7 +5213,7 @@ retire(ment) | L4
 v. 退休；退役 | retire from 從⋯退休
 n. 退休（retirement） | early retirement 提早退休
 例: My grandfather retired from teaching at the age of sixty-five. | 我爺爺六十五歲時從教職退休。
-相關: retirement(衍生字,退休) / retiree(衍生字,退休人員) / resign(相關字,辭職) / pension(相關字,退休金)
+相關: retiree(衍生字,退休人員) / resign(相關字,辭職) / pension(相關字,退休金)
 
 retreat | L4
 v. 撤退；退縮 | retreat from 從⋯撤退

@@ -1892,7 +1892,7 @@ n. 外部；外表 |
 adj. 外部的；外面的 | exterior walls 外牆
 例: The exterior of the old building was painted white. | 那棟舊建築的外牆被漆成白色。
 相關: interior(反義字,內部) / outside(同義字,外面) / external(同義字,外部的) / surface(同義字,表面)
-字根: ex-(向外) + -terior(比較級字尾) | 比較外面的 | exterior, external
+字根: ex-(向外) + -terior(比較級字尾) | 比較外面的 | external
 
 external | L5
 adj. 外部的；外在的；對外的 | for external use only 僅限外用
@@ -2824,7 +2824,7 @@ adj. 博學的；有見識的 | be knowledgeable about 對⋯很有知識
 相關: knowledge(衍生字,知識) / well-informed(同義字,見多識廣的) / learned(同義字,有學問的) / ignorant(反義字,無知的)
 
 lad | L5
-n. 少年；小伙子 |
+n. 少年；小夥子 |
 例: When I was a lad, I used to swim in this river every summer. | 我年少時每年夏天都在這條河裡游泳。
 相關: boy(同義字,男孩) / youth(同義字,年輕人) / lass(反義字,少女) / guy(同義字,傢伙)
 

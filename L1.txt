@@ -17,7 +17,7 @@ adv. 大約；到處 | about + 數字 = around
 
 above | L1
 prep. 在⋯之上；超過 | above all 最重要的是
-adv. 在上面；上述地
+adv. 在上面；上述地 |
 例: The temperature stayed above thirty degrees all week. | 整個星期氣溫都維持在三十度以上。
 相關: below(反義字,在⋯之下) / over(同義字,在⋯上方) / beyond(同義字,超出) / above all(片語,最重要的是)
 
@@ -28,7 +28,7 @@ prep. 根據；依照 | according to + 來源，後面不接 me／my opinion
 
 across | L1
 prep. 橫越；在⋯對面 | across from 在⋯對面；across the country 全國各地
-adv. 橫過；寬
+adv. 橫過；寬 |
 例: The post office is right across the street from our school. | 郵局就在我們學校的對街。
 相關: cross(衍生字,穿越) / through(易混淆字,穿過內部) / over(同義字,越過)
 
@@ -49,7 +49,7 @@ actor/actress | L1
 n. 男演員／女演員 | actress 為女性形式，現在也常以 actor 統稱
 例: The actor practiced his lines for hours before the show. | 那位演員在演出前練習台詞好幾個小時。
 相關: act(衍生字,表演) / performer(同義字,表演者) / director(易混淆字,導演) / audience(相關字,觀眾)
-字根: act(表演) + -or／-ress(人) | 表演的人 | actor, director, waitress
+字根: act(表演) + -or／-ress(人) | 表演的人 | director, waitress
 
 add | L1
 v. 增加；加；補充說 | add A to B 把 A 加到 B；add up to 總計
@@ -64,7 +64,7 @@ v. 寫地址；對⋯演說；處理（問題） | address a problem 處理問�
 
 adult | L1
 n. 成年人 |
-adj. 成年的；成熟的
+adj. 成年的；成熟的 |
 例: Children under twelve must be accompanied by an adult. | 十二歲以下的孩童必須有成人陪同。
 相關: adulthood(衍生字,成年期) / child(反義字,兒童) / grown-up(同義字,成年人) / teenager(相關字,青少年)
 
@@ -75,8 +75,8 @@ adj. 害怕的；恐怕 | be afraid of N／V-ing 害怕；I'm afraid (that)⋯ �
 
 after | L1
 prep. 在⋯之後；追尋 | after all 畢竟；look after 照顧
-conj. 在⋯之後
-adv. 之後
+conj. 在⋯之後 |
+adv. 之後 |
 例: After he finished his homework, he went out to play basketball. | 他寫完功課後就出去打籃球。
 相關: before(反義字,在⋯之前) / afterward(衍生字,之後) / later(同義字,稍後) / look after(片語,照顧)
 
@@ -98,7 +98,7 @@ prep. 反對；對抗；倚靠；以⋯為背景 | be against 反對；lean agai
 
 age | L1
 n. 年齡；時代 | at the age of 在⋯歲時；the Stone Age 石器時代
-v. 變老；使老化
+v. 變老；使老化 |
 例: She started playing the piano at the age of five. | 她五歲時開始彈鋼琴。
 相關: aged(衍生字,年老的；⋯歲的) / aging(衍生字,老化) / era(同義字,時代) / elderly(相關字,年長的)
 
@@ -127,7 +127,7 @@ v. 晾；播出 | air a program 播出節目
 
 airmail | L1
 n. 航空郵件 | by airmail 以航空郵寄
-v. 以航空郵寄
+v. 以航空郵寄 |
 例: I sent the birthday card to my cousin in Canada by airmail. | 我用航空郵件把生日卡寄給在加拿大的表妹。
 相關: mail(衍生字,郵件) / postage(相關字,郵資) / letter(相關字,信)
 字根: air(空中) + mail(郵件) | 從空中運送的郵件 | airplane, airport
@@ -163,7 +163,7 @@ adv. 幾乎；差一點 | almost all／every；不可說 almost students
 
 alone | L1
 adj. 獨自的；單獨的 | leave sb alone 別打擾某人；不可放在名詞前
-adv. 獨自地；僅僅
+adv. 獨自地；僅僅 |
 例: Please leave me alone; I need some time to think. | 請讓我一個人靜一靜，我需要時間想想。
 相關: lonely(易混淆字,寂寞的) / by oneself(同義字,獨自) / together(反義字,一起) / solo(同義字,單獨的)
 
@@ -205,7 +205,7 @@ conj. 和；而且；然後 | 祈使句 + and⋯ 表結果（Hurry up, and you'l
 
 anger | L1
 n. 憤怒 | in anger 生氣地
-v. 激怒
+v. 激怒 |
 例: He couldn't hide his anger when he found out the truth. | 他發現真相時無法掩飾他的憤怒。
 相關: angry(衍生字,生氣的) / rage(同義字,狂怒) / fury(同義字,暴怒) / calm(反義字,平靜)
 
@@ -239,7 +239,7 @@ n. 螞蟻 |
 
 any | L1
 adj. 任何的；一些 | 用於疑問句、否定句；肯定句表「任何一個」
-pron. 任何一個；一些
+pron. 任何一個；一些 |
 adv. 稍微；絲毫 | not any longer 不再
 例: Do you have any questions about the assignment? | 你對這份作業有任何問題嗎？
 相關: some(易混淆字,一些，用於肯定句) / anything(衍生字,任何事物) / anyone(衍生字,任何人) / no(反義字,沒有)
@@ -348,7 +348,7 @@ n. 嬰兒 | have a baby 生小孩
 back | L1
 n. 背部；後面 | at the back of 在⋯後部
 adv. 向後；回原處 | come back 回來；back and forth 來回地
-adj. 後面的
+adj. 後面的 |
 v. 支持；倒退 | back up 支持；備份
 例: Please sit at the back of the classroom if you arrive late. | 如果遲到了，請坐在教室後面。
 相關: front(反義字,前面) / backward(衍生字,向後的) / support(同義字,支持) / back up(片語,支持；備份)
@@ -431,8 +431,8 @@ n. 籃球 | play basketball 打籃球
 
 bat | L1
 n. 蝙蝠 | as blind as a bat 視力極差
-n. 球棒；球拍
-v. 用球棒打
+n. 球棒；球拍 |
+v. 用球棒打 |
 例: The player swung the bat and hit the ball out of the stadium. | 球員揮棒，把球打出球場。
 相關: baseball(相關字,棒球) / racket(相關字,球拍) / batter(衍生字,打擊者)
 
@@ -454,7 +454,7 @@ n. 浴室；廁所 | go to the bathroom 上廁所
 
 be | L1
 v. 是；存在；在 | be + V-ing 進行式；be + p.p. 被動式
-aux. （構成進行式、被動式）
+aux. （構成進行式、被動式） |
 例: It is important to be honest with your friends. | 對朋友誠實很重要。
 相關: being(衍生字,存在；生物) / exist(同義字,存在) / become(相關字,變成)
 
@@ -470,7 +470,7 @@ n. 熊 | polar bear 北極熊
 
 beat | L1
 v. 打；打敗；（心臟）跳動 | beat sb at 在⋯打敗某人
-n. 敲打聲；節拍；心跳
+n. 敲打聲；節拍；心跳 |
 例: Our team beat the champions by two points. | 我們的隊伍以兩分之差打敗冠軍隊。
 相關: defeat(同義字,擊敗) / hit(同義字,打) / win(易混淆字,贏得比賽，受詞是比賽) / heartbeat(衍生字,心跳)
 
@@ -507,7 +507,7 @@ n. 蜜蜂 | as busy as a bee 非常忙碌
 
 before | L1
 prep. 在⋯之前 | before long 不久之後
-conj. 在⋯之前
+conj. 在⋯之前 |
 adv. 以前 | 可與完成式連用
 例: Wash your hands before you eat. | 吃東西前要洗手。
 相關: after(反義字,在⋯之後) / ago(易混淆字,⋯以前，只與過去式連用) / earlier(同義字,較早) / prior to(同義字,在⋯之前)
@@ -540,7 +540,7 @@ v. 屬於；應在（某處） | belong to + 人／團體（不用進行式）
 
 below | L1
 prep. 在⋯下方；低於 | below zero 零度以下
-adv. 在下面；下文
+adv. 在下面；下文 |
 例: The temperature dropped below zero last night. | 昨晚氣溫降到零度以下。
 相關: above(反義字,在⋯上方) / under(同義字,在⋯下面) / beneath(同義字,在⋯之下)
 
@@ -569,9 +569,9 @@ prep. 在（兩者）之間 | between A and B；between you and me 私下說
 
 bicycle/bike | L1
 n. 腳踏車 | ride a bike 騎腳踏車；by bike 騎腳踏車
-v. 騎腳踏車
+v. 騎腳踏車 |
 例: Many people in Taiwan ride bikes along the riverside paths on weekends. | 很多台灣人週末會沿著河濱自行車道騎腳踏車。
-相關: cycle(衍生字,騎腳踏車) / motorcycle(衍生字,機車) / pedal(相關字,踏板)
+相關: cycle(衍生字,騎腳踏車) / motorcycle(相關字,機車) / pedal(相關字,踏板)
 字根: bi-(二) + cycle(輪) | 有兩個輪子的車 | bilingual, cycle, recycle
 
 big | L1
@@ -602,7 +602,7 @@ n. 咬；一口 | have a bite 吃一口
 
 black | L1
 adj. 黑色的；黑暗的 | black coffee 不加奶精的咖啡
-n. 黑色
+n. 黑色 |
 例: He took his coffee black without any sugar. | 他喝黑咖啡，不加糖。
 相關: white(反義字,白色) / dark(同義字,黑暗的) / blackboard(衍生字,黑板)
 
@@ -619,7 +619,7 @@ n. 血；血統 | blood type 血型；in cold blood 冷血地
 
 blow | L1
 v. 吹；（風）吹；吹熄 | blow out 吹熄；blow up 爆炸；充氣
-n. 打擊；重擊
+n. 打擊；重擊 |
 例: She closed her eyes, made a wish, and blew out the candles. | 她閉上眼睛許願，然後吹熄蠟燭。
 相關: breeze(相關字,微風) / blast(同義字,爆炸；強風) / blow up(片語,爆炸)
 
@@ -657,19 +657,19 @@ adj. 出生的；天生的 | be born in／on 出生於；a born leader 天生的
 
 both | L1
 adj. 兩者的 | both A and B（動詞用複數）
-pron. 兩者
+pron. 兩者 |
 例: Both my parents are teachers. | 我爸媽兩個都是老師。
 相關: either(易混淆字,兩者之一) / neither(反義字,兩者皆不) / each(相關字,各自)
 
 bottom | L1
 n. 底部；最下面 | at the bottom of 在⋯底部；from the bottom of my heart 打從心底
-adj. 最底部的
+adj. 最底部的 |
 例: I thank you from the bottom of my heart. | 我打從心底感謝你。
 相關: top(反義字,頂端) / base(同義字,底部) / bottomless(衍生字,無底的)
 
 bowl | L1
 n. 碗 | a bowl of rice 一碗飯
-v. 打保齡球
+v. 打保齡球 |
 例: He was so hungry that he ate three bowls of noodles. | 他餓到吃了三碗麵。
 相關: plate(相關字,盤子) / dish(相關字,碟子) / bowling(衍生字,保齡球)
 
@@ -709,7 +709,7 @@ n. 早餐 | have breakfast 吃早餐（三餐前不加冠詞）
 
 bridge | L1
 n. 橋；橋樑；溝通的橋樑 | bridge the gap 縮小差距
-v. 架橋；彌合
+v. 架橋；彌合 |
 例: Learning a language can be a bridge between different cultures. | 學習語言可以成為不同文化間的橋樑。
 相關: tunnel(相關字,隧道) / connect(同義字,連接) / link(同義字,連結)
 
@@ -730,7 +730,7 @@ n. 兄弟；哥哥；弟弟 |
 
 brown | L1
 adj. 棕色的；褐色的 |
-n. 棕色
+n. 棕色 |
 例: The bear had thick brown fur. | 那隻熊有厚厚的棕色毛皮。
 相關: color(相關字,顏色) / tan(同義字,黃褐色)
 
@@ -768,7 +768,7 @@ prep. 除了 | all but 幾乎；nothing but 只有
 
 butter | L1
 n. 奶油 |
-v. 塗奶油
+v. 塗奶油 |
 例: She spread some butter on her toast. | 她在吐司上塗了些奶油。
 相關: bread(相關字,麵包) / cheese(相關字,起司) / margarine(同義字,人造奶油)
 
@@ -790,7 +790,7 @@ adv. 經過 | pass by 經過
 
 cage | L1
 n. 籠子 |
-v. 關進籠子
+v. 關進籠子 |
 例: The bird escaped when someone left the cage door open. | 有人沒關籠門，鳥就飛走了。
 相關: zoo(相關字,動物園) / trap(相關字,陷阱) / prison(同義字,監獄)
 
@@ -834,7 +834,7 @@ n. 糖果 | candy 多為美式，sweet 多為英式
 
 cap | L1
 n. 便帽；蓋子 | a baseball cap 棒球帽
-v. 蓋上；限制
+v. 蓋上；限制 |
 例: Remember to put the cap back on the pen. | 記得把筆蓋蓋回去。
 相關: hat(同義字,帽子) / lid(同義字,蓋子) / cover(同義字,覆蓋)
 
@@ -874,11 +874,11 @@ n. 箱子；盒子 | a pencil case 鉛筆盒
 cat | L1
 n. 貓 | let the cat out of the bag 洩密
 例: Our cat likes to sleep in the sun. | 我們的貓喜歡在陽光下睡覺。
-相關: kitten(衍生字,小貓) / dog(相關字,狗) / pet(相關字,寵物)
+相關: kitten(相關字,小貓) / dog(相關字,狗) / pet(相關字,寵物)
 
 catch | L1
 v. 抓住；接住；趕上；感染；聽懂 | catch a cold 感冒；catch up with 趕上
-n. 捕獲；接球
+n. 捕獲；接球 |
 例: If you hurry, you can still catch the last bus. | 如果你快一點，還趕得上末班公車。
 相關: grab(同義字,抓住) / capture(同義字,捕獲) / miss(反義字,錯過) / catch up with(片語,趕上)
 
@@ -907,7 +907,7 @@ adj. 確定的；某個；一定的 | be certain of／that 確定；for certain 
 
 chair | L1
 n. 椅子；主席 |
-v. 主持（會議）
+v. 主持（會議） |
 例: Please pull up a chair and join us. | 請拉張椅子過來加入我們。
 相關: seat(同義字,座位) / sofa(相關字,沙發) / chairperson(衍生字,主席)
 
@@ -918,13 +918,13 @@ n. 機會；可能性；偶然 | by chance 偶然地；take a chance 冒險
 
 chart | L1
 n. 圖表；排行榜 | top the charts 登上排行榜冠軍
-v. 繪製圖表
+v. 繪製圖表 |
 例: The chart shows how the population has changed over the past fifty years. | 這張圖表顯示過去五十年人口的變化。
 相關: graph(同義字,圖表) / table(同義字,表格) / diagram(同義字,圖解) / map(相關字,地圖)
 
 chase | L1
 v. 追趕；追求 | chase after 追逐
-n. 追逐
+n. 追逐 |
 例: The police chased the thief down the street. | 警察沿街追捕小偷。
 相關: pursue(同義字,追求) / follow(同義字,跟隨) / hunt(同義字,追捕)
 
@@ -989,7 +989,7 @@ v. 清除；放晴 | clear up 放晴；清理
 
 climb | L1
 v. 爬；攀登；上升 | climb up 爬上去
-n. 攀登
+n. 攀登 |
 例: It took us six hours to climb to the top of Jade Mountain. | 我們花了六小時爬到玉山山頂。
 相關: climber(衍生字,登山者) / mountain(相關字,山) / rise(同義字,上升)
 
@@ -1100,7 +1100,7 @@ n. 費用；代價 | at all costs 不惜任何代價；the cost of living 生活
 
 count | L1
 v. 數；計算；重要 | count on 依靠；Every vote counts. 每一票都很重要。
-n. 計數；總數
+n. 計數；總數 |
 例: You can always count on me when you need help. | 你需要幫忙時隨時都可以靠我。
 相關: countless(衍生字,無數的) / calculate(同義字,計算) / depend on(同義字,依賴) / count on(片語,依靠)
 
@@ -1138,7 +1138,7 @@ n. 烏鴉 |
 
 cry | L1
 v. 哭；喊叫 | cry out 大叫；cry for 哭著要
-n. 哭；叫聲
+n. 哭；叫聲 |
 例: The little girl cried when she lost her doll. | 小女孩弄丟娃娃時哭了。
 相關: weep(同義字,哭泣) / shout(同義字,大喊) / scream(同義字,尖叫) / laugh(反義字,笑)
 
@@ -1242,7 +1242,7 @@ v. 決定 | decide to V；decide on 決定（選擇）
 
 deep | L1
 adj. 深的；深沉的；深刻的 | take a deep breath 深呼吸
-adv. 深深地
+adv. 深深地 |
 例: Take a deep breath and try to relax. | 深呼吸，試著放輕鬆。
 相關: depth(衍生字,深度) / deepen(衍生字,加深) / shallow(反義字,淺的) / deeply(衍生字,深深地)
 
@@ -1285,14 +1285,14 @@ n. 晚餐；正餐 | have dinner 吃晚餐
 direct | L1
 adj. 直接的；坦率的 | a direct flight 直飛班機
 v. 指導；導演；指路 | direct a movie 執導電影
-adv. 直接地
+adv. 直接地 |
 例: There is a direct flight from Taipei to Paris. | 從台北到巴黎有直飛班機。
 相關: direction(衍生字,方向) / director(衍生字,導演) / directly(衍生字,直接地) / indirect(反義字,間接的)
 字根: di-(分開) + rect(直、引導) | 引導到筆直的方向 | correct, rectangle, erect
 
 dirty | L1
 adj. 髒的；骯髒的 |
-v. 弄髒
+v. 弄髒 |
 例: Don't put your dirty shoes on the sofa! | 不要把你的髒鞋子放在沙發上！
 相關: dirt(衍生字,灰塵；泥土) / clean(反義字,乾淨的) / filthy(同義字,骯髒的) / messy(同義字,凌亂的)
 
@@ -1309,7 +1309,7 @@ n. 盤子；一道菜 | do the dishes 洗碗
 
 do | L1
 v. 做；從事；足夠 | do one's best 盡力；do sb a favor 幫某人忙；That will do. 那就夠了。
-aux. （構成疑問句、否定句、強調）
+aux. （構成疑問句、否定句、強調） |
 例: Could you do me a favor and close the window? | 你可以幫我個忙，把窗戶關上嗎？
 相關: make(易混淆字,製作) / perform(同義字,執行) / done(衍生字,完成的) / undo(衍生字,解開；復原)
 
@@ -1321,7 +1321,7 @@ n. 醫生；博士 | see a doctor 看醫生
 dog | L1
 n. 狗 |
 例: We take our dog for a walk in the park every evening. | 我們每天傍晚帶狗去公園散步。
-相關: puppy(衍生字,小狗) / pet(相關字,寵物) / bark(相關字,吠叫)
+相關: puppy(相關字,小狗) / pet(相關字,寵物) / bark(相關字,吠叫)
 
 doll | L1
 n. 洋娃娃 |
@@ -1364,7 +1364,7 @@ n. 一打；十二個 | dozens of 幾十個；許多
 
 draw | L1
 v. 畫；拉；吸引；抽出 | draw attention to 引起注意；draw a conclusion 得出結論
-n. 平手；抽籤
+n. 平手；抽籤 |
 例: The festival draws thousands of visitors every year. | 這個節慶每年吸引成千上萬的遊客。
 相關: drawing(衍生字,素描) / attract(同義字,吸引) / pull(同義字,拉) / drawer(衍生字,抽屜)
 
@@ -1376,7 +1376,7 @@ v. 做夢；夢想 | dream of／about 夢想
 
 drink | L1
 v. 喝；喝酒 | drink and drive 酒駕
-n. 飲料；酒
+n. 飲料；酒 |
 例: You should drink at least eight glasses of water a day. | 你一天應該至少喝八杯水。
 相關: beverage(同義字,飲料) / sip(相關字,啜飲) / drunk(衍生字,喝醉的) / thirsty(相關字,口渴的)
 
@@ -1417,7 +1417,7 @@ prep. 在⋯期間 | during + 名詞（不接子句）；while + 子句
 each | L1
 adj. 每個；各自的 | each + 單數名詞
 pron. 每個；各自 | each other 彼此
-adv. 各；每個
+adv. 各；每個 |
 例: Each student has to give a five-minute speech. | 每個學生都要做五分鐘演講。
 相關: every(易混淆字,每個，強調全體) / both(相關字,兩者) / each other(片語,彼此)
 
@@ -1450,8 +1450,8 @@ v. 減輕；緩和 | ease the pain 減輕疼痛
 
 east | L1
 n. 東方；東部 | in the east of 在⋯的東部
-adj. 東方的
-adv. 向東
+adj. 東方的 |
+adv. 向東 |
 例: The sun rises in the east and sets in the west. | 太陽從東邊升起，從西邊落下。
 相關: eastern(衍生字,東方的) / west(反義字,西方) / Asia(相關字,亞洲)
 
@@ -1520,14 +1520,14 @@ v. 結束 | end up V-ing 最後落得⋯
 
 English | L1
 n. 英語 |
-adj. 英國的；英語的
+adj. 英國的；英語的 |
 例: English is used as an international language in business. | 英語在商業上被當作國際語言使用。
 相關: England(衍生字,英格蘭) / British(同義字,英國的) / language(相關字,語言)
 
 enough | L1
 adj. 足夠的 | enough + 名詞
 adv. 足夠地 | 形容詞／副詞 + enough to V
-pron. 足夠的量
+pron. 足夠的量 |
 例: She is old enough to make her own decisions. | 她已經夠大了，可以自己做決定。
 相關: sufficient(同義字,足夠的) / adequate(同義字,足夠的) / plenty(同義字,充足)
 
@@ -1539,7 +1539,7 @@ v. 進入；參加；輸入 | enter the room（不加 into）；enter a contest 
 equal | L1
 adj. 相等的；平等的 | be equal to 等於；勝任
 v. 等於；比得上 | Two plus three equals five.
-n. 對手；相等的人
+n. 對手；相等的人 |
 例: All people should be treated as equals under the law. | 在法律之前，所有人都應受到平等對待。
 相關: equality(衍生字,平等) / equally(衍生字,同樣地) / unequal(反義字,不平等的) / same(同義字,相同的)
 字根: equ(相等) + -al | 源自拉丁文 aequus「平的、相等的」 | equation, equator, adequate
@@ -1582,7 +1582,7 @@ n. 例子；榜樣 | for example 例如；set an example 樹立榜樣
 
 except/excepting | L1
 prep. 除了⋯之外 | except for 除了⋯之外（整體大致如此）
-conj. 只是；除了
+conj. 只是；除了 |
 例: Everyone came to the party except Tom. | 除了湯姆，大家都來參加派對了。
 相關: exception(衍生字,例外) / besides(易混淆字,除了⋯還有) / apart from(同義字,除了) / except for(片語,除了)
 字根: ex-(向外) + cept(拿) | 拿出去不算在內 | accept, concept, exception
@@ -1611,7 +1611,7 @@ n. 工廠 |
 
 fall | L1
 v. 落下；跌倒；下降；變成 | fall asleep 睡著；fall in love 墜入愛河；fall behind 落後
-n. 落下；下降；秋天（美式）
+n. 落下；下降；秋天（美式） |
 例: He fell asleep in class because he stayed up late. | 他熬夜，所以上課睡著了。
 相關: drop(同義字,落下) / rise(反義字,上升) / decline(同義字,下降) / fall behind(片語,落後)
 
@@ -1819,7 +1819,7 @@ n. 腳；英尺；底部 | 複數 feet；on foot 步行；at the foot of 在⋯�
 
 for | L1
 prep. 為了；給；對於；持續（一段時間）；支持 | for a long time；be for 支持
-conj. 因為（較正式）
+conj. 因為（較正式） |
 例: I have lived in this city for ten years. | 我住在這座城市十年了。
 相關: since(易混淆字,自從) / against(反義字,反對) / during(易混淆字,在⋯期間)
 
@@ -2116,7 +2116,7 @@ haircut | L1
 n. 理髮；髮型 | get a haircut 去剪頭髮
 例: I need to get a haircut before school starts. | 開學前我得去剪頭髮。
 相關: barber(相關字,理髮師) / hairstyle(同義字,髮型) / hair(衍生字,頭髮)
-字根: hair(頭髮) + cut(剪) | 剪頭髮 | haircut, shortcut
+字根: hair(頭髮) + cut(剪) | 剪頭髮 | shortcut
 
 half | L1
 n. 一半 | 複數 halves；in half 成兩半
@@ -3520,7 +3520,7 @@ pay(ment) | L1
 v. 付款；付出；值得 | pay for 付錢買；pay attention to 注意；pay off 有回報
 n. 付款（payment）；薪水 |
 例: All her hard work finally paid off. | 她所有的努力終於有了回報。
-相關: payment(衍生字,付款) / salary(同義字,薪水) / cost(相關字,費用) / pay attention to(片語,注意)
+相關: salary(同義字,薪水) / cost(相關字,費用) / pay attention to(片語,注意)
 
 pen | L1
 n. 筆；鋼筆 | pen pal 筆友
@@ -4678,7 +4678,7 @@ state(ment) | L1
 v. 陳述；聲明 |
 n. 陳述；聲明（statement） | make a statement 發表聲明
 例: The company made a statement about the accident. | 公司就這起事故發表了聲明。
-相關: statement(衍生字,聲明) / declare(同義字,宣布) / announce(同義字,宣布) / claim(同義字,聲稱)
+相關: declare(同義字,宣布) / announce(同義字,宣布) / claim(同義字,聲稱)
 
 station | L1
 n. 車站；站；局 | train station 火車站；police station 警察局
@@ -5275,7 +5275,7 @@ adv. 很；非常 | very much 非常；very + 原級
 相關: extremely(同義字,極其) / really(同義字,真的) / quite(同義字,相當) / much(相關字,非常，修飾比較級)
 
 view | L1
-n. 景色；觀點；視野 | in view of 鑒於；point of view 觀點
+n. 景色；觀點；視野 | in view of 鑑於；point of view 觀點
 v. 看待；觀看 | view A as B 把 A 視為 B
 例: From my point of view, the plan is too risky. | 從我的觀點來看，這個計畫風險太高了。
 相關: viewer(衍生字,觀眾) / review(衍生字,複習；評論) / opinion(同義字,意見) / scene(同義字,景色)

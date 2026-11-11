@@ -659,7 +659,7 @@ adj. 對⋯滿意 | be satisfied with + N；= be content with, be pleased with�
 
 be sensitive to | P
 adj. 對⋯敏感 | be sensitive to + N（光線、批評、他人感受）；易混淆：sensible（明智的）
-例: People with sensitive skin should avoid strong sunlight in summer. | 皮膚敏感的人夏天應該避免強烈陽光。
+例: Babies' eyes are very sensitive to bright light, so protect them from the sun. | 嬰兒的眼睛對強光非常敏感，所以要幫他們擋太陽。
 相關: be vulnerable to(相關字,易受傷害) / be allergic to(相關字,對⋯過敏) / sensible(易混淆字,明智的) / insensitive(反義字,不敏感的)
 
 be short of | P
@@ -1518,8 +1518,7 @@ v. 有共同點 | have + something／nothing／a lot／much + in common (with + 
 相關: in common(片語,共同的) / share(同義字,共有) / similarity(相關字,相似之處) / differ from(反義字,不同於)
 
 hear from | P
-v. 收到某人的消息或來信 | hear from + 人；常用 I look forward to hearing from you.（信件結尾）
-v. 易錯：hear of／about + 事物 是「聽說」，hear from 是「得到某人的音訊」 |
+v. 收到某人的消息或來信 | hear from + 人；常用 I look forward to hearing from you.（信件結尾）；易錯：hear of／about + 事物 是「聽說」，hear from 是「得到某人的音訊」
 例: I haven't heard from my cousin since she moved to Canada last year. | 自從表姐去年搬到加拿大後，我就沒有她的消息了。
 相關: hear of(易混淆字,聽說) / get in touch with(相關字,與某人聯絡) / keep in touch with(片語,保持聯絡)
 
@@ -1555,8 +1554,7 @@ v. 持槍搶劫 | hold up a bank
 相關: delay(同義字,延誤) / raise(同義字,舉起) / rob(相關字,搶劫) / hold back(易混淆字,抑制)
 
 in a hurry | P
-adv. 匆忙地；急著 | be in a hurry + to 原形V／for + N；= in haste
-adv. 易錯：be in no hurry 是「不急」 |
+adv. 匆忙地；急著 | be in a hurry + to 原形V／for + N；= in haste；易錯：be in no hurry 是「不急」
 例: He left home in a hurry and forgot to bring his student ID card. | 他匆匆出門，忘了帶學生證。
 相關: in haste(同義字,匆忙地) / hurriedly(同義字,匆忙地) / take one's time(反義字,慢慢來) / rush(相關字,衝；趕)
 
@@ -1571,14 +1569,12 @@ prep. 依照；與⋯一致 | in accordance with + N（rules／law／wishes）�
 相關: according to(同義字,根據) / in line with(同義字,與⋯一致) / in compliance with(同義字,遵照) / violate(反義字,違反)
 
 in addition | P
-adv. 此外；另外 | 獨立使用，放句首加逗號；= besides、moreover、furthermore
-adv. 易錯：後面若接名詞要用 in addition to |
+adv. 此外；另外 | 獨立使用，放句首加逗號；= besides、moreover、furthermore；易錯：後面若接名詞要用 in addition to
 例: The hotel is close to the station. In addition, its rooms are clean and cheap. | 這家旅館離車站很近。此外，房間又乾淨又便宜。
 相關: moreover(同義字,此外) / furthermore(同義字,而且) / besides(同義字,此外) / in addition to(易混淆字,除了⋯之外還有)
 
 in addition to | P
-prep. 除了⋯之外（還有） | in addition to + N／V-ing（to 是介系詞）；= besides、apart from、aside from
-prep. 易錯：in addition to 是「加上」，except 是「排除」 |
+prep. 除了⋯之外（還有） | in addition to + N／V-ing（to 是介系詞）；= besides、apart from、aside from；易錯：in addition to 是「加上」，except 是「排除」
 例: In addition to playing the piano, Amy also enjoys painting and dancing. | 除了彈鋼琴，艾咪也喜歡畫畫和跳舞。
 相關: besides(同義字,除了⋯還) / apart from(同義字,除了) / except(易混淆字,除了⋯以外都不) / as well as(相關字,以及)
 
@@ -1601,14 +1597,12 @@ prep. in case of + N 萬一發生⋯ |
 相關: in case of(片語,萬一發生) / lest(同義字,以免) / in any case(易混淆字,無論如何) / if(相關字,如果)
 
 in charge of | P
-adj. 負責；管理 | be in charge of + N／V-ing；= be responsible for、take charge of
-adj. 易錯：in the charge of sb 是「由某人負責」（主詞是被管理的事物） |
+adj. 負責；管理 | be in charge of + N／V-ing；= be responsible for、take charge of；易錯：in the charge of sb 是「由某人負責」（主詞是被管理的事物）
 例: Mr. Lin is in charge of organizing the school's graduation ceremony this year. | 林老師負責籌辦今年學校的畢業典禮。
 相關: be responsible for(同義字,負責) / take charge of(同義字,接管) / supervise(同義字,監督) / manage(相關字,管理)
 
 in common | P
-adv. 共同地；共有 | have + N + in common (with)；常見 have much／a lot／nothing in common
-adj. 易錯：common sense 是名詞片語「常識」，與 in common 無關 |
+adv. 共同地；共有 | have + N + in common (with)；常見 have much／a lot／nothing in common；易錯：common sense 是名詞片語「常識」，與 in common 無關
 例: My sister and I have nothing in common except our love of spicy food. | 我和姊姊除了都愛吃辣以外沒有任何共同點。
 相關: have sth in common(片語,有共同點) / shared(同義字,共有的) / mutual(同義字,共同的) / unique(反義字,獨特的)
 
@@ -1623,14 +1617,12 @@ prep. 與⋯形成對比；與⋯相反 | in contrast to／with + N；單獨使�
 相關: in contrast(片語,相較之下) / unlike(同義字,不像) / compared with(相關字,與⋯相比) / similar to(反義字,類似於)
 
 in demand | P
-adj. 需求量大的；搶手的 | be in demand；強調用 be in great／high demand
-adj. 易錯：on demand 是「一經要求就⋯」（如 video on demand 隨選視訊） |
+adj. 需求量大的；搶手的 | be in demand；強調用 be in great／high demand；易錯：on demand 是「一經要求就⋯」（如 video on demand 隨選視訊）
 例: Engineers who can work with artificial intelligence are in great demand these days. | 會運用人工智慧的工程師現在非常搶手。
 相關: popular(同義字,受歡迎的) / sought-after(同義字,搶手的) / on demand(易混淆字,隨選；應要求) / supply and demand(片語,供需)
 
 in detail | P
-adv. 詳細地 | 常接在 describe／explain／discuss 後；= thoroughly、at length
-adv. 易錯：不加 s，不說 in details |
+adv. 詳細地 | 常接在 describe／explain／discuss 後；= thoroughly、at length；易錯：不加 s，不說 in details
 例: The teacher explained the grammar rules in detail so that everyone could understand. | 老師詳細解說文法規則，讓每個人都能理解。
 相關: thoroughly(同義字,徹底地) / at length(同義字,詳盡地) / briefly(反義字,簡短地) / detailed(相關字,詳細的)
 
@@ -1651,8 +1643,7 @@ prep. 有利於；偏向 | The decision was in favor of the workers.
 相關: support(同義字,支持) / be for(同義字,贊成) / be against(反義字,反對) / object to(反義字,反對)
 
 in front of | P
-prep. 在⋯前面 | in front of + N；指空間位置在某物外面的前方
-prep. 易錯：in the front of 是「在⋯內部的前段」（in the front of the bus 公車前排） |
+prep. 在⋯前面 | in front of + N；指空間位置在某物外面的前方；易錯：in the front of 是「在⋯內部的前段」（in the front of the bus 公車前排）
 例: A tall man sat in front of me at the concert, so I couldn't see the stage clearly. | 音樂會上一個高個子坐在我前面，所以我看不清楚舞台。
 相關: behind(反義字,在後面) / ahead of(同義字,在⋯前方) / in the front of(易混淆字,在⋯內的前部) / opposite(相關字,在對面)
 
@@ -1684,8 +1675,7 @@ adj. 名詞用法：people in need 有需要的人；A friend in need is a frien
 相關: need(同義字,需要) / require(同義字,需要) / lack(相關字,缺乏) / in demand(易混淆字,需求大的)
 
 in no time | P
-adv. 立刻；馬上；很快地 | = very soon、in an instant、right away
-adv. 易錯：in time 是「及時」，on time 是「準時」，in no time 是「一下子」 |
+adv. 立刻；馬上；很快地 | = very soon、in an instant、right away；易錯：in time 是「及時」，on time 是「準時」，in no time 是「一下子」
 例: With the help of his classmates, he finished cleaning the classroom in no time. | 在同學幫忙下，他一下子就打掃完教室。
 相關: immediately(同義字,立即) / in an instant(同義字,瞬間) / in time(易混淆字,及時) / at once(同義字,立刻)
 
@@ -1707,14 +1697,12 @@ adj. nothing in particular 沒有特別的事 |
 相關: especially(同義字,尤其) / particularly(同義字,特別地) / in general(反義字,一般來說) / above all(相關字,最重要的是)
 
 in person | P
-adv. 親自；本人 | 接在動詞後：apply／come／meet + in person；= personally、face to face
-adv. 易錯：in person 強調「本人到場」；by phone／online 為對照用法 |
+adv. 親自；本人 | 接在動詞後：apply／come／meet + in person；= personally、face to face；易錯：in person 強調「本人到場」；by phone／online 為對照用法
 例: You have to go to the office in person to apply for a new passport. | 你必須親自去辦公室申請新護照。
 相關: personally(同義字,親自) / face to face(同義字,面對面) / online(反義字,線上) / in public(易混淆字,公開地)
 
 in place of | P
-prep. 代替；取代 | in place of + N；= instead of；也可寫 in sb's place
-prep. 易錯：in place 單獨用是「在適當位置；就緒」，take place 是「發生」 |
+prep. 代替；取代 | in place of + N；= instead of；也可寫 in sb's place；易錯：in place 單獨用是「在適當位置；就緒」，take place 是「發生」
 例: Many restaurants now use paper straws in place of plastic ones. | 現在許多餐廳用紙吸管代替塑膠吸管。
 相關: instead of(同義字,代替) / replace(同義字,取代) / take the place of(片語,取代) / take place(易混淆字,發生)
 
@@ -1751,26 +1739,22 @@ prep. 尋找；搜尋 | in search of + N；常接在 go／come／set out 後；=
 相關: look for(同義字,尋找) / seek(同義字,尋求) / search for(片語,搜尋) / in pursuit of(同義字,追求)
 
 in short | P
-adv. 簡言之；總之 | 用來簡短總結前文，放句首加逗號；= in brief、in a word、to sum up
-adj. 易錯：be short of 是「缺乏」，in short supply 是「短缺」 |
+adv. 簡言之；總之 | 用來簡短總結前文，放句首加逗號；= in brief、in a word、to sum up；易錯：be short of 是「缺乏」，in short supply 是「短缺」
 例: The food was cold and the waiter was rude. In short, it was a terrible dinner. | 菜是冷的，服務生又沒禮貌。總之，那是一頓糟透的晚餐。
 相關: in brief(同義字,簡言之) / in a word(同義字,總之) / to sum up(同義字,總結) / in detail(反義字,詳細地)
 
 in spite of | P
-prep. 儘管 | in spite of + N／V-ing；= despite（despite 後面不加 of）
-prep. 易錯：後面不可接子句；接子句要用 although／though，或寫 in spite of the fact that + 子句 |
+prep. 儘管 | in spite of + N／V-ing；= despite（despite 後面不加 of）；易錯：後面不可接子句；接子句要用 although／though，或寫 in spite of the fact that + 子句
 例: In spite of the heavy rain, the baseball game continued until the end. | 儘管下大雨，棒球比賽仍一直進行到結束。
 相關: despite(同義字,儘管) / although(相關字,雖然) / regardless of(同義字,不管) / because of(反義字,因為)
 
 in terms of | P
-prep. 就⋯而言；從⋯方面來看 | in terms of + N（cost／quality／size）；= with regard to、as far as sth is concerned
-prep. 易錯：in terms of 不是「以條件」；be on good terms with 是「與⋯關係良好」 |
+prep. 就⋯而言；從⋯方面來看 | in terms of + N（cost／quality／size）；= with regard to、as far as sth is concerned；易錯：in terms of 不是「以條件」；be on good terms with 是「與⋯關係良好」
 例: In terms of price, this phone is much better than the newer models. | 就價格而言，這支手機比新機型好多了。
 相關: with regard to(同義字,關於) / regarding(同義字,關於) / be on good terms with(易混淆字,與⋯交好) / as for(相關字,至於)
 
 in that | P
-conj. 因為；在於 | in that + 子句；正式用語，說明前述情況成立的理由；= because、since
-conj. 易錯：in that 後接完整子句，不可接名詞 |
+conj. 因為；在於 | in that + 子句；正式用語，說明前述情況成立的理由；= because、since；易錯：in that 後接完整子句，不可接名詞
 例: Humans differ from other animals in that they can use language to share complex ideas. | 人類與其他動物不同，在於人類能用語言分享複雜的想法。
 相關: because(同義字,因為) / since(同義字,既然) / in which(易混淆字,在其中) / now that(相關字,既然)
 
@@ -1780,8 +1764,7 @@ prep. 在⋯過程中；在⋯期間 | in the course of + N（time／the meeting
 相關: during(同義字,在⋯期間) / throughout(相關字,自始至終) / in the process of(同義字,在⋯過程中) / of course(易混淆字,當然)
 
 in the end | P
-adv. 最後；終於 | 獨立使用，不接 of；= finally、eventually、at last
-adv. 易錯：at the end of + N 是「在⋯的末尾」（at the end of the month） |
+adv. 最後；終於 | 獨立使用，不接 of；= finally、eventually、at last；易錯：at the end of + N 是「在⋯的末尾」（at the end of the month）
 例: After months of hard training, she won the gold medal in the end. | 經過數個月辛苦訓練，她最後贏得金牌。
 相關: eventually(同義字,最終) / finally(同義字,終於) / at the end of(易混淆字,在⋯末端) / at first(反義字,起初)
 
@@ -1802,8 +1785,7 @@ adv. 當初；一開始（常用於事後抱怨） | Why did you buy it in the f
 相關: first of all(同義字,首先) / to begin with(同義字,首先) / originally(同義字,原本) / in the second place(相關字,其次)
 
 in the least | P
-adv. 一點也（不） | 用於否定句：not ... in the least = not at all、not in the slightest
-adv. 易錯：at least 是「至少」，與 not in the least 意思完全不同 |
+adv. 一點也（不） | 用於否定句：not ... in the least = not at all、not in the slightest；易錯：at least 是「至少」，與 not in the least 意思完全不同
 例: The movie was so long and boring that I was not in the least interested in the ending. | 電影又長又無聊，我對結局一點興趣也沒有。
 相關: not at all(同義字,一點也不) / by no means(同義字,絕不) / at least(易混淆字,至少) / at all(相關字,根本)
 
@@ -1839,8 +1821,7 @@ prep. 在⋯之後；由於⋯的結果 | in the wake of + N（多為災難、�
 
 in time | P
 adv. 及時 | in time for + N；in time to + 原形V；just in time 剛好趕上
-adv. 最終；遲早 | In time, you will understand.
-adv. 易錯：on time 是「準時」（不早不晚），in time 是「及時；沒有遲到」 |
+adv. 最終；遲早 | In time, you will understand.；易錯：on time 是「準時」（不早不晚），in time 是「及時；沒有遲到」
 例: We arrived at the theater just in time for the beginning of the show. | 我們剛好及時抵達劇院趕上表演開場。
 相關: on time(易混淆字,準時) / eventually(同義字,終究) / too late(反義字,太遲) / in no time(易混淆字,立刻)
 
@@ -1857,14 +1838,12 @@ adj. 作補語：All our efforts were in vain. |
 相關: unsuccessfully(同義字,不成功地) / fruitless(同義字,徒勞的) / successfully(反義字,成功地) / vain(相關字,自負的；徒然的)
 
 in view of | P
-prep. 鑑於；考慮到 | in view of + N（the fact that 子句）；= in light of、considering
-prep. 易錯：in sb's view 是「依某人看法」，與 in view of 不同 |
+prep. 鑑於；考慮到 | in view of + N（the fact that 子句）；= in light of、considering；易錯：in sb's view 是「依某人看法」，與 in view of 不同
 例: In view of the rising number of cases, the school decided to move classes online. | 鑑於病例數增加，學校決定改為線上上課。
 相關: in light of(同義字,鑑於) / considering(同義字,考慮到) / because of(相關字,由於) / in my view(易混淆字,依我看)
 
 inform sb of | P
-v. 通知某人某事 | inform sb of／about + N；inform sb that + 子句；被動 be informed of
-v. 易錯：不說 inform to sb；inform 後直接接人 |
+v. 通知某人某事 | inform sb of／about + N；inform sb that + 子句；被動 be informed of；易錯：不說 inform to sb；inform 後直接接人
 例: Please inform us of any change in your address as soon as possible. | 地址若有任何變更，請盡快通知我們。
 相關: notify sb of(同義字,通知) / tell(同義字,告訴) / keep sb informed(片語,隨時告知某人) / information(相關字,資訊)
 
@@ -1875,14 +1854,12 @@ v. 接子句：insist that + S + (should) 原形V（表要求時用原形動詞�
 相關: persist in(易混淆字,堅持做) / demand(同義字,要求) / stick to(同義字,堅持) / give in(反義字,讓步)
 
 instead of | P
-prep. 代替；而不是 | instead of + N／V-ing；= in place of、rather than
-adv. 易錯：instead 單獨用是副詞，放句首或句尾，不接受詞 |
+prep. 代替；而不是 | instead of + N／V-ing；= in place of、rather than；易錯：instead 單獨用是副詞，放句首或句尾，不接受詞
 例: Why don't you walk to school instead of asking your dad to drive you every day? | 你何不走路上學，而不是每天叫爸爸載你？
 相關: in place of(同義字,代替) / rather than(同義字,而不是) / replace(相關字,取代) / instead(相關字,反而)
 
 interfere with | P
-v. 妨礙；干擾（事物） | interfere with + N（sleep／work／signals）
-v. 易錯：interfere in + 事務 是「干涉別人的事」 |
+v. 妨礙；干擾（事物） | interfere with + N（sleep／work／signals）；易錯：interfere in + 事務 是「干涉別人的事」
 例: Playing video games late at night can interfere with your sleep. | 深夜打電動可能會影響你的睡眠。
 相關: disturb(同義字,打擾) / hinder(同義字,妨礙) / interfere in(易混淆字,干涉) / interrupt(相關字,打斷)
 
@@ -1897,14 +1874,12 @@ v. 遠離；避開 | keep away from + N／V-ing；keep sb／sth away from 使⋯
 相關: stay away from(同義字,遠離) / avoid(同義字,避免) / approach(反義字,接近) / keep off(相關字,不接近)
 
 keep in touch with | P
-v. 與⋯保持聯絡 | keep in touch with + 人；= stay in touch with、keep in contact with
-v. 易錯：get in touch with 是「與⋯取得聯絡」（開始聯絡），lose touch with 是「失去聯絡」 |
+v. 與⋯保持聯絡 | keep in touch with + 人；= stay in touch with、keep in contact with；易錯：get in touch with 是「與⋯取得聯絡」（開始聯絡），lose touch with 是「失去聯絡」
 例: Thanks to social media, I can keep in touch with my friends from junior high school. | 多虧社群媒體，我能和國中朋友保持聯絡。
 相關: get in touch with(易混淆字,取得聯絡) / stay in touch with(同義字,保持聯繫) / lose touch with(反義字,失去聯絡) / contact(相關字,聯絡)
 
 keep on | P
-v. 繼續；一直（做） | keep on + V-ing；= keep + V-ing、go on + V-ing、continue
-v. 易錯：keep on 不接不定詞，不說 keep on to do |
+v. 繼續；一直（做） | keep on + V-ing；= keep + V-ing、go on + V-ing、continue；易錯：keep on 不接不定詞，不說 keep on to do
 例: Even though he failed many times, he kept on trying until he succeeded. | 雖然失敗很多次，他仍繼續嘗試直到成功。
 相關: go on(同義字,繼續) / continue(同義字,繼續) / carry on(同義字,繼續進行) / give up(反義字,放棄)
 
@@ -1914,8 +1889,7 @@ v. 跟上；與⋯並駕齊驅 | keep pace with + N（changes／technology／sb�
 相關: keep up with(同義字,跟上) / catch up with(易混淆字,趕上) / fall behind(反義字,落後) / pace(相關字,步調)
 
 keep sb from | P
-v. 阻止某人做 | keep sb from + V-ing；= prevent／stop sb from + V-ing
-v. 易錯：keep sb + V-ing 是「讓某人一直做」，意思相反 |
+v. 阻止某人做 | keep sb from + V-ing；= prevent／stop sb from + V-ing；易錯：keep sb + V-ing 是「讓某人一直做」，意思相反
 例: The loud noise from the construction site kept me from sleeping last night. | 工地傳來的巨大噪音讓我昨晚無法入睡。
 相關: prevent sb from(同義字,阻止某人) / stop sb from(同義字,阻止某人) / prohibit sb from(同義字,禁止) / keep away from(易混淆字,遠離)
 
@@ -1931,8 +1905,7 @@ v. 反義：lose track of 失去聯繫；不知道⋯的情況 |
 相關: monitor(同義字,監測) / keep a record of(同義字,記錄) / lose track of(反義字,忘了留意) / keep an eye on(相關字,留意)
 
 keep up with | P
-v. 跟上；不落後 | keep up with + N（the class／news／trends）；= keep pace with
-v. 易錯：catch up with 是「從落後狀態趕上」，keep up with 是「保持同步」 |
+v. 跟上；不落後 | keep up with + N（the class／news／trends）；= keep pace with；易錯：catch up with 是「從落後狀態趕上」，keep up with 是「保持同步」
 例: He studies hard every night to keep up with the rest of the class. | 他每晚用功讀書，好跟上班上其他同學。
 相關: keep pace with(同義字,跟上) / catch up with(易混淆字,趕上) / fall behind(反義字,落後) / put up with(易混淆字,忍受)
 
@@ -1942,8 +1915,7 @@ adv. 最後但同樣重要的是 | 用於列舉的最後一項，放句首加逗
 相關: finally(同義字,最後) / lastly(同義字,最後) / first of all(反義字,首先) / above all(相關字,最重要的是)
 
 lay off | P
-v. 解僱；資遣（因經營不善） | lay off + N／lay N off；被動 be laid off；名詞 layoff
-v. 易錯：lay 的過去式、過去分詞是 laid，不要與 lie（躺）混淆 |
+v. 解僱；資遣（因經營不善） | lay off + N／lay N off；被動 be laid off；名詞 layoff；易錯：lay 的過去式、過去分詞是 laid，不要與 lie（躺）混淆
 例: Because of the economic crisis, the factory laid off nearly half of its workers. | 由於經濟危機，工廠資遣了將近一半的員工。
 相關: fire(同義字,開除) / dismiss(同義字,解僱) / hire(反義字,僱用) / layoff(相關字,裁員)
 
@@ -1954,8 +1926,7 @@ v. 清楚陳述；提出（計畫、理由） | lay out a plan
 相關: arrange(同義字,安排) / set out(同義字,陳列；說明) / layout(相關字,版面設計) / lay off(易混淆字,解僱)
 
 lead to | P
-v. 導致；造成 | lead to + N／V-ing（to 是介系詞）；= result in、cause、bring about
-v. 易錯：result from 是「起因於」，方向相反；主詞是原因才用 lead to |
+v. 導致；造成 | lead to + N／V-ing（to 是介系詞）；= result in、cause、bring about；易錯：result from 是「起因於」，方向相反；主詞是原因才用 lead to
 例: Eating too much sugar may lead to serious health problems such as diabetes. | 吃太多糖可能導致糖尿病等嚴重健康問題。
 相關: result in(同義字,導致) / bring about(同義字,引起) / cause(同義字,造成) / result from(反義字,起因於)
 
@@ -1976,8 +1947,7 @@ v. 幫忙 | lend (sb) a hand with + N；lend a hand + (in) V-ing；= help out、
 相關: give sb a hand(同義字,幫忙) / help out(同義字,幫忙) / assist(同義字,協助) / lend an ear(易混淆字,傾聽)
 
 let alone | P
-conj. 更別說；遑論 | 用在否定句後：S + 否定 ..., let alone + N／原形V；= not to mention、much less
-conj. 易錯：let alone 前面多為否定句，後接更難或更不可能的事 |
+conj. 更別說；遑論 | 用在否定句後：S + 否定 ..., let alone + N／原形V；= not to mention、much less；易錯：let alone 前面多為否定句，後接更難或更不可能的事
 例: He can't even ride a bicycle, let alone drive a car. | 他連腳踏車都不會騎，更別說開車了。
 相關: not to mention(同義字,更不用說) / much less(同義字,更不用說) / still less(同義字,更別提) / leave alone(易混淆字,不打擾)
 
@@ -1993,8 +1963,7 @@ adv. 漸漸地；一點一點地 | = gradually、bit by bit、step by step
 相關: gradually(同義字,逐漸地) / bit by bit(同義字,一點一點地) / step by step(同義字,逐步地) / all at once(反義字,突然)
 
 live up to | P
-v. 不辜負；達到（期望、名聲） | live up to + N（expectations／reputation／promise）；= meet、fulfill
-v. 易錯：不是 live with（忍受），也不是 look up to（尊敬） |
+v. 不辜負；達到（期望、名聲） | live up to + N（expectations／reputation／promise）；= meet、fulfill；易錯：不是 live with（忍受），也不是 look up to（尊敬）
 例: The new restaurant didn't live up to our expectations; the food was quite ordinary. | 新餐廳沒有達到我們的期待，食物很普通。
 相關: meet(同義字,符合) / fulfill(同義字,實現) / fall short of(反義字,未達到) / look up to(易混淆字,尊敬)
 
@@ -2004,8 +1973,7 @@ v. 渴望；嚮往 | long for + N；long to + 原形V；= yearn for、crave
 相關: yearn for(同義字,渴望) / crave(同義字,渴望) / desire(同義字,想要) / longing(相關字,渴望)
 
 look after | P
-v. 照顧；照料 | look after + N；= take care of、care for
-v. 易錯：look for 是「尋找」，look after 是「照顧」 |
+v. 照顧；照料 | look after + N；= take care of、care for；易錯：look for 是「尋找」，look after 是「照顧」
 例: My grandmother looks after my little brother when my parents are at work. | 父母上班時，祖母照顧我弟弟。
 相關: take care of(同義字,照顧) / care for(同義字,照料) / look for(易混淆字,尋找) / neglect(反義字,忽略)
 
@@ -2020,14 +1988,12 @@ v. 瞧不起；輕視 | look down on + 人；= despise、look down upon
 相關: despise(同義字,鄙視) / look up to(反義字,尊敬) / respect(反義字,尊重) / look down(易混淆字,往下看)
 
 look for | P
-v. 尋找 | look for + N；強調「找的過程」；find 強調「找到的結果」
-v. 易錯：look for 不能換成 find 表示正在找 |
+v. 尋找 | look for + N；強調「找的過程」；find 強調「找到的結果」；易錯：look for 不能換成 find 表示正在找
 例: I spent the whole morning looking for my keys, and finally found them in my pocket. | 我花了一整個早上找鑰匙，最後在口袋裡找到。
 相關: search for(同義字,搜尋) / seek(同義字,尋求) / find(易混淆字,找到) / look after(易混淆字,照顧)
 
 look forward to | P
-v. 期待；盼望 | look forward to + N／V-ing（to 是介系詞，後面接名詞或動名詞）
-v. 易錯：不可接原形動詞，不說 look forward to see you |
+v. 期待；盼望 | look forward to + N／V-ing（to 是介系詞，後面接名詞或動名詞）；易錯：不可接原形動詞，不說 look forward to see you
 例: Many students are looking forward to the summer vacation after the exam. | 很多學生期待考完試後的暑假。
 相關: expect(同義字,預期) / anticipate(同義字,期待) / dread(反義字,害怕) / look back on(反義字,回顧)
 
@@ -2078,14 +2044,12 @@ v. 與⋯失去聯絡 | lose track of old friends
 相關: keep track of(反義字,掌握動態) / lose touch with(同義字,失去聯絡) / forget(同義字,忘記) / lose sight of(易混淆字,看不見；忽略)
 
 major in | P
-v. 主修 | major in + 學科；名詞 major 主修科目；minor in 輔修
-v. 易錯：major 當動詞時要加 in，不說 major English |
+v. 主修 | major in + 學科；名詞 major 主修科目；minor in 輔修；易錯：major 當動詞時要加 in，不說 major English
 例: My cousin majors in computer science at National Taiwan University. | 我表哥在臺灣大學主修資訊工程。
 相關: specialize in(同義字,專攻) / minor in(相關字,輔修) / major(相關字,主修科目) / study(相關字,研讀)
 
 make a difference | P
-v. 有影響；產生改變（常指正面） | make a difference (to／in + N)；make a big／no difference
-v. 易錯：make no difference 是「沒有差別；不重要」；tell the difference 是「分辨差異」 |
+v. 有影響；產生改變（常指正面） | make a difference (to／in + N)；make a big／no difference；易錯：make no difference 是「沒有差別；不重要」；tell the difference 是「分辨差異」
 例: Even small actions, like bringing your own cup, can make a difference to the environment. | 即使像自備杯子這樣的小行動，也能對環境產生影響。
 相關: matter(同義字,要緊) / have an effect on(同義字,對⋯有影響) / tell the difference(易混淆字,分辨不同) / make no difference(反義字,沒有差別)
 
@@ -2095,8 +2059,7 @@ v. 謀生 | make a living + (by) V-ing／as + 職業；= earn a living
 相關: earn a living(同義字,謀生) / make ends meet(相關字,收支平衡) / support oneself(同義字,養活自己) / livelihood(相關字,生計)
 
 make an effort | P
-v. 努力；盡力 | make an effort + to 原形V；強調可說 make every effort to 原形V
-v. 易錯：make efforts 也可，但不說 do an effort |
+v. 努力；盡力 | make an effort + to 原形V；強調可說 make every effort to 原形V；易錯：make efforts 也可，但不說 do an effort
 例: She made an effort to talk to the new student who sat alone at lunch. | 她努力找午餐時獨自坐著的轉學生聊天。
 相關: try hard(同義字,努力) / strive(同義字,努力) / spare no effort(片語,不遺餘力) / give up(反義字,放棄)
 
@@ -2106,8 +2069,7 @@ v. 收支平衡；勉強維持生計 | 不接受詞；常與 struggle to／have 
 相關: get by(同義字,勉強過活) / make a living(相關字,謀生) / budget(相關字,預算) / be in debt(反義字,負債)
 
 make fun of | P
-v. 取笑；嘲弄 | make fun of + N；= laugh at、tease、ridicule
-v. 易錯：make fun of 是負面「取笑別人」，have fun 是「玩得開心」 |
+v. 取笑；嘲弄 | make fun of + N；= laugh at、tease、ridicule；易錯：make fun of 是負面「取笑別人」，have fun 是「玩得開心」
 例: It is cruel to make fun of people because of their appearance. | 因為外表而取笑別人是很殘忍的。
 相關: laugh at(同義字,嘲笑) / tease(同義字,戲弄) / ridicule(同義字,嘲笑) / have fun(易混淆字,玩得愉快)
 
@@ -2118,8 +2080,7 @@ v. 理解；弄懂 | I can't make out what he means.
 相關: distinguish(同義字,辨別) / recognize(同義字,認出) / figure out(同義字,弄懂) / make up(易混淆字,編造；化妝)
 
 make progress | P
-v. 進步；有進展 | make progress (in + N)；強調用 make great／rapid progress
-v. 易錯：progress 當名詞不可數，不說 a progress、progresses |
+v. 進步；有進展 | make progress (in + N)；強調用 make great／rapid progress；易錯：progress 當名詞不可數，不說 a progress、progresses
 例: Thanks to daily practice, he has made great progress in his English speaking. | 多虧每天練習，他的英文口說大有進步。
 相關: improve(同義字,進步) / advance(同義字,進展) / go downhill(反義字,走下坡) / progress(相關字,進步)
 
@@ -2135,14 +2096,12 @@ v. 理解：make sense of + N 弄懂⋯ |
 相關: be reasonable(同義字,合理) / make sense of(片語,理解) / absurd(反義字,荒謬的) / logical(同義字,合邏輯的)
 
 make sure | P
-v. 確定；確保 | make sure + (that) 子句（子句用現在式表未來）；make sure of + N
-v. 易錯：make sure 後的子句不用 will |
+v. 確定；確保 | make sure + (that) 子句（子句用現在式表未來）；make sure of + N；易錯：make sure 後的子句不用 will
 例: Make sure that all the windows are closed before you leave the house. | 出門前務必確認所有窗戶都關好。
 相關: ensure(同義字,確保) / check(同義字,檢查) / confirm(同義字,確認) / see to it that(片語,務必)
 
 make the best of | P
-v. 善用（不利條件）；盡力而為 | make the best of + N（a bad situation／what one has）；強調在不理想的情況下盡力
-v. 易錯：make the most of 多指善用好機會；make the best of 多指應付不利處境 |
+v. 善用（不利條件）；盡力而為 | make the best of + N（a bad situation／what one has）；強調在不理想的情況下盡力；易錯：make the most of 多指善用好機會；make the best of 多指應付不利處境
 例: The hotel room was small and noisy, but we decided to make the best of it. | 旅館房間又小又吵，但我們決定將就著好好利用。
 相關: make the most of(易混淆字,充分利用) / cope with(相關字,應付) / make do with(相關字,將就) / waste(反義字,浪費)
 
@@ -2206,14 +2165,12 @@ adv. 不用說；當然 | 放句首加逗號；= it goes without saying that、o
 相關: of course(同義字,當然) / obviously(同義字,明顯地) / it goes without saying(同義字,不言而喻) / not to mention(易混淆字,更不用說)
 
 no longer | P
-adv. 不再 | 放 be 動詞／助動詞後、一般動詞前：S + no longer + V；= not ... any longer／any more
-adv. 易錯：no longer 本身已含否定，不再加 not |
+adv. 不再 | 放 be 動詞／助動詞後、一般動詞前：S + no longer + V；= not ... any longer／any more；易錯：no longer 本身已含否定，不再加 not
 例: After the new road was built, villagers no longer had to walk two hours to the town. | 新路蓋好後，村民不再需要走兩小時到鎮上。
 相關: not anymore(同義字,不再) / not any longer(同義字,不再) / still(反義字,仍然) / no more(相關字,不再)
 
 no matter | P
-conj. 無論；不管 | no matter + wh-詞（what／who／how／where／when）+ 子句；= whatever、however 等
-conj. 易錯：不說 no matter + 名詞；no matter what 後要有完整子句或單獨放句尾 |
+conj. 無論；不管 | no matter + wh-詞（what／who／how／where／when）+ 子句；= whatever、however 等；易錯：不說 no matter + 名詞；no matter what 後要有完整子句或單獨放句尾
 例: No matter how busy she is, she always makes time to call her grandparents. | 無論多忙，她總會撥時間打電話給祖父母。
 相關: whatever(同義字,無論什麼) / however(同義字,無論如何) / regardless of(同義字,不管) / it doesn't matter(易混淆字,沒關係)
 
@@ -2223,14 +2180,12 @@ adv. 難怪 | No wonder + (that) 子句；也可單獨說 No wonder.；= It is n
 相關: not surprisingly(同義字,不出所料) / naturally(同義字,自然地) / surprisingly(反義字,令人驚訝地) / wonder(相關字,納悶)
 
 not to mention | P
-conj. 更不用說；而且還 | not to mention + N／V-ing；= let alone、to say nothing of
-conj. 易錯：not to mention 前可為肯定句（補充更多）；let alone 前多為否定句 |
+conj. 更不用說；而且還 | not to mention + N／V-ing；= let alone、to say nothing of；易錯：not to mention 前可為肯定句（補充更多）；let alone 前多為否定句
 例: The apartment is close to the MRT station, not to mention the low rent. | 這間公寓離捷運站很近，更不用說租金很便宜。
 相關: let alone(易混淆字,更別說) / to say nothing of(同義字,更不用說) / besides(相關字,此外) / needless to say(易混淆字,不用說)
 
 nothing but | P
-adv. 只有；只不過 | nothing but + N／原形V；= only；do nothing but + 原形V 只做
-adv. 易錯：anything but 是「絕不是；根本不」，與 nothing but 相反 |
+adv. 只有；只不過 | nothing but + N／原形V；= only；do nothing but + 原形V 只做；易錯：anything but 是「絕不是；根本不」，與 nothing but 相反
 例: During the typhoon, we could do nothing but stay at home and watch TV. | 颱風期間，我們只能待在家裡看電視。
 相關: only(同義字,只有) / merely(同義字,僅僅) / anything but(易混淆字,絕不是) / no more than(同義字,只不過)
 
@@ -2240,20 +2195,17 @@ conj. 既然；由於 | now that + 子句；= since、because；指新出現的�
 相關: since(同義字,既然) / because(同義字,因為) / as(同義字,由於) / so that(易混淆字,以便)
 
 object to | P
-v. 反對 | object to + N／V-ing（to 是介系詞）；= be opposed to、oppose
-v. 易錯：oppose 是及物動詞，直接接受詞，不加 to；object to 不可接原形V |
+v. 反對 | object to + N／V-ing（to 是介系詞）；= be opposed to、oppose；易錯：oppose 是及物動詞，直接接受詞，不加 to；object to 不可接原形V
 例: Many residents object to building a new factory near the elementary school. | 許多居民反對在小學附近蓋新工廠。
 相關: oppose(同義字,反對) / be opposed to(同義字,反對) / be against(同義字,反對) / approve of(反義字,贊成)
 
 of course | P
-adv. 當然 | 回應請求或強調理所當然；= certainly、sure、naturally
-adv. 易錯：of course not 表「當然不」；回答 Do you mind ...? 時常用 Of course not.（表示不介意） |
+adv. 當然 | 回應請求或強調理所當然；= certainly、sure、naturally；易錯：of course not 表「當然不」；回答 Do you mind ...? 時常用 Of course not.（表示不介意）
 例: "Can I borrow your notes?" "Of course, but please give them back tomorrow." | 「我可以借你的筆記嗎？」「當然可以，但請明天還我。」
 相關: certainly(同義字,當然) / naturally(同義字,自然地) / needless to say(同義字,不用說) / in the course of(易混淆字,在⋯過程中)
 
 on account of | P
-prep. 由於；因為 | on account of + N／V-ing；= because of、owing to、due to
-prep. 易錯：不可接子句；take sth into account 是「考慮」 |
+prep. 由於；因為 | on account of + N／V-ing；= because of、owing to、due to；易錯：不可接子句；take sth into account 是「考慮」
 例: The flight was delayed for three hours on account of the heavy fog. | 由於濃霧，班機延誤了三小時。
 相關: because of(同義字,因為) / owing to(同義字,由於) / due to(同義字,由於) / take sth into account(易混淆字,考慮)
 
@@ -2263,20 +2215,17 @@ adv. 平均來說 | 放句首或句尾；= on the average；the average + N 平�
 相關: per capita(相關字,每人平均) / typically(同義字,通常) / in general(同義字,一般來說) / average(相關字,平均)
 
 on behalf of | P
-prep. 代表；為了⋯（的利益） | on behalf of + N；= on sb's behalf、representing
-prep. 易錯：in the name of 多指「以⋯名義」，on behalf of 是「代表某人發言或行事」 |
+prep. 代表；為了⋯（的利益） | on behalf of + N；= on sb's behalf、representing；易錯：in the name of 多指「以⋯名義」，on behalf of 是「代表某人發言或行事」
 例: On behalf of the whole class, Amy gave our teacher a card and some flowers. | 艾咪代表全班送給老師一張卡片和一些花。
 相關: represent(同義字,代表) / in the name of(易混淆字,以⋯之名) / for the sake of(相關字,為了) / instead of(相關字,代替)
 
 on one's own | P
-adv. 獨自；靠自己 | = alone、by oneself、independently
-adv. 易錯：on one's own 與 of one's own（自己的）不同：a room of my own |
+adv. 獨自；靠自己 | = alone、by oneself、independently；易錯：on one's own 與 of one's own（自己的）不同：a room of my own
 例: She traveled around Europe on her own after graduating from college. | 大學畢業後，她獨自環遊歐洲。
 相關: by oneself(同義字,獨自) / alone(同義字,單獨) / independently(同義字,獨立地) / of one's own(易混淆字,自己的)
 
 on purpose | P
-adv. 故意地 | = deliberately、intentionally
-adv. 易錯：for the purpose of + N／V-ing 是「為了⋯目的」 |
+adv. 故意地 | = deliberately、intentionally；易錯：for the purpose of + N／V-ing 是「為了⋯目的」
 例: I'm sure he broke the window on purpose because he was angry with his neighbor. | 我確定他是故意打破窗戶的，因為他在生鄰居的氣。
 相關: deliberately(同義字,故意地) / intentionally(同義字,有意地) / by accident(反義字,意外地) / by chance(反義字,偶然)
 
@@ -2291,8 +2240,7 @@ prep. 根據；以⋯為基礎 | on the basis of + N（evidence／grades／exper
 相關: based on(同義字,根據) / according to(同義字,根據) / on the grounds of(同義字,以⋯為理由) / basis(相關字,基礎)
 
 on the contrary | P
-adv. 正好相反；反而 | 用來否定前面的說法並提出相反看法，常接在否定句後；= quite the opposite
-adv. 易錯：on the contrary 是推翻前句；比較兩件不同事物用 in contrast 或 on the other hand |
+adv. 正好相反；反而 | 用來否定前面的說法並提出相反看法，常接在否定句後；= quite the opposite；易錯：on the contrary 是推翻前句；比較兩件不同事物用 in contrast 或 on the other hand
 例: He is not lazy at all. On the contrary, he is the hardest-working student in our class. | 他一點也不懶。正好相反，他是我們班最用功的學生。
 相關: in contrast(易混淆字,相較之下) / on the other hand(易混淆字,另一方面) / conversely(同義字,相反地) / contrary to(片語,與⋯相反)
 
@@ -2302,8 +2250,7 @@ adv. 一方面 | 常與 on the other hand 連用：On the one hand ..., on the o
 相關: on the other hand(片語,另一方面) / for one thing(同義字,一來) / firstly(相關字,首先) / while(相關字,然而)
 
 on the other hand | P
-adv. 另一方面；相對地 | 用來提出對比的觀點，常與 on the one hand 連用
-adv. 易錯：on the other hand 是並列兩面；on the contrary 是否定前句 |
+adv. 另一方面；相對地 | 用來提出對比的觀點，常與 on the one hand 連用；易錯：on the other hand 是並列兩面；on the contrary 是否定前句
 例: The job pays well. On the other hand, you will have to work long hours. | 這份工作薪水很高。另一方面，你得長時間工作。
 相關: however(同義字,然而) / in contrast(同義字,相較之下) / on the contrary(易混淆字,正好相反) / on the one hand(片語,一方面)
 
@@ -2323,8 +2270,7 @@ adv. 大體上；總的來說 | 放句首加逗號；= in general、overall、by
 相關: in general(同義字,一般來說) / overall(同義字,整體而言) / by and large(同義字,大致上) / as a whole(易混淆字,作為一個整體)
 
 on time | P
-adv. 準時 | = punctually、on schedule
-adv. 易錯：in time 是「及時；來得及」，on time 是「準時，不早不晚」 |
+adv. 準時 | = punctually、on schedule；易錯：in time 是「及時；來得及」，on time 是「準時，不早不晚」
 例: The train left on time, but we missed it because we got to the station late. | 火車準時開走，但我們太晚到車站而錯過了。
 相關: punctually(同義字,準時地) / in time(易混淆字,及時) / late(反義字,遲到的) / on schedule(同義字,按時)
 

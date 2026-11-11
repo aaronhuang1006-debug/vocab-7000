@@ -474,7 +474,7 @@ assess(ment) | L6
 v. 評估；估價 | assess the damage 評估損害
 n. 評估（assessment） | make an assessment of 對⋯做評估
 例: Experts are still assessing the damage caused by the earthquake. | 專家仍在評估地震造成的損害。
-相關: assessment(衍生字,評估) / evaluate(同義字,評估) / judge(同義字,判斷) / estimate(同義字,估計)
+相關: evaluate(同義字,評估) / judge(同義字,判斷) / estimate(同義字,估計)
 字根: as-(朝向) + sess(坐) | 坐在旁邊判斷（原指陪審評稅） | session, possess
 
 assumption | L6
@@ -499,7 +499,7 @@ attain(ment) | L6
 v. 達到；獲得 | attain one's goal 達成目標
 n. 達到；成就（attainment） | educational attainment 教育程度
 例: With hard work, you can attain your goal of entering a top university. | 只要努力，你就能達成進入頂尖大學的目標。
-相關: attainment(衍生字,成就) / achieve(同義字,達成) / reach(同義字,達到) / accomplish(同義字,完成) / attainable(衍生字,可達到的)
+相關: achieve(同義字,達成) / reach(同義字,達到) / accomplish(同義字,完成) / attainable(衍生字,可達到的)
 字根: at-(朝向) + tain(觸碰) | 碰觸到目標 | contact, tangible
 
 attendant | L6
@@ -536,7 +536,7 @@ n. （名人的）親筆簽名 | ask for one's autograph 請某人簽名
 n. 簽名；簽署（signature） | put one's signature on 在⋯上簽名
 v. 親筆簽名於 |
 例: The fans lined up for hours to get the singer's autograph. | 歌迷排隊好幾個小時要拿歌手的簽名。
-相關: sign(衍生字,簽名) / signature(同義字,簽名) / initials(相關字,姓名首字母) / handwriting(相關字,筆跡)
+相關: sign(衍生字,簽名) / initials(相關字,姓名首字母) / handwriting(相關字,筆跡)
 字根: auto(自己) + graph(寫) | 自己親手寫的 | automatic, photograph
 
 autonomy | L6
@@ -2225,7 +2225,7 @@ v. 制定（法律）；頒布 | enact a law 制定法律
 v. 扮演；上演 |
 n. 制定；法規（enactment） |
 例: The government enacted a new law to protect animals. | 政府制定了一條保護動物的新法律。
-相關: enactment(衍生字,制定) / pass(同義字,通過) / legislate(同義字,立法) / repeal(反義字,廢除)
+相關: pass(同義字,通過) / legislate(同義字,立法) / repeal(反義字,廢除)
 字根: en-(使) + act(行為；法令) | 使成為法令 | act, react
 
 enclosure | L6
@@ -2251,20 +2251,20 @@ enhance(ment) | L6
 v. 提高；增強 | enhance one's ability 提升能力
 n. 增強；提高（enhancement） |
 例: Reading English novels can enhance your vocabulary. | 閱讀英文小說能增加你的字彙量。
-相關: enhancement(衍生字,增強) / improve(同義字,改善) / boost(同義字,提升) / strengthen(同義字,強化) / weaken(反義字,削弱)
+相關: improve(同義字,改善) / boost(同義字,提升) / strengthen(同義字,強化) / weaken(反義字,削弱)
 
 enlighten(ment) | L6
 v. 啟發；開導 | enlighten sb about/on 啟發某人有關⋯
 n. 啟蒙；啟發（enlightenment） | the Enlightenment 啟蒙運動
 例: The documentary enlightened us about the problem of ocean pollution. | 這部紀錄片讓我們了解海洋汙染問題。
-相關: enlightenment(衍生字,啟蒙) / enlightening(衍生字,有啟發性的) / inform(同義字,告知) / educate(同義字,教育) / inspire(同義字,啟發)
+相關: enlightening(衍生字,有啟發性的) / inform(同義字,告知) / educate(同義字,教育) / inspire(同義字,啟發)
 字根: en-(使) + light(光) + -en(動詞) | 使光明 | light, lighten
 
 enrich(ment) | L6
 v. 使豐富；使富裕；充實 | enrich one's life 豐富某人的生活
 n. 豐富；充實（enrichment） |
 例: Traveling abroad can enrich your life experience. | 出國旅行能豐富你的人生經驗。
-相關: enrichment(衍生字,充實) / improve(同義字,改善) / enhance(同義字,提高) / impoverish(反義字,使貧困)
+相關: improve(同義字,改善) / enhance(同義字,提高) / impoverish(反義字,使貧困)
 字根: en-(使) + rich(富有) | 使富有 | rich, enlarge
 
 epidemic | L6
@@ -2811,7 +2811,7 @@ harass(ment) | L6
 v. 騷擾；不斷煩擾 | be harassed by 被⋯騷擾
 n. 騷擾（harassment） | sexual harassment 性騷擾
 例: The singer was harassed by photographers wherever she went. | 這位歌手走到哪裡都被攝影師騷擾。
-相關: harassment(衍生字,騷擾) / bother(同義字,打擾) / pester(同義字,糾纏) / bully(同義字,霸凌)
+相關: bother(同義字,打擾) / pester(同義字,糾纏) / bully(同義字,霸凌)
 
 hazard | L6
 n. 危險；危害 | health hazard 健康危害；fire hazard 火災隱患
@@ -2990,7 +2990,7 @@ imprison(ment) | L6
 v. 監禁；關押 | be imprisoned for 因⋯入獄
 n. 監禁（imprisonment） | life imprisonment 無期徒刑
 例: The man was imprisoned for ten years for robbery. | 那名男子因搶劫被判入獄十年。
-相關: imprisonment(衍生字,監禁) / prison(衍生字,監獄) / jail(同義字,監禁) / confine(同義字,限制) / release(反義字,釋放)
+相關: prison(衍生字,監獄) / jail(同義字,監禁) / confine(同義字,限制) / release(反義字,釋放)
 
 incentive | L6
 n. 誘因；激勵；動機 | an incentive to V 做⋯的誘因；tax incentives 租稅優惠
@@ -3734,7 +3734,7 @@ n. 代言人；喉舌（常含貶義） | a mouthpiece for the government 政府
 mouthpiece/spokesperson/spokesman/spokeswoman | L6
 n. 發言人；代言人 | a spokesperson for 為⋯發言的人；spokesperson 為性別中立用語
 例: A spokesperson for the hospital said the patient was in stable condition. | 醫院的發言人表示病人情況穩定。
-相關: representative(同義字,代表) / spokesman(衍生字,男發言人) / press conference(相關字,記者會) / announce(相關字,宣布)
+相關: representative(同義字,代表) / press conference(相關字,記者會) / announce(相關字,宣布)
 
 municipal | L6
 adj. 市的；市政的 | municipal government 市政府；a special municipality 直轄市

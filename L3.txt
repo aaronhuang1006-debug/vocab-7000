@@ -40,7 +40,7 @@ achieve(ment) | L3
 v. 達成；實現 | achieve a goal 達成目標；achieve success 獲得成功
 n. 成就；達成（achievement） | a sense of achievement 成就感
 例: She worked hard every day and finally achieved her dream of studying abroad. | 她每天努力，終於實現出國念書的夢想。
-相關: achievement(衍生字,成就) / accomplish(同義字,完成) / attain(同義字,達到) / a sense of achievement(片語,成就感)
+相關: accomplish(同義字,完成) / attain(同義字,達到) / a sense of achievement(片語,成就感)
 
 activity | L3
 n. 活動 | outdoor activities 戶外活動；extracurricular activities 課外活動
@@ -178,7 +178,7 @@ announce(ment) | L3
 v. 宣布；宣告 | announce that 宣布⋯
 n. 宣布；公告（announcement） | make an announcement 發布公告
 例: The principal announced that classes would be canceled because of the typhoon. | 校長宣布因颱風停課。
-相關: announcement(衍生字,宣布) / announcer(衍生字,播報員) / declare(同義字,宣布) / proclaim(同義字,宣告)
+相關: announcer(衍生字,播報員) / declare(同義字,宣布) / proclaim(同義字,宣告)
 
 apart | L3
 adv. 分開地；相隔 | apart from 除⋯之外；fall apart 崩解；tell A and B apart 分辨 A 與 B
@@ -1146,7 +1146,7 @@ connection | L3
 n. 連結；關聯 | in connection with 與⋯有關；connection between A and B A 與 B 之間的關聯
 n. 人脈；（交通）轉乘 | have good connections 人脈很廣；miss a connection 錯過轉乘
 例: Scientists found a connection between lack of sleep and weight gain. | 科學家發現睡眠不足和體重增加之間有關聯。
-相關: connect(衍生字,連接) / relation(同義字,關係) / link(同義字,關聯) / network(相關字,網絡)
+相關: connect(衍生字,連接) / relation(同義字,關係) / link(同義字,關聯) / network(相關字,網路)
 
 conscious | L3
 adj. 意識到的；察覺的 | be conscious of 意識到⋯
@@ -1731,7 +1731,7 @@ employ(ment) | L3
 v. 僱用；使用 | be employed by 受僱於；employ a method 使用一種方法
 n. 僱用；工作（employment） | find employment 找到工作；the employment rate 就業率
 例: The company employs more than 500 workers. | 這家公司僱用五百多名員工。
-相關: employment(衍生字,僱用) / unemployment(反義字,失業) / hire(同義字,僱用) / job(同義字,工作)
+相關: unemployment(反義字,失業) / hire(同義字,僱用) / job(同義字,工作)
 
 employee | L3
 n. 員工；受僱者 | full-time employees 全職員工
@@ -1764,7 +1764,7 @@ v. 從事；參與 | be engaged in 從事⋯；engage in 參與⋯
 v. 訂婚 | be engaged to sb 與某人訂婚
 n. 訂婚；約定；參與（engagement） | an engagement ring 訂婚戒指
 例: She is engaged in volunteer work at the hospital. | 她在醫院從事志工工作。
-相關: engagement(衍生字,訂婚；約定) / involve(同義字,參與) / participate(同義字,參加) / fiancé(相關字,未婚夫)
+相關: involve(同義字,參與) / participate(同義字,參加) / fiancé(相關字,未婚夫)
 
 engine | L3
 n. 引擎；發動機 | start the engine 發動引擎；search engine 搜尋引擎
@@ -3101,7 +3101,7 @@ v. 管理；經營 | manage a company 經營公司
 v. 設法做到 | manage to V 設法完成（強調成功）
 n. 管理；經營（management）；管理階層 | time management 時間管理
 例: Although the test was difficult, she managed to finish it on time. | 雖然考試很難，她還是設法準時寫完了。
-相關: manager(衍生字,經理) / manageable(衍生字,可處理的) / handle(同義字,處理) / run(同義字,經營) / management(衍生字,管理)
+相關: manager(衍生字,經理) / manageable(衍生字,可處理的) / handle(同義字,處理) / run(同義字,經營)
 
 manageable | L3
 adj. 可處理的；可控制的；易管理的 | a manageable amount of work 可應付的工作量
@@ -3474,7 +3474,7 @@ adj. 神經的 | the nervous system 神經系統
 相關: nerve(衍生字,神經) / anxious(同義字,焦慮的) / tense(同義字,緊張的) / calm(反義字,冷靜的)
 
 network | L3
-n. 網路；網絡；人脈 | social network 社群網路；a network of 由⋯構成的網絡
+n. 網路；人脈 | social network 社群網路；a network of 由⋯構成的網路
 v. 建立人脈 |
 例: Taipei has an excellent MRT network that connects most parts of the city. | 台北有完善的捷運路網，連接市區大部分地方。
 相關: Internet(相關字,網際網路) / system(同義字,系統) / connection(相關字,連結) / web(同義字,網)
@@ -3644,7 +3644,7 @@ n. 桶；提桶 | a pail of water 一桶水
 pal | L3
 n. 好友；夥伴 | pen pal 筆友
 例: I've been pen pals with a Japanese girl for three years. | 我和一個日本女孩當了三年的筆友。
-相關: friend(同義字,朋友) / buddy(同義字,夥伴) / mate(同義字,伙伴) / companion(同義字,同伴)
+相關: friend(同義字,朋友) / buddy(同義字,夥伴) / mate(同義字,夥伴) / companion(同義字,同伴)
 
 palace | L3
 n. 宮殿 | the National Palace Museum 國立故宮博物院
@@ -3727,7 +3727,7 @@ pave(ment) | L3
 v. 鋪（路） | pave the way for 為⋯鋪路
 n. 人行道；路面（pavement） | 美式多用 sidewalk
 例: The new invention paved the way for modern computers. | 這項新發明為現代電腦鋪了路。
-相關: pavement(衍生字,人行道) / sidewalk(同義字,人行道) / road(相關字,道路) / pave the way for(片語,為⋯鋪路)
+相關: sidewalk(同義字,人行道) / road(相關字,道路) / pave the way for(片語,為⋯鋪路)
 
 paw | L3
 n. 爪子；腳掌 | a cat's paw 貓掌
@@ -4374,7 +4374,7 @@ replace(ment) | L3
 v. 取代；更換 | replace A with B 用 B 取代 A
 n. 取代；替代品（replacement） |
 例: Many workers worry that robots will replace them in the future. | 許多工人擔心未來會被機器人取代。
-相關: replacement(衍生字,替代品) / substitute(同義字,替代) / take the place of(片語,取代) / exchange(相關字,交換)
+相關: substitute(同義字,替代) / take the place of(片語,取代) / exchange(相關字,交換)
 
 represent | L3
 v. 代表；象徵 | represent one's country 代表國家
@@ -5399,7 +5399,7 @@ system | L3
 n. 系統；體系；制度 | the education system 教育制度；the solar system 太陽系
 n. 方法；體制 |
 例: Many people believe the education system needs to change. | 許多人認為教育制度需要改變。
-相關: systematic(衍生字,有系統的) / structure(同義字,結構) / network(同義字,網絡) / method(同義字,方法)
+相關: systematic(衍生字,有系統的) / structure(同義字,結構) / network(同義字,網路) / method(同義字,方法)
 
 tablet | L3
 n. 藥片；藥錠 | take two tablets 吃兩顆藥
@@ -5999,7 +5999,7 @@ web | L3
 n. 網；蜘蛛網 | a spider web 蜘蛛網
 n. 網際網路（the Web） | a web page 網頁
 例: I found the information on a government web page. | 我在一個政府網頁上找到這項資訊。
-相關: website(衍生字,網站) / network(同義字,網絡) / Internet(同義字,網際網路) / net(同義字,網)
+相關: website(衍生字,網站) / network(同義字,網路) / Internet(同義字,網際網路) / net(同義字,網)
 
 weed | L3
 n. 雜草 | pull up weeds 拔雜草

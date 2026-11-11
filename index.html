@@ -66,6 +66,11 @@ h1{font-family:var(--f-head);font-weight:700;font-size:clamp(22px,4.4vw,30px);li
 .sugg button{display:flex;width:100%;align-items:center;gap:10px;padding:9px 14px;border:0;background:none;color:var(--fg);font:15px var(--f-body);text-align:left;cursor:pointer}
 .sugg button[aria-selected="true"],.sugg button:hover{background:var(--soft)}
 .sugg .sw{font-family:var(--f-head);font-weight:500;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sugg .zhm .sw{flex:0 1 auto;max-width:55%}
+.sugg .sz{flex:1;min-width:0;font-size:13px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sugg .more{justify-content:center;color:var(--accent);font-size:14px;border-top:1px solid var(--line)}
+.sugg .wait{color:var(--muted);font-size:14px;cursor:default}
+.wz mark,.sz mark{background:none;color:var(--accent);font-weight:700}
 .lv{display:inline-flex;align-items:center;font:500 11.5px/1 var(--f-mono);padding:4px 7px;border-radius:5px;letter-spacing:.04em;white-space:nowrap}
 .lv1{background:var(--l1);color:var(--l1-fg)}.lv2{background:var(--l2);color:var(--l2-fg)}.lv3{background:var(--l3);color:var(--l3-fg)}
 .lv4{background:var(--l4);color:var(--l4-fg)}.lv5{background:var(--l5);color:var(--l5-fg)}.lv6{background:var(--l6);color:var(--l6-fg)}
@@ -263,7 +268,7 @@ button.part:hover{border-color:var(--accent)}
 
   <div class="search" role="combobox" aria-expanded="false" aria-haspopup="listbox" id="combo">
     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-    <input id="q" type="search" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="輸入單字或片語，例如 abandon" aria-label="輸入英文單字或片語" aria-controls="sugg">
+    <input id="q" type="search" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="輸入英文或中文，例如 abandon、放棄" aria-label="輸入英文單字、片語或中文意思" aria-controls="sugg">
     <div class="sugg" id="sugg" role="listbox" hidden></div>
   </div>
 
@@ -357,6 +362,48 @@ function nearMiss(q) {
   return KEYS.filter(k => k[0] === q[0]).map(k => [k, lev(q, k)]).filter(x => x[1] <= 2).sort((a,b) => a[1]-b[1]).slice(0,6).map(x => x[0]);
 }
 const levelsOf = k => [...new Set((IDX.get(norm(k)) || []).map(e => e.l))].sort();
+
+/* ---------- 中文反查：用詞義欄的中文找英文 ---------- */
+const HAN = /[㐀-鿿]/, BOPO = /[㄀-ㄯㆠ-ㆿˇˊˋ˙]/;
+const isZh = v => HAN.test(v) && !BOPO.test(v);
+let ZH = null, zhBuilding = null;
+function zhIndex() {
+  if (ZH) return Promise.resolve(ZH);
+  if (!zhBuilding) zhBuilding = Promise.all([1, 2, 3, 4, 5, 6, "P"].map(loadLevel)).then(() => {
+    const terms = [];
+    for (const e of E) {
+      const d = DATA.get(e.w + "|" + e.l); if (!d) continue;
+      const key = norm(e.keys[0]);
+      d.senses.forEach((s, si) => {
+        if (/^(易錯|注意|易混淆|比較|用法)[：:]/.test(s.zh)) return;
+        const plain = s.zh.replace(/（[^）]*）|\([^)]*\)/g, "");
+        plain.split(/[；;，,、／/]/).map(t => t.trim()).filter(x => x && HAN.test(x)).forEach((x, ti) => terms.push({ t: x, b: x.replace(/[的地]$/, ""), key, l: e.l, si, ti, zh: s.zh }));
+        // 括號裡的字也收（例如「（錢）拮据的」的「錢」不收，但「在船（飛機、火車）上」的「火車」收）
+        for (const m of s.zh.matchAll(/（([^）]*)）/g)) for (const t of m[1].split(/[、，,；]/)) { const x = t.trim(); if (x.length >= 2 && HAN.test(x) && !/^(美式|英式|口語|正式|較正式|常複數|複數|單數|多用於|用複數)/.test(x)) terms.push({ t: x, b: x, key, l: e.l, si: si + 3, ti: 2, zh: s.zh }); }
+      });
+    }
+    return (ZH = terms);
+  });
+  return zhBuilding;
+}
+function zhSearch(v) {
+  if (!ZH) return null;
+  const vb = v.replace(/[的地]$/, "") || v;
+  const best = new Map();
+  for (const x of ZH) {
+    let sc;
+    if (x.t === v || x.b === vb) sc = 100;
+    else if (x.t.startsWith(v)) sc = 72;
+    else if (x.t.endsWith(v) || x.b.endsWith(vb)) sc = 64;
+    else if (x.t.includes(v)) sc = 48;
+    else continue;
+    sc -= Math.min(20, (x.t.length - v.length) * 2) + Math.min(x.si, 5) * 6 + Math.min(x.ti, 4) * 4 + (x.l === "P" ? 3 : +x.l * 0.5);
+    const old = best.get(x.key);
+    if (!old || sc > old.sc) best.set(x.key, { key: x.key, sc, zh: x.zh, l: x.l });
+  }
+  return [...best.values()].sort((a, b) => b.sc - a.sc || a.key.localeCompare(b.key));
+}
+const markZh = (zh, v) => { const i = zh.indexOf(v); return i < 0 ? esc(zh) : esc(zh.slice(0, i)) + "<mark>" + esc(v) + "</mark>" + esc(zh.slice(i + v.length)); };
 
 /* ---------- content files (L1.txt ... L6.txt) ---------- */
 const POS_RE = /^(n|v|adj|adv|prep|conj|pron|aux|art|interj|num|det)\.(\/(n|v|adj|adv|prep|conj|pron|aux|art|interj)\.)*\s/;
@@ -572,18 +619,39 @@ async function showLevel(l, opts = {}) {
   if (opts.restore && opts.y != null) requestAnimationFrame(() => window.scrollTo({ top: opts.y }));
 }
 
-let seq = 0;
+let seq = 0, zhBack = null;
+async function showZh(v, opts = {}) {
+  v = v.trim(); if (!v) return;
+  setView("lookup"); session = null; backTo = null; zhBack = null; hideSugg(); markLevel(0); q.value = v;
+  const my = ++seq;
+  try { history.replaceState(null, "", "#zh=" + encodeURIComponent(v)); } catch {}
+  if (!opts.restore) { window.scrollTo({ top: 0 }); track("zh-" + v, "中文查詢：" + v); }
+  out.innerHTML = `<article class="card"><div class="lvhead"><h2>「${esc(v)}」的英文</h2></div><div class="state"><div class="sk" style="width:60%"></div><div class="sk" style="width:85%"></div><p class="note">載入中⋯</p></div></article>`;
+  await zhIndex();
+  if (my !== seq) return;
+  const rows = zhSearch(v) || [];
+  const MAX = 80, shown = rows.slice(0, MAX);
+  out.innerHTML = `<article class="card"><div class="lvhead"><h2>「${esc(v)}」的英文</h2></div>
+    ${rows.length ? `<p class="note">詞義裡有「${esc(v)}」的單字與片語共 ${rows.length} 個${rows.length > MAX ? `，列出最相關的 ${MAX} 個` : ""}，意思最接近的排前面。點英文看完整解釋。</p>
+    <ul class="wl">${shown.map(r => `<li><button type="button" data-act="zhopen" data-k="${esc(r.key)}"><span class="ww">${esc(r.key)}</span><span class="wz">${markZh(r.zh, v)}</span><span>${levelsOf(r.key).map(l => lvBadge(l)).join("")}</span></button></li>`).join("")}</ul>`
+    : `<p class="none">七千單字和片語的中文詞義裡找不到「${esc(v)}」。可以試試更短或更常見的說法，例如把「非常開心」改成「開心」或「高興」。</p>`}</article>`;
+  zhCtx = { v, y: 0 };
+  if (opts.restore && opts.y != null) requestAnimationFrame(() => window.scrollTo({ top: opts.y }));
+}
+let zhCtx = null;
 async function show(key, opts = {}) {
   key = norm(key);
   const entries = IDX.get(key);
   hideSugg(); setView("lookup"); session = null; markLevel(0);
   backTo = opts.fromLevel && levelCtx ? { ...levelCtx } : null;
+  zhBack = opts.fromZh || null;
   if (entries) lastKey = key;
   if (!entries) return showMiss(key);
   const my = ++seq;
   if (!opts.keepHash) try { history.replaceState(null, "", /^[a-z-]+$/.test(key) ? "#" + key : location.pathname + location.search); } catch {}
   track((entries.some(e => e.l === "P") ? "phrase-" : "word-") + key.replace(/\s+/g, "-"), key);
-  const back = backTo ? `<button class="backlv" type="button" data-act="backlv">← 回到${backTo.l === "P" ? "片語表" : ` Level ${backTo.l} 單字表`}</button>` : "";
+  const back = backTo ? `<button class="backlv" type="button" data-act="backlv">← 回到${backTo.l === "P" ? "片語表" : ` Level ${backTo.l} 單字表`}</button>`
+    : zhBack ? `<button class="backlv" type="button" data-act="backzh">← 回到「${esc(zhBack.v)}」的搜尋結果</button>` : "";
   out.innerHTML = `<article class="card">${back}${headHTML(key, entries)}<div class="state" id="st"><div class="sk" style="width:55%"></div><div class="sk" style="width:80%"></div><div class="sk" style="width:68%"></div><p class="note">載入中⋯</p></div></article>`;
   const r = await fetchEntry(key, entries);
   if (my !== seq) return;
@@ -613,12 +681,34 @@ out.addEventListener("click", ev => {
 /* ---------- search box ---------- */
 const q = document.getElementById("q"), sugg = document.getElementById("sugg"), combo = document.getElementById("combo");
 let items = [], sel = -1;
-function renderSugg() {
+let zhMode = false, arrowed = false;
+function renderSugg(ev) {
+  if (ev && ev.isComposing) return;
   const v = norm(q.value);
+  arrowed = false;
+  zhMode = isZh(v);
+  if (zhMode) return renderZhSugg(v);
+  if (BOPO.test(v)) return hideSugg();
   items = suggest(v);
   sel = items.length ? 0 : -1;
   if (!v || !items.length) return hideSugg();
   sugg.innerHTML = items.map((k, i) => `<button type="button" role="option" id="opt${i}" aria-selected="${i === sel}" data-k="${esc(k)}"><span class="sw">${esc(k)}</span>${levelsOf(k).map(l => lvBadge(l)).join("")}</button>`).join("");
+  sugg.hidden = false; combo.setAttribute("aria-expanded", "true");
+}
+function renderZhSugg(v) {
+  const rows = zhSearch(v);
+  if (!rows) {
+    items = []; sel = -1;
+    sugg.innerHTML = `<button type="button" class="wait" tabindex="-1">正在準備中文查詢⋯</button>`;
+    sugg.hidden = false; combo.setAttribute("aria-expanded", "true");
+    zhIndex().then(() => { if (norm(q.value) === v && document.activeElement === q) renderZhSugg(v); });
+    return;
+  }
+  if (!rows.length) { items = []; sel = -1; sugg.innerHTML = `<button type="button" class="wait" tabindex="-1">找不到詞義含「${esc(v)}」的字</button>`; sugg.hidden = false; combo.setAttribute("aria-expanded", "true"); return; }
+  const top = rows.slice(0, 7);
+  items = top.map(r => r.key); sel = 0;
+  sugg.innerHTML = top.map((r, i) => `<button type="button" role="option" class="zhm" id="opt${i}" aria-selected="${i === sel}" data-k="${esc(r.key)}"><span class="sw">${esc(r.key)}</span><span class="sz">${markZh(r.zh, v)}</span>${levelsOf(r.key).map(l => lvBadge(l)).join("")}</button>`).join("")
+    + (rows.length > top.length ? `<button type="button" class="more" data-zhall="${esc(v)}">看全部 ${rows.length} 個結果</button>` : "");
   sugg.hidden = false; combo.setAttribute("aria-expanded", "true");
 }
 function hideSugg() { sugg.hidden = true; combo.setAttribute("aria-expanded", "false"); }
@@ -629,19 +719,27 @@ function moveSel(d) {
   sugg.children[sel]?.scrollIntoView({ block: "nearest" });
 }
 q.addEventListener("input", renderSugg);
+q.addEventListener("compositionend", () => renderSugg());
 q.addEventListener("keydown", e => {
-  if (e.key === "ArrowDown") { e.preventDefault(); moveSel(1); }
-  else if (e.key === "ArrowUp") { e.preventDefault(); moveSel(-1); }
+  if (e.isComposing || e.keyCode === 229) return;
+  if (e.key === "ArrowDown") { e.preventDefault(); arrowed = true; moveSel(1); }
+  else if (e.key === "ArrowUp") { e.preventDefault(); arrowed = true; moveSel(-1); }
   else if (e.key === "Escape") hideSugg();
   else if (e.key === "Enter") {
     e.preventDefault();
     const v = norm(q.value); if (!v) return;
+    if (isZh(v)) { if (arrowed && !sugg.hidden && sel >= 0) { track("zh-" + v, "中文查詢：" + v); const k = items[sel]; q.value = k; show(k); } else showZh(v); q.blur(); return; }
     const k = !sugg.hidden && sel >= 0 ? items[sel] : v;
     q.value = k; show(k); q.blur();
   }
 });
 sugg.addEventListener("mousedown", e => e.preventDefault());
-sugg.addEventListener("click", e => { const b = e.target.closest("[data-k]"); if (b) { q.value = b.dataset.k; show(b.dataset.k); } });
+sugg.addEventListener("click", e => {
+  const all = e.target.closest("[data-zhall]"); if (all) { showZh(all.dataset.zhall); q.blur(); return; }
+  const b = e.target.closest("[data-k]"); if (!b) return;
+  if (zhMode) { const v = norm(q.value); track("zh-" + v, "中文查詢：" + v); zhCtx = { v, y: 0 }; q.value = b.dataset.k; show(b.dataset.k, { fromZh: { v, y: 0 } }); return; }
+  q.value = b.dataset.k; show(b.dataset.k);
+});
 q.addEventListener("blur", () => setTimeout(hideSugg, 120));
 q.addEventListener("focus", () => { if (q.value) renderSugg(); });
 
@@ -780,6 +878,8 @@ function onAct(a, el) {
   if (a === "gobackup") { document.querySelector(".backup")?.scrollIntoView({ block: "start" }); return; }
   if (a === "exall") { el.closest(".exams")?._all?.(); return; }
   if (a === "lvopen") { const fromLv = view === "level"; if (fromLv && levelCtx) levelCtx.y = window.scrollY; q.value = el.dataset.k; show(el.dataset.k, { fromLevel: fromLv }); window.scrollTo({ top: 0 }); return; }
+  if (a === "zhopen") { if (zhCtx) zhCtx.y = window.scrollY; q.value = el.dataset.k; show(el.dataset.k, { fromZh: zhCtx ? { ...zhCtx } : null }); window.scrollTo({ top: 0 }); return; }
+  if (a === "backzh") { const b = zhBack; if (b) showZh(b.v, { restore: true, y: b.y }); return; }
   if (a === "backlv") { const b = backTo; if (b) showLevel(b.l, { sort: b.sort, tested: b.tested, restore: true, y: b.y }); return; }
   if (a === "lvsort") { if (levelCtx) showLevel(levelCtx.l, { sort: el.dataset.sort }); return; }
   if (a === "lvtested") { if (levelCtx) showLevel(levelCtx.l, { tested: !levelCtx.tested }); return; }
@@ -921,7 +1021,7 @@ async function showRoot(part, fromKey) {
 
 /* ---------- home, back-to-top, scroll position ---------- */
 function goHome() {
-  session = null; backTo = null; lastKey = null; setView("lookup"); markLevel(""); q.value = ""; hideSugg(); seq++;
+  session = null; backTo = null; zhBack = null; lastKey = null; setView("lookup"); markLevel(""); q.value = ""; hideSugg(); seq++;
   try { history.replaceState(null, "", location.pathname + location.search); } catch {}
   showDemo(); window.scrollTo({ top: 0 }); updateFloat();
 }
@@ -959,6 +1059,7 @@ function fromHash() {
   const h = decodeURIComponent(location.hash.slice(1));
   const lm = h.match(/^L([1-6P])$/);
   if (lm) { showLevel(lm[1] === "P" ? "P" : +lm[1]); return true; }
+  if (h.startsWith("zh=") && isZh(h.slice(3))) { showZh(h.slice(3)); return true; }
   if (h && IDX.has(norm(h))) { q.value = norm(h); show(norm(h), { keepHash: true }); return true; }
   return false;
 }

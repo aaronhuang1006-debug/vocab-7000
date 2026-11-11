@@ -218,7 +218,7 @@ arrange(ment) | L2
 v. 安排；整理；排列 | arrange for N to V 安排某人做⋯；arrange flowers 插花
 n. 安排；布置（arrangement） | make arrangements for 為⋯做安排
 例: The school arranged a bus to take students to the museum. | 學校安排了一輛巴士載學生去博物館。
-相關: arrangement(衍生字,安排) / organize(同義字,組織) / plan(同義字,計畫) / rearrange(衍生字,重新安排)
+相關: organize(同義字,組織) / plan(同義字,計畫) / rearrange(衍生字,重新安排)
 
 arrest | L2
 v. 逮捕 | arrest N for 因⋯逮捕某人
@@ -1425,7 +1425,7 @@ v. 發展；開發；培養 | develop a habit 養成習慣；developing country 
 v. 沖洗（底片） |
 n. 發展（development） | economic development 經濟發展
 例: Reading every day can help you develop a good vocabulary. | 每天閱讀可以幫助你培養豐富的字彙。
-相關: development(衍生字,發展) / developer(衍生字,開發者) / grow(同義字,成長) / developed(衍生字,已開發的)
+相關: developer(衍生字,開發者) / grow(同義字,成長) / developed(衍生字,已開發的)
 
 dew | L2
 n. 露水 | morning dew 朝露
@@ -1486,7 +1486,7 @@ disagree(ment) | L2
 v. 不同意；不一致 | disagree with + 人／意見；disagree about／on + 議題
 n. 意見不合（disagreement） | have a disagreement with 和⋯意見不合
 例: I disagree with you about the plan for the class trip. | 關於班遊的計畫，我不同意你的看法。
-相關: agree(反義字,同意) / disagreement(衍生字,意見不合) / object(同義字,反對) / argue(相關字,爭論)
+相關: agree(反義字,同意) / object(同義字,反對) / argue(相關字,爭論)
 
 disappear | L2
 v. 消失；不見 | disappear from 從⋯消失（不用被動）
@@ -1742,7 +1742,7 @@ encourage(ment) | L2
 v. 鼓勵；激勵 | encourage N to V 鼓勵某人⋯
 n. 鼓勵（encouragement） | words of encouragement 鼓勵的話
 例: My teacher encouraged me to take part in the English speech contest. | 老師鼓勵我參加英文演講比賽。
-相關: encouragement(衍生字,鼓勵) / discourage(反義字,使氣餒) / courage(衍生字,勇氣) / inspire(同義字,激勵)
+相關: discourage(反義字,使氣餒) / courage(衍生字,勇氣) / inspire(同義字,激勵)
 字根: en-(使) + courage(勇氣) | 使有勇氣 | discourage
 
 ending | L2
@@ -1764,7 +1764,7 @@ enjoy(ment) | L2
 v. 享受；喜愛 | enjoy + V-ing 喜歡做⋯；enjoy oneself 玩得愉快
 n. 樂趣；享受（enjoyment） |
 例: We enjoyed ourselves very much at the beach. | 我們在海灘玩得很愉快。
-相關: enjoyment(衍生字,樂趣) / enjoyable(衍生字,令人愉快的) / like(同義字,喜歡) / have fun(片語,玩得愉快)
+相關: enjoyable(衍生字,令人愉快的) / like(同義字,喜歡) / have fun(片語,玩得愉快)
 
 entire | L2
 adj. 全部的；整個的 | the entire world 全世界
@@ -1820,7 +1820,7 @@ excite(ment) | L2
 v. 使興奮；刺激 | be excited about 對⋯感到興奮
 n. 興奮；刺激（excitement） | in excitement 興奮地
 例: The children were excited about the trip to the zoo. | 孩子們對去動物園感到很興奮。
-相關: excitement(衍生字,興奮) / exciting(衍生字,令人興奮的) / excited(衍生字,感到興奮的) / thrill(同義字,使興奮)
+相關: exciting(衍生字,令人興奮的) / excited(衍生字,感到興奮的) / thrill(同義字,使興奮)
 
 excuse | L2
 n. 藉口；理由 | make an excuse 找藉口
@@ -2030,7 +2030,7 @@ v. 閃光；閃現 |
 flashlight/flash | L2
 n. 手電筒 |
 例: We used a flashlight to find our way in the dark. | 我們用手電筒在黑暗中找路。
-相關: torch(同義字,手電筒，英式) / lamp(相關字,燈) / battery(相關字,電池) / flash(衍生字,閃光)
+相關: torch(同義字,手電筒，英式) / lamp(相關字,燈) / battery(相關字,電池)
 
 flat | L2
 adj. 平的；扁平的 | a flat tire 洩氣的輪胎；fall flat 完全失敗
@@ -2602,7 +2602,7 @@ improve(ment) | L2
 v. 改善；改進；進步 | improve one's English 提升英文能力
 n. 改善；進步（improvement） | make improvements 做改進；room for improvement 改進空間
 例: Watching English movies can help you improve your listening skills. | 看英文電影可以幫助你提升聽力。
-相關: improvement(衍生字,改善) / better(同義字,改善) / enhance(同義字,增進) / worsen(反義字,惡化)
+相關: better(同義字,改善) / enhance(同義字,增進) / worsen(反義字,惡化)
 
 include | L2
 v. 包括；包含 | including N 包括⋯
@@ -3108,7 +3108,7 @@ v. 相配；相稱 | match A with B 把 A 與 B 配對；be no match for 不是�
 相關: game(同義字,比賽) / fit(易混淆字,尺寸合身) / suit(易混淆字,適合) / mismatch(反義字,不相配)
 
 mate | L2
-n. 同伴；伙伴 | classmate 同學；roommate 室友；teammate 隊友
+n. 同伴；夥伴 | classmate 同學；roommate 室友；teammate 隊友
 n. （動物的）配偶 |
 v. 交配 |
 例: My roommate and I take turns cleaning our room. | 我和室友輪流打掃房間。
@@ -3146,7 +3146,7 @@ v. 測量；衡量 | measure the length 量長度
 n. 措施；手段 | take measures to 採取措施去⋯
 n. 測量；尺寸（measurement） | take measurements 量尺寸
 例: The government took measures to reduce air pollution. | 政府採取了減少空氣污染的措施。
-相關: measurement(衍生字,測量) / measurable(衍生字,可測量的) / step(同義字,措施) / size(相關字,尺寸)
+相關: measurable(衍生字,可測量的) / step(同義字,措施) / size(相關字,尺寸)
 
 medicine | L2
 n. 藥 | take medicine 吃藥（用 take 不用 eat）
@@ -3424,7 +3424,7 @@ net | L2
 n. 網 | fishing net 漁網；the Net 網際網路
 adj. 淨的；純的 | net weight 淨重；net income 淨收入
 例: The fishermen pulled their nets out of the sea early in the morning. | 漁夫們一大早把漁網從海裡拉起來。
-相關: network(衍生字,網路；網絡) / Internet(衍生字,網際網路) / web(同義字,網) / gross(反義字,總共的)
+相關: network(衍生字,網路) / Internet(衍生字,網際網路) / web(同義字,網) / gross(反義字,總共的)
 
 niece | L2
 n. 姪女；外甥女 |
@@ -4178,7 +4178,7 @@ punish(ment) | L2
 v. 處罰；懲罰 | punish sb for sth 因某事處罰某人
 n. 處罰（punishment） | physical punishment 體罰；capital punishment 死刑
 例: The boy was punished for cheating on the test. | 那個男孩因考試作弊被處罰。
-相關: punishment(衍生字,處罰) / penalty(同義字,處罰) / reward(反義字,獎賞) / discipline(相關字,紀律)
+相關: penalty(同義字,處罰) / reward(反義字,獎賞) / discipline(相關字,紀律)
 
 pupil | L2
 n. 學生（多指小學生） |
@@ -4362,7 +4362,7 @@ require(ment) | L2
 v. 需要；要求 | require sb to V 要求某人做⋯；be required to V 被要求⋯
 n. 必要條件；要求（requirement） | meet the requirements 符合要求
 例: All students are required to wear uniforms at school. | 所有學生在學校都必須穿制服。
-相關: requirement(衍生字,要求) / need(同義字,需要) / demand(同義字,要求) / request(易混淆字,請求)
+相關: need(同義字,需要) / demand(同義字,要求) / request(易混淆字,請求)
 字根: re-(再) + quire(尋求) | 一再尋求 | request, inquire
 
 respect | L2
@@ -4583,7 +4583,7 @@ v. 解決；決定 | settle a problem 解決問題；settle an argument 平息�
 v. 定居；安頓 | settle down 定居；安定下來；settle in 適應新環境
 n. 解決；殖民地；定居地（settlement） | reach a settlement 達成和解
 例: After traveling around the world, he finally settled down in Hualien. | 環遊世界後，他終於在花蓮定居下來。
-相關: settlement(衍生字,解決；定居地) / settler(衍生字,移民者) / solve(同義字,解決) / resolve(同義字,解決)
+相關: settler(衍生字,移民者) / solve(同義字,解決) / resolve(同義字,解決)
 
 share | L2
 v. 分享；共用 | share A with B 與 B 分享 A
@@ -5456,7 +5456,7 @@ v. 治療 | treat a patient 治療病人
 v. 請客 | treat sb to sth 請某人吃⋯；It's my treat. 我請客
 n. 治療；對待（treatment） | receive treatment 接受治療；medical treatment 醫療
 例: Let me treat you to dinner to thank you for your help. | 讓我請你吃晚餐謝謝你的幫忙。
-相關: treatment(衍生字,治療；對待) / cure(同義字,治療) / handle(同義字,對待) / Trick or treat(片語,不給糖就搗蛋)
+相關: cure(同義字,治療) / handle(同義字,對待) / Trick or treat(片語,不給糖就搗蛋)
 
 trial | L2
 n. 審判 | be on trial 受審
