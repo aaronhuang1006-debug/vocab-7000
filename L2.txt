@@ -796,11 +796,13 @@ n. 文字；字元 | Chinese characters 漢字
 相關: characteristic(衍生字,特徵) / personality(同義字,個性) / role(同義字,角色) / characterize(衍生字,具有⋯特徵)
 
 charge | L2
-v. 收費；索價 | charge N + 金額 + for 向某人收⋯費用
+v. 收費；索價 | charge sb + 金額 + for sth 為某物向某人收取⋯；They charged me NT$500 for the repair.
 n. 費用 | free of charge 免費；service charge 服務費
 v. 控告；指控 | charge N with 控告某人⋯
 n. 掌管；負責 | in charge of 負責⋯
 v. 充電 | charge a phone 手機充電
+v. 衝向；衝鋒 | charge at／toward 朝⋯衝過去
+n. 電荷 | positive／negative charge 正／負電荷
 例: Who is in charge of cleaning the classroom this week? | 這星期誰負責打掃教室？
 相關: fee(同義字,費用) / accuse(同義字,指控) / charger(衍生字,充電器) / free of charge(片語,免費) / in charge of(片語,負責)
 
@@ -2035,7 +2037,7 @@ n. 手電筒 |
 flat | L2
 adj. 平的；扁平的 | a flat tire 洩氣的輪胎；fall flat 完全失敗
 n. 公寓（英式） |
-adv. 平地；整整 | in ten seconds flat 整整十秒
+adv. 平坦地；平放地；（時間）只花了 | lie flat 平躺；in ten seconds flat 只花了短短十秒（強調快）
 例: We had a flat tire on the way to Kenting. | 我們在去墾丁的路上爆胎了。
 相關: level(同義字,平的) / smooth(同義字,平滑的) / apartment(同義字,公寓) / flatten(衍生字,使變平)
 
@@ -4115,6 +4117,7 @@ v. 進展；進步 |
 project | L2
 n. 計畫；專題；方案 | a school project 學校專題；carry out a project 執行計畫
 v. 投射；預估 | project images onto a screen 把影像投射到螢幕上；be projected to V 預計⋯
+v. 展現（形象）；使（聲音）傳遠 | project a positive image 展現正面形象
 例: We are working on a science project about water pollution. | 我們正在做一個關於水污染的科學專題。
 相關: projector(衍生字,投影機) / plan(同義字,計畫) / scheme(同義字,方案) / predict(同義字,預測)
 字根: pro-(向前) + ject(丟) | 向前丟出 | object, reject, subject
@@ -4305,6 +4308,7 @@ n. 冰箱 | put sth in the fridge 把⋯放進冰箱
 
 refuse | L2
 v. 拒絕 | refuse to V 拒絕做⋯；refuse an offer 拒絕提議
+n. 垃圾；廢棄物 | 讀 [ˈrɛfjus]，重音在前；動詞讀 [rɪˈfjuz]
 例: She refused to tell anyone where she had been. | 她拒絕告訴任何人她去了哪裡。
 相關: refusal(衍生字,拒絕) / reject(同義字,拒絕) / decline(同義字,婉拒) / accept(反義字,接受)
 
@@ -4878,6 +4882,7 @@ v. 跳；彈 | spring up 湧現；三態 spring, sprang, sprung
 square | L2
 n. 正方形；廣場 | Times Square 時代廣場
 adj. 正方形的；平方的 | square meter 平方公尺
+v. 使成平方；使成正方形 | 3 squared is 9. 3 的平方是 9
 例: Liberty Square is in front of the Chiang Kai-shek Memorial Hall. | 自由廣場位於中正紀念堂前。
 相關: rectangle(相關字,長方形) / plaza(同義字,廣場) / circle(相關字,圓形) / triangle(相關字,三角形)
 

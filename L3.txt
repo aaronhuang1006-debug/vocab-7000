@@ -748,6 +748,7 @@ n. 首都 | the capital of Japan 日本首都
 n. 大寫字母 | in capital letters 用大寫字母
 n. 資本；資金 | raise capital 籌措資金
 adj. 死刑的 | capital punishment 死刑
+adj. 主要的；極重要的 | of capital importance 極為重要
 例: Tokyo is the capital of Japan. | 東京是日本的首都。
 相關: capitalism(衍生字,資本主義) / city(相關字,城市) / capital punishment(片語,死刑) / Capitol(易混淆字,國會大廈)
 字根: capit(頭) + -al(形容詞字尾) | 頭等的、最重要的 | captain, chief
@@ -5498,6 +5499,7 @@ tender | L3
 adj. 嫩的；柔軟的 | tender meat 嫩肉
 adj. 溫柔的；親切的 | a tender smile 溫柔的微笑
 adj. 疼痛的；一碰就痛的 |
+v. 正式提出；投標 | tender one's resignation 提出辭呈；tender for 投標⋯
 例: The beef was so tender that it melted in my mouth. | 這牛肉很嫩，入口即化。
 相關: tenderness(衍生字,溫柔) / gentle(同義字,溫柔的) / soft(同義字,柔軟的) / tough(反義字,堅韌的；老的)
 

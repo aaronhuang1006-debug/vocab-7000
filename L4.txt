@@ -1240,7 +1240,8 @@ n. 容器；貨櫃 | a plastic container 塑膠容器
 字根: con-(一起) + tain(握住) + -er(物) | 把東西握在一起的物品 | maintain, obtain
 
 content | L4
-adj. 滿足的；甘願的 | be content with 滿足於；be content to V 甘願做⋯
+n. 內容；含量 | 讀 [ˈkɑntɛnt]，重音在前；the content of the article 文章內容；fat content 脂肪含量；contents 目錄（table of contents）
+adj. 滿足的；甘願的 | 讀 [kənˈtɛnt]，重音在後；be content with 滿足於；be content to V 甘願做⋯
 v. 使滿足 | content oneself with 以⋯為滿足
 例: He is content with a simple life in the countryside. | 他滿足於鄉下簡單的生活。
 相關: contented(衍生字,滿足的) / satisfied(同義字,滿意的) / discontent(反義字,不滿) / happy(同義字,快樂的)

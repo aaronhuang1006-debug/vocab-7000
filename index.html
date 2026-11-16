@@ -199,6 +199,11 @@ button.chip:hover{border-color:var(--accent)}
 .empty p{margin:0;color:var(--muted)}
 .backup{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:16px}
 .backup h3{margin:0}
+.backup h4{margin:10px 0 0;font-size:15px}
+.qrbox{align-self:center;width:min(280px,100%);background:#fff;border-radius:12px;padding:10px;line-height:0}
+.qrbox svg{width:100%;height:auto;display:block}
+.imp{display:flex;flex-direction:column;gap:12px}
+.imp h2{margin:0}
 .backup textarea{width:100%;min-height:76px;font:12.5px/1.4 var(--f-mono);border:1px solid var(--line);border-radius:8px;padding:10px;background:var(--bg);color:var(--fg);resize:vertical;word-break:break-all}
 .okmsg{font-size:13.5px;color:#2f855a;margin:0}
 .rv{display:flex;flex-direction:column;gap:18px}
@@ -306,6 +311,7 @@ const norm = s => s.toLowerCase().replace(/[’‘]/g, "'").replace(/\s+/g, " ")
 const IDX = new Map();
 for (const e of E) for (const k of e.keys) { const n = norm(k); if (!IDX.has(n)) IDX.set(n, []); IDX.get(n).push(e); }
 const KEYS = [...IDX.keys()].sort();
+const IKEYS = [...IDX.keys()];   // 詞表原始順序：新字只會加在最後，轉移代碼用它的位置編號
 
 const counts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, P: 0 }; E.forEach(e => counts[e.l]++);
 const lad = document.getElementById("ladder");
@@ -830,21 +836,58 @@ async function showBook(msg, opts = {}) {
   for (const k of keys) firstZh(k).then(z => { const el = out.querySelector(`[data-zh="${CSS.escape(k)}"]`); if (el) el.textContent = z || "　"; });
 }
 function backupHTML() {
-  return `<section class="backup"><h3>備份與還原</h3>
-    <p class="note">單字本只存在這支手機的瀏覽器裡。換手機或清除瀏覽器資料前，先按「產生備份代碼」，把代碼傳到自己的 LINE 存起來；之後在新手機貼上代碼按「還原」即可。</p>
-    <div class="row"><button class="btn" type="button" data-act="mkbackup">產生備份代碼</button></div>
-    <div id="bkOut" hidden><textarea id="bkCode" readonly aria-label="備份代碼"></textarea><div class="row"><button class="btn primary" type="button" data-act="copy">複製代碼</button><span class="note" id="copyMsg"></span></div></div>
-    <textarea id="rsCode" placeholder="在這裡貼上備份代碼" aria-label="貼上備份代碼"></textarea>
-    <div class="row"><button class="btn" type="button" data-act="restore">還原</button><span class="note" id="rsMsg"></span></div></section>`;
+  return `<section class="backup"><h3>傳到其他裝置／備份</h3>
+    <p class="note">單字本只存在這個瀏覽器裡。要換手機、從 Safari 搬到主畫面的 App，或在平板也用同一份，按「產生轉移連結」，在另一台裝置掃 QR code 或打開連結就能加入。把連結傳到自己的 LINE 存著，也就是備份。</p>
+    <div class="row"><button class="btn" type="button" data-act="mkbackup">產生轉移連結</button></div>
+    <div id="bkOut" hidden>
+      <div class="qrbox" id="qrBox" hidden></div>
+      <p class="note" id="qrNote"></p>
+      <textarea id="bkCode" readonly aria-label="轉移連結"></textarea>
+      <div class="row"><button class="btn primary" type="button" data-act="copy">複製連結</button>${navigator.share ? `<button class="btn" type="button" data-act="share">分享⋯</button>` : ""}<span class="note" id="copyMsg"></span></div>
+    </div>
+    <h4>從其他裝置接收</h4>
+    <textarea id="rsCode" placeholder="貼上轉移連結或備份代碼" aria-label="貼上轉移連結或備份代碼"></textarea>
+    <div class="row"><button class="btn" type="button" data-act="restore">加入單字本</button><span class="note" id="rsMsg"></span></div>
+    <p class="note">加入時會和這裡原有的字合併：同一個字保留進度比較多的那一份，不會刪掉任何字。</p></section>`;
 }
 const b64e = s => btoa(unescape(encodeURIComponent(s))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 const b64d = s => decodeURIComponent(escape(atob(s.replace(/-/g, "+").replace(/_/g, "/"))));
-function makeCode() { return "V7K1." + b64e(JSON.stringify(book)); }
-function restoreCode(code) {
-  const m = code.trim().replace(/\s+/g, "").match(/^V7K1\.([A-Za-z0-9_-]+)$/);
-  if (!m) throw new Error("代碼格式不對，請確認有完整複製（開頭是 V7K1.）。");
-  let data; try { data = JSON.parse(b64d(m[1])); } catch { throw new Error("代碼不完整或已損壞，請重新複製一次。"); }
+/* 轉移代碼 V7K2：每個字 10 個字元＝詞表位置(3)＋熟練度(1)＋加入日(3)＋下次複習日(3)，全部是大寫英數，QR code 可用高容量的英數模式 */
+const D0 = Date.UTC(2026, 0, 1);
+const dayN = s => Math.max(0, Math.min(46654, Math.round((Date.UTC(+s.slice(0, 4), +s.slice(5, 7) - 1, +s.slice(8, 10)) - D0) / 864e5) || 0));
+const dayS = n => new Date(D0 + n * 864e5).toISOString().slice(0, 10);
+const b36 = (n, w) => n.toString(36).toUpperCase().padStart(w || 1, "0");
+const fnv = str => { let h = 0x811c9dc5; for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 0x01000193); } return (h >>> 0).toString(36).toUpperCase(); };
+function makeCode() {
+  const pos = new Map(IKEYS.map((k, i) => [k, i]));
+  const items = Object.entries(book).filter(([k]) => pos.has(k)).sort((x, y) => (x[1].a || "").localeCompare(y[1].a || ""));
+  const body = items.map(([k, it]) => b36(pos.get(k), 3) + Math.max(0, Math.min(4, +it.b || 0)) + b36(dayN(it.a || today()), 3) + (it.d ? b36(dayN(it.d), 3) : "ZZZ")).join("");
+  return "V7K2." + b36(IKEYS.length) + "." + fnv(IKEYS.join("\n")) + "." + body;
+}
+const shareBase = () => location.origin + location.pathname;
+const shareURL = code => shareBase() + "#import=" + code;
+function decodeCode(text) {
+  const t = String(text || "").replace(/\s+/g, "");
+  const m2 = t.match(/V7K2\.([0-9A-Za-z]+)\.([0-9A-Za-z]+)\.([0-9A-Za-z]*)/);
+  if (m2) {
+    const n = parseInt(m2[1], 36), body = m2[3].toUpperCase();
+    if (!(n <= IKEYS.length) || fnv(IKEYS.slice(0, n).join("\n")) !== m2[2].toUpperCase()) throw new Error("這個連結來自不同版本的網站。請在原本的裝置重新整理網頁後，再產生一次。");
+    if (body.length % 10) throw new Error("連結不完整，請確認有完整複製。");
+    const data = {};
+    for (let i = 0; i < body.length; i += 10) {
+      const c = body.slice(i, i + 10), k = IKEYS[parseInt(c.slice(0, 3), 36)];
+      if (k) data[k] = { a: dayS(parseInt(c.slice(4, 7), 36)), b: +c[3] || 0, d: c.slice(7) === "ZZZ" ? null : dayS(parseInt(c.slice(7), 36)) };
+    }
+    return data;
+  }
+  const m1 = t.match(/V7K1\.([A-Za-z0-9_-]+)/);
+  if (!m1) throw new Error("看不懂這段文字。請貼上完整的轉移連結，或開頭是 V7K 的代碼。");
+  let data; try { data = JSON.parse(b64d(m1[1])); } catch { throw new Error("代碼不完整或已損壞，請重新複製一次。"); }
   if (!data || typeof data !== "object") throw new Error("代碼內容無法辨識。");
+  return data;
+}
+function mergeBook(data) {
+  book = lsGet(BK, book);   // 別的分頁可能剛改過，先讀最新的
   let added = 0, updated = 0;
   for (const [k, it] of Object.entries(data)) {
     if (!IDX.has(k) || !it || typeof it !== "object") continue;
@@ -852,7 +895,44 @@ function restoreCode(code) {
     if (!book[k]) { book[k] = clean; added++; }
     else if (clean.b > book[k].b) { book[k] = clean; updated++; }
   }
-  saveBook(); return { added, updated };
+  saveBook(); if (added) askPersist();
+  flags.lastBackup = today(); flags.backupN = Object.keys(book).length; lsSet(FLAG, flags);   // 連結本身就是一份備份
+  return { added, updated };
+}
+function restoreCode(code) { return mergeBook(decodeCode(code)); }
+const mergeMsg = r => r.added || r.updated ? `已加入：新增 ${r.added} 個字${r.updated ? `，更新 ${r.updated} 個字的進度` : ""}。` : "這些字本來就都在單字本裡了，沒有新增。";
+let qrLoading = null;
+const loadQR = () => qrLoading || (qrLoading = new Promise((ok, no) => { if (window.qrcode) return ok(); const sc = document.createElement("script"); sc.src = "qr.js"; sc.onload = ok; sc.onerror = () => { qrLoading = null; no(); }; document.head.appendChild(sc); }));
+async function showTransfer() {
+  const code = makeCode(), url = shareURL(code), n = (code.length - code.lastIndexOf(".") - 1) / 10;
+  flags.lastBackup = today(); flags.backupN = Object.keys(book).length; lsSet(FLAG, flags);
+  document.getElementById("bkOut").hidden = false;
+  const t = document.getElementById("bkCode"); t.value = url;
+  const box = document.getElementById("qrBox"), note = document.getElementById("qrNote");
+  note.textContent = n ? `共 ${n} 個字。` : "單字本是空的。";
+  try {
+    await loadQR();
+    const qr = qrcode(0, "L"); qr.addData(shareURL(""), "Byte"); qr.addData(code, "Alphanumeric"); qr.make();
+    box.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 2, scalable: true }); box.hidden = false;
+    note.textContent = `共 ${n} 個字。用另一台裝置的相機掃描，或把下面的連結傳過去打開。`;
+  } catch { box.hidden = true; note.textContent = `共 ${n} 個字。${n > 250 ? "字太多，QR code 放不下" : "QR code 無法顯示"}，請複製下面的連結傳到另一台裝置打開。`; }
+}
+let pendingImport = null;
+function showImport(code) {
+  nav({ v: "home" }, location.pathname + location.search, { nopush: true });
+  setView("lookup"); session = null; hideSugg(); markLevel(""); seq++; window.scrollTo({ top: 0 });
+  let data, err = null;
+  try { data = decodeCode(code); } catch (e) { err = e.message; }
+  const n = data ? Object.keys(data).filter(k => IDX.has(k)).length : 0, have = Object.keys(book).length;
+  pendingImport = data || null;
+  const appTip = `<p class="note">如果你平常用的是主畫面上的 App：App 和瀏覽器的單字本是分開的。請按「複製連結」，打開 App →「單字本」→ 貼到「從其他裝置接收」。</p>
+    <div class="row"><button class="btn" type="button" data-act="copyimp" data-c="${esc(shareURL(code))}">複製連結</button><span class="note" id="impMsg"></span></div>`;
+  let body;
+  if (err) body = `<h2>無法加入單字本</h2><p class="none">${esc(err)}</p>`;
+  else if (IN_LINE) body = `<h2>請改用瀏覽器開啟</h2><p>你在 LINE 裡打開了單字本轉移連結（${n} 個字）。LINE 內建瀏覽器的單字本是另外一份，加在這裡之後很容易找不到。</p><p>請點右上角「⋯」→「用預設瀏覽器開啟」，再按加入。</p>${appTip}`;
+  else body = `<h2>加入另一台裝置的單字本</h2><p>這個連結裡有 <b>${n}</b> 個字，這台裝置的單字本目前有 ${have} 個字。加入時會合併：同一個字保留進度比較多的那一份，不會刪掉任何字。</p>
+    <div class="row"><button class="btn primary" type="button" data-act="doimport">加入單字本</button><button class="btn" type="button" data-act="noimport">不要加入</button></div>${PWA && IS_IOS && !STANDALONE ? appTip : ""}`;
+  out.innerHTML = `<article class="card imp">${body}</article>`;
 }
 
 let session = null;
@@ -921,16 +1001,20 @@ function onAct(a, el) {
   if (a === "endrv" || a === "tobook") { session = null; return showBook(); }
   if (a === "open") { setView("lookup"); q.value = el.dataset.k; show(el.dataset.k); window.scrollTo({ top: 0 }); return; }
   if (a === "del") { delete book[el.dataset.k]; saveBook(); return showBook(); }
-  if (a === "mkbackup") { flags.lastBackup = today(); flags.backupN = Object.keys(book).length; lsSet(FLAG, flags); document.getElementById("bkOut").hidden = false; const t = document.getElementById("bkCode"); t.value = makeCode(); t.focus(); t.select(); return; }
+  if (a === "mkbackup") { showTransfer(); return; }
+  if (a === "share") { const u = document.getElementById("bkCode").value; navigator.share({ title: "我的單字本", text: "學測七千單字：單字本轉移連結，在另一台裝置打開就能加入。", url: u }).catch(() => {}); return; }
+  if (a === "doimport") { if (!pendingImport) return; const r = mergeBook(pendingImport); pendingImport = null; showBook(mergeMsg(r)); return; }
+  if (a === "noimport") { pendingImport = null; goHome(); return; }
+  if (a === "copyimp") { const m = document.getElementById("impMsg"); try { navigator.clipboard.writeText(el.dataset.c).then(() => { m.textContent = "已複製。"; }, () => { m.textContent = "無法自動複製，請長按網址列複製。"; }); } catch { m.textContent = "無法自動複製，請長按網址列複製。"; } return; }
   if (a === "copy") {
     const t = document.getElementById("bkCode"), m = document.getElementById("copyMsg");
-    const fallback = () => { t.focus(); t.select(); m.textContent = "已選取代碼，請長按或按 ⌘C／Ctrl+C 複製。"; };
-    try { navigator.clipboard.writeText(t.value).then(() => { m.textContent = "已複製，貼到 LINE 傳給自己存起來。"; }, fallback); } catch { fallback(); }
+    const fallback = () => { t.focus(); t.select(); m.textContent = "已選取連結，請長按或按 ⌘C／Ctrl+C 複製。"; };
+    try { navigator.clipboard.writeText(t.value).then(() => { m.textContent = "已複製。貼到 LINE 傳給自己，在另一台裝置點開就能加入，也可以留著當備份。"; }, fallback); } catch { fallback(); }
     return;
   }
   if (a === "restore") {
     const m = document.getElementById("rsMsg");
-    try { const r = restoreCode(document.getElementById("rsCode").value); showBook(`還原完成：新增 ${r.added} 個字${r.updated ? `，更新 ${r.updated} 個字的進度` : ""}。`); }
+    try { showBook(mergeMsg(restoreCode(document.getElementById("rsCode").value))); }
     catch (e) { m.textContent = e.message; }
   }
 }
@@ -1003,7 +1087,7 @@ if (Object.keys(book).length) askPersist();
 function bookNotices(n) {
   const out = [];
   if (PWA && IS_IOS && !STANDALONE && !IN_LINE && n)
-    out.push(`<p class="notice">你現在是用 Safari 開啟。加入主畫面之後，App 裡的單字本是空的；請先在這裡「產生備份代碼」，再到 App 裡「還原」。</p>`);
+    out.push(`<p class="notice">你現在是用 Safari 開啟。加入主畫面之後，App 裡的單字本是空的；請先在這裡按「產生轉移連結」並複製，再到 App 的單字本貼到「從其他裝置接收」。</p>`);
   const days = flags.lastBackup ? Math.floor((new Date(today()) - new Date(flags.lastBackup)) / 864e5) : null;
   const grown = n - (flags.backupN || 0);
   if (n >= 15 && (days === null || (days >= 14 && grown > 0) || grown >= 30))
@@ -1095,9 +1179,10 @@ function fromHash() {
   if (h && IDX.has(norm(h))) { q.value = norm(h); show(norm(h), { keepHash: true }); return true; }
   return false;
 }
-if (history.state && history.state.v && history.state.v !== "review") renderState(history.state);
+if (location.hash.startsWith("#import=")) showImport(decodeURIComponent(location.hash.slice(8)));
+else if (history.state && history.state.v && history.state.v !== "review") renderState(history.state);
 else if (!fromHash()) goHome({ nopush: true, restore: true });
-window.addEventListener("hashchange", () => { if (!(history.state && history.state.v)) fromHash(); });
+window.addEventListener("hashchange", () => { if (location.hash.startsWith("#import=")) showImport(decodeURIComponent(location.hash.slice(8))); else if (!(history.state && history.state.v)) fromHash(); });
 updBack();
 /* 背景預載各級資料：使用者還在打字時就先下載，第一次查詢不必等 */
 const prefetchAll = () => { for (let l = 1; l <= 6; l++) loadLevel(l); loadLevel("P"); loadExams(); };

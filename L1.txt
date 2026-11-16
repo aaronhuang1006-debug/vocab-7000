@@ -1193,6 +1193,7 @@ n. 黑暗 | in the dark 在黑暗中；一無所知
 date | L1
 n. 日期；約會 | out of date 過時的；up to date 最新的
 v. 標日期；約會；追溯至 | date back to 追溯至
+n. 椰棗 |
 例: This temple dates back to the 17th century. | 這座廟可追溯至十七世紀。
 相關: calendar(相關字,日曆) / appointment(同義字,約會) / outdated(衍生字,過時的) / up to date(片語,最新的)
 
@@ -2677,6 +2678,7 @@ left | L1
 adj. 左邊的 |
 adv. 向左 | turn left 左轉
 n. 左邊 | on the left 在左邊
+n. 左派；左翼（the left） | 政治用語；the right 右派
 例: Turn left at the next corner, and you'll see the post office. | 下個轉角左轉，你就會看到郵局。
 相關: right(反義字,右邊) / leftover(衍生字,剩菜) / leave(衍生字,離開，left 為過去式)
 
@@ -2907,7 +2909,7 @@ v. 精通；掌握 | master a language 精通一種語言
 match | L1
 n. 比賽；對手 | be no match for 不是⋯的對手
 n. 火柴 |
-v. 相配；匹配 | match with 與⋯相配
+v. 相配；匹配 | A match(es) B A 與 B 相配；match A with B 把 A 與 B 配對
 例: Your shoes don't match your dress. | 你的鞋子跟洋裝不搭。
 相關: game(同義字,比賽) / suit(同義字,適合) / fit(易混淆字,合身)
 
@@ -2940,6 +2942,8 @@ pron. 我（受格） |
 mean | L1
 v. 意思是；意圖；意味著 | mean to V 打算；I mean it. 我是認真的
 adj. 刻薄的；吝嗇的 | be mean to 對⋯刻薄
+adj. 平均的 | the mean temperature 平均氣溫
+n. 平均數；平均值 | 數學、統計用語；= average
 例: I didn't mean to hurt your feelings. | 我不是有意傷害你的感情。
 相關: meaning(衍生字,意思) / means(衍生字,方法) / intend(同義字,打算) / unkind(同義字,刻薄的)
 
@@ -2979,6 +2983,7 @@ v. 介意；注意 | mind V-ing 介意做；Mind your step. 小心腳步
 
 minute | L1
 n. 分鐘；片刻 | in a minute 馬上；the minute + 子句 一⋯就
+adj. 極小的；詳細的 | 讀 [maɪˈnjut]，重音在後；minute details 細節
 例: The minute I got home, it started to rain. | 我一到家就開始下雨。
 相關: second(相關字,秒) / hour(相關字,小時) / moment(同義字,片刻)
 
@@ -3633,7 +3638,9 @@ n. 詩（總稱） | 不可數；a poem 一首詩
 相關: poem(衍生字,詩) / poet(衍生字,詩人) / poetic(衍生字,詩意的) / prose(反義字,散文)
 
 point | L1
-n. 點；要點；分數；時刻 | to the point 中肯；There's no point in V-ing 做⋯沒有意義
+n. 點；要點；論點；觀點 | to the point 中肯；make a point 提出論點；point of view 觀點
+n. 意義；用處 | There's no point in V-ing 做⋯沒有意義；What's the point of ⋯? ⋯有什麼意義？
+n. 分數；時刻 | score a point 得一分；at this point 此時；在這個階段
 v. 指；指向 | point out 指出；point at 指著
 例: The teacher pointed out a few mistakes in my essay. | 老師指出我作文裡的幾個錯誤。
 相關: pointed(衍生字,尖的) / viewpoint(衍生字,觀點) / aim(同義字,瞄準) / point out(片語,指出)
@@ -4002,6 +4009,7 @@ n. 一輪；回合 |
 row | L1
 n. 一排；一列 | in a row 連續地
 v. 划船 | row a boat 划船
+n. 爭吵；口角 | 英式用法，讀 [raʊ]
 例: Our team has won five games in a row. | 我們隊連贏五場比賽。
 相關: line(同義字,一排) / paddle(同義字,划) / row(易混淆字,爭吵，讀音不同)
 
@@ -4642,6 +4650,7 @@ n. 運動 |
 spring | L1
 n. 春天 |
 n. 泉水 | hot spring 溫泉
+n. 彈簧 |
 v. 跳躍；湧出 | spring up 湧現
 例: Beitou is famous for its hot springs. | 北投以溫泉聞名。
 相關: season(相關字,季節) / leap(同義字,跳) / summer(相關字,夏天)
@@ -5341,6 +5350,7 @@ n. 浪費；廢物 | a waste of time 浪費時間；waste 廢棄物
 watch | L1
 v. 觀看；注視；留意 | watch out 小心；watch TV 看電視
 n. 手錶 |
+n. 看守；監視 | keep watch 看守；be on the watch for 提防⋯
 例: Watch out! There's a car coming. | 小心！有車來了。
 相關: see(易混淆字,看見) / look(易混淆字,看) / observe(同義字,觀察) / clock(相關字,時鐘)
 
@@ -5521,7 +5531,7 @@ n. 勝利 |
 
 wind | L1
 n. 風 |
-v. 蜿蜒；上發條 | wind up 結束；上發條
+v. 蜿蜒；纏繞；捲繞；上發條 | 讀 [waɪnd]，三態 wind, wound, wound；wind A around B 把 A 繞在 B 上；wind up 結束；上發條
 例: The strong wind made it hard to walk. | 強風讓人難以行走。
 相關: windy(衍生字,風大的) / breeze(同義字,微風) / typhoon(相關字,颱風)
 

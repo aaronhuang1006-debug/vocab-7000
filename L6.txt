@@ -5042,7 +5042,8 @@ n. （宗教）救贖 | the Salvation Army 救世軍
 sanction | L6
 n. 制裁（常用複數） | impose sanctions on 對⋯實施制裁
 n. 批准；認可 | with the sanction of 經⋯批准
-v. 批准；認可 |
+v. 批准；認可 | 注意：sanction 同時有「批准」和「制裁」兩個相反的意思，要看上下文
+v. 制裁；處罰 | sanction a country 制裁某國
 例: Many countries imposed economic sanctions on the country after the invasion. | 入侵事件後許多國家對該國實施經濟制裁。
 相關: penalty(同義字,處罰) / approval(同義字,批准) / embargo(相關字,禁運) / authorize(同義字,授權)
 
@@ -5599,6 +5600,7 @@ stock | L6
 n. 存貨；庫存 | in stock／out of stock 有現貨／缺貨
 n. 股票；股份 | the stock market 股市
 v. 備有；進貨 | be stocked with 存有⋯
+n. 高湯 | chicken stock 雞高湯
 例: Sorry, this size is out of stock, but we will have more next week. | 抱歉，這個尺寸缺貨了，下週會再進貨。
 相關: stockholder(衍生字,股東) / supply(同義字,供應) / inventory(同義字,存貨) / share(同義字,股份)
 

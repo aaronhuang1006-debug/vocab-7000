@@ -5163,6 +5163,7 @@ stock | L5
 n. 存貨；庫存 | in stock 有存貨；out of stock 缺貨
 n. 股票；股份 | the stock market 股票市場
 v. 儲備；備有 | stock up on 囤積⋯
+n. 高湯 | chicken stock 雞高湯
 例: Sorry, this model is out of stock right now. | 抱歉，這個型號目前缺貨。
 相關: inventory(同義字,存貨) / supply(同義字,供應) / share(同義字,股份) / stock market(片語,股市)
 
