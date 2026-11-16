@@ -1346,7 +1346,7 @@ adj. 核心的；主要的 | core values 核心價值；core subjects 主科
 
 corporate | L6
 adj. 公司的；企業的 | corporate culture 企業文化
-adj. 團體的；共同的 | corporate responsibility 共同責任
+adj. 團體的；法人的 | a corporate body 法人團體
 例: More companies are paying attention to corporate social responsibility. | 越來越多公司重視企業社會責任。
 相關: corporation(衍生字,公司) / business(相關字,商業) / company(相關字,公司) / collective(同義字,集體的)
 字根: corpor(身體) + -ate(形容詞) | 結成一體的 | corporation, corps
@@ -1398,7 +1398,7 @@ n. 四海為家的人 |
 字根: cosmo(世界) + polit(城市；公民) + -an(形容詞) | 世界公民的 | cosmos, politics
 
 counterpart | L6
-n. 對應的人或物；對手 | one's counterpart in ⋯中的對應者
+n. 對應的人或物；職位相當的人 | one's counterpart in ⋯中的對應者
 例: The Taiwanese foreign minister met his Japanese counterpart in Tokyo. | 台灣外交部長在東京與日本外相會面。
 相關: equivalent(同義字,相等物) / match(同義字,對手) / peer(同義字,同級者) / opposite number(片語,職位相當的人)
 
@@ -1778,7 +1778,7 @@ n. 兩難；困境 | be in a dilemma 進退兩難；face a dilemma 面臨兩難
 字根: di-(二) + lemma(前提) | 兩個前提都不利 | dioxide, diploma
 
 dimension | L6
-n. 尺寸；面積 | the dimensions of the room 房間的尺寸
+n. 尺寸；大小 | the dimensions of the room 房間的尺寸
 n. 方面；維度 | three-dimensional 立體的；a new dimension 新的層面
 例: We need to know the dimensions of the room before buying a bed. | 買床前我們需要知道房間的尺寸。
 相關: dimensional(衍生字,…維的) / size(同義字,尺寸) / measurement(同義字,尺寸) / aspect(同義字,方面)
@@ -3280,7 +3280,7 @@ v. 刺激（皮膚等）；使發炎 |
 
 irritation | L6
 n. 惱怒；煩躁 | with irritation 惱怒地
-n. 刺激；發炎 | skin irritation 皮膚過敏
+n. 刺激；發炎 | skin irritation 皮膚刺激；皮膚發炎
 例: She could not hide her irritation when the bus was late again. | 公車又誤點時，她掩飾不住心中的煩躁。
 相關: irritate(衍生字,激怒) / annoyance(同義字,惱怒) / frustration(同義字,挫折) / inflammation(同義字,發炎)
 
@@ -3394,7 +3394,7 @@ n. 豪華禮車；機場接駁車 | a stretch limousine 加長型禮車
 
 liner | L6
 n. 郵輪；定期客輪 | an ocean liner 遠洋郵輪
-n. 襯裡；內襯 | eyeliner 眼線筆
+n. 襯裡；內襯 | a coat liner 外套內裡
 例: The ocean liner carried more than two thousand passengers across the Atlantic. | 這艘遠洋郵輪載著兩千多名乘客橫渡大西洋。
 相關: cruise ship(相關字,遊輪) / line(衍生字,航線) / vessel(同義字,船) / lining(衍生字,內襯)
 
@@ -4504,7 +4504,7 @@ v. 起訴；告發 | prosecute sb for 因⋯起訴某人
 
 prosecution | L6
 n. 起訴；訴訟 | face prosecution 面臨起訴
-n. 檢方；原告 | the prosecution 檢方（相對於 the defense 被告方）
+n. 檢方；控方 | the prosecution 檢方（相對於 the defense 辯方）
 例: The company now faces prosecution for polluting the river. | 這家公司現在因汙染河川面臨起訴。
 相關: prosecute(衍生字,起訴) / prosecutor(衍生字,檢察官) / defense(反義字,辯方) / trial(相關字,審判)
 字根: pro(向前) + secut(跟隨) + -ion | 一路追究 | execution, persecution
@@ -4741,7 +4741,7 @@ n. 精煉；改良；優雅（refinement） |
 相關: refined(衍生字,精緻的；精煉的) / refinery(衍生字,煉油廠) / improve(同義字,改進) / polish(同義字,潤飾)
 
 reflective | L6
-adj. 反光的 | a reflective jacket 反光背心
+adj. 反光的 | a reflective jacket／vest 反光外套／背心
 adj. 深思的；沉思的 | in a reflective mood 陷入沉思
 例: Cyclists should wear reflective clothing when riding at night. | 騎單車的人夜間騎車時應穿反光衣物。
 相關: reflect(衍生字,反射；反思) / reflection(衍生字,倒影；反思) / thoughtful(同義字,深思的) / contemplative(同義字,沉思的)
@@ -5036,7 +5036,7 @@ salvation | L6
 n. 拯救；救星 | be sb's salvation 是某人的救星
 n. （宗教）救贖 | the Salvation Army 救世軍
 例: Music was her salvation during the most difficult time of her life. | 在她人生最艱難的時期，音樂是她的救贖。
-相關: save(衍生字,拯救) / rescue(同義字,救援) / redemption(同義字,救贖) / damnation(反義字,詛咒)
+相關: save(衍生字,拯救) / rescue(同義字,救援) / redemption(同義字,救贖) / damnation(反義字,天譴；永罰)
 字根: salv(安全；拯救) + -ation(名詞字尾) | 使安全 | salvage, safe, salute
 
 sanction | L6

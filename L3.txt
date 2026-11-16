@@ -1118,6 +1118,7 @@ n. 結論 | come to／reach a conclusion 得出結論；in conclusion 總之
 condition | L3
 n. 狀況；狀態 | in good condition 狀況良好；living conditions 生活條件
 n. 條件 | on condition that 在⋯的條件下
+n. 疾病；（身體的）毛病 | a heart condition 心臟病；a medical condition 疾病
 例: The used car is still in good condition. | 這台二手車的狀況仍然很好。
 相關: conditional(衍生字,有條件的) / state(同義字,狀態) / situation(同義字,情況) / requirement(相關字,條件)
 
@@ -1716,7 +1717,7 @@ adj. 電子的 | electronic devices 電子產品；electronic mail 電子郵件
 emergency | L3
 n. 緊急情況 | in case of emergency 萬一發生緊急情況；emergency room 急診室
 例: In case of emergency, call 119 for help. | 遇到緊急情況，請撥 119 求救。
-相關: emergent(衍生字,緊急的) / crisis(同義字,危機) / urgent(相關字,緊急的) / emergency exit(片語,緊急出口)
+相關: emergent(衍生字,新興的) / crisis(同義字,危機) / urgent(相關字,緊急的) / emergency exit(片語,緊急出口)
 
 emperor | L3
 n. 皇帝 | the Emperor of Japan 日本天皇
@@ -2489,6 +2490,7 @@ n. 誠實；正直 | Honesty is the best policy. 誠實為上策。
 honor | L3
 n. 榮譽；光榮 | in honor of 為紀念⋯；It's an honor to V 很榮幸⋯
 v. 尊敬；給予榮譽 | be honored to V 很榮幸⋯
+v. 履行（承諾、合約） | honor a promise／an agreement 信守承諾／履行協議
 例: It is a great honor to be invited to speak at the ceremony. | 很榮幸受邀在典禮上致詞。
 相關: honorable(衍生字,可敬的) / glory(同義字,榮耀) / respect(同義字,尊敬) / shame(反義字,恥辱)
 
@@ -3537,6 +3539,7 @@ odd | L3
 adj. 奇怪的 | It's odd that... ⋯很奇怪
 adj. 奇數的；不成對的 | odd numbers 奇數；an odd sock 單隻襪子
 n. 可能性（odds） | the odds are that... 很可能⋯；against all odds 儘管困難重重
+adj. 零星的；臨時的；（數字後）⋯多 | odd jobs 零工；thirty-odd people 三十多人
 例: It's odd that he hasn't replied to my message all day. | 他一整天都沒回我訊息，真奇怪。
 相關: strange(同義字,奇怪的) / weird(同義字,怪異的) / even(反義字,偶數的) / odds(衍生字,可能性)
 
@@ -4640,7 +4643,7 @@ v. 安排；預定 | be scheduled to V 預定做⋯；be scheduled for + 時間
 相關: timetable(同義字,時刻表) / plan(同義字,計畫) / agenda(相關字,議程) / on schedule(片語,準時)
 
 scholar | L3
-n. 學者 | a Chinese scholar 漢學家
+n. 學者 | a Chinese scholar 中國學者；a scholar of Chinese history 中國史學者
 n. 獎學金得主 |
 例: The professor is a well-known scholar of Taiwanese history. | 那位教授是知名的台灣史學者。
 相關: scholarship(衍生字,獎學金) / scholarly(衍生字,學術的) / academic(同義字,學者) / professor(相關字,教授)
@@ -5245,7 +5248,7 @@ v. 塞滿；填塞（stuff 2） | stuff A into B 把 A 塞進 B；be stuffed wit
 相關: thing(同義字,東西) / material(同義字,材料) / fill(同義字,填滿) / staff(易混淆字,職員) / stuffy(衍生字,悶熱的)
 
 style | L3
-n. 風格；方式 | life style 生活方式；writing style 寫作風格
+n. 風格；方式 | lifestyle 生活方式；writing style 寫作風格
 n. 時尚；款式 | in style 流行的；out of style 過時的
 v. 設計；梳理（髮型） |
 例: Wide-leg pants are back in style this year. | 寬褲今年又流行回來了。
@@ -5684,7 +5687,7 @@ n. 趨勢；潮流；時尚 | a trend toward 往⋯的趨勢；set a trend 帶�
 
 tribe | L3
 n. 部落；種族 | indigenous tribes 原住民族
-例: The Amis is the largest indigenous tribe in Taiwan. | 阿美族是台灣人數最多的原住民族。
+例: The Amis are the largest indigenous tribe in Taiwan. | 阿美族是台灣人數最多的原住民族。
 相關: tribal(衍生字,部落的) / clan(同義字,氏族) / community(相關字,社群) / ethnic group(相關字,族群)
 
 tricky | L3

@@ -1457,8 +1457,8 @@ n. 耀眼；燦爛 |
 相關: dazzling(衍生字,耀眼的) / amaze(同義字,使驚奇) / impress(同義字,使印象深刻) / blind(相關字,使目盲)
 
 decay | L5
-v. 腐爛；衰退 | tooth decay 蛀牙
-n. 腐爛；衰退 | fall into decay 衰敗
+v. 腐爛；衰退 | decay quickly 很快腐爛
+n. 腐爛；衰退 | tooth decay 蛀牙；fall into decay 衰敗
 例: Eating too much candy can cause tooth decay. | 吃太多糖果會導致蛀牙。
 相關: rot(同義字,腐爛) / decline(同義字,衰退) / spoil(同義字,變壞) / flourish(反義字,興盛)
 字根: de-(向下) + cay(落下) | 往下掉落 | decadent, cadence
@@ -1767,7 +1767,7 @@ v. 給予權利；給⋯命名 | be entitled to N／V 有權⋯；a book entitle
 equate | L5
 v. 把⋯等同起來；視為相等 | equate A with B 把 A 等同於 B
 例: Many people equate success with making a lot of money. | 許多人把成功等同於賺大錢。
-相關: equation(衍生字,方程式) / equal(衍生字,相等的) / identify(同義字,認同) / compare(相關字,比較)
+相關: equation(衍生字,方程式) / equal(衍生字,相等的) / identify(同義字,視為等同) / compare(相關字,比較)
 字根: equ(相等) + -ate(動詞) | 使相等 | equal, equator
 
 erect | L5
@@ -2267,7 +2267,7 @@ n. 擦傷 |
 相關: feed(同義字,餵養) / pasture(相關字,牧場) / scrape(同義字,擦傷) / scratch(同義字,刮傷)
 
 grease | L5
-n. 油脂；潤滑油 | elbow grease 苦力
+n. 油脂；潤滑油 | elbow grease 費力的體力活（如用力擦洗）
 v. 塗油；上油 | grease the pan 在鍋子上抹油
 例: The cook wiped the grease off the kitchen counter. | 廚師把廚房流理台上的油漬擦掉。
 相關: greasy(衍生字,油膩的) / oil(同義字,油) / fat(同義字,脂肪) / lubricant(同義字,潤滑劑)
@@ -2930,7 +2930,7 @@ n. 蜥蜴 |
 相關: reptile(相關字,爬蟲類) / gecko(相關字,壁虎) / snake(相關字,蛇) / iguana(相關字,鬣蜥)
 
 locomotive | L5
-n. 火車頭；機車 |
+n. 火車頭；（鐵路）機關車 |
 adj. 運動的；移動的 |
 例: The old steam locomotive is now displayed in the railway museum. | 那輛老蒸汽火車頭現在陳列在鐵道博物館裡。
 相關: engine(同義字,火車頭) / train(相關字,火車) / railway(相關字,鐵路) / steam(相關字,蒸汽)
@@ -3758,7 +3758,7 @@ n. 消遣；娛樂 | a popular pastime 熱門的消遣
 pastry | L5
 n. 酥皮點心；糕點 | Danish pastry 丹麥酥
 例: Pineapple cake is a famous Taiwanese pastry that tourists love to buy. | 鳳梨酥是觀光客愛買的著名台灣糕點。
-相關: paste(相關字,麵團) / bakery(相關字,麵包店) / dessert(相關字,甜點) / pie(相關字,派)
+相關: paste(相關字,糊；膏) / bakery(相關字,麵包店) / dessert(相關字,甜點) / pie(相關字,派)
 
 patch | L5
 n. 補丁；小塊 | a patch of grass 一小塊草地
@@ -3948,7 +3948,7 @@ n. 劇作家 |
 
 plea | L5
 n. 懇求；請求 | make a plea for 懇求⋯
-n. 抗辯；答辯 | plead guilty 認罪
+n. 抗辯；答辯 | enter a plea of guilty／not guilty 表示認罪／不認罪
 例: The family made a plea for help on social media to find their lost dog. | 這家人在社群媒體上發出請求，協尋走失的狗。
 相關: plead(衍生字,懇求) / appeal(同義字,呼籲) / request(同義字,請求) / beg(相關字,乞求)
 
@@ -4326,7 +4326,7 @@ v. 反駁；駁斥 | refute a claim 駁斥說法
 相關: refutation(衍生字,反駁) / disprove(同義字,證明為誤) / deny(同義字,否認) / confirm(反義字,證實)
 
 reign | L5
-n. 統治時期；王朝 | during the reign of 在⋯統治期間
+n. 統治時期；在位期間；統治 | during the reign of 在⋯統治期間
 v. 統治；支配 | reign over 統治⋯
 例: Silence reigned in the classroom as the students took the exam. | 學生們考試時，教室裡一片寂靜。
 相關: rule(同義字,統治) / govern(同義字,治理) / rein(易混淆字,韁繩) / rain(易混淆字,雨)
@@ -5684,7 +5684,7 @@ triple | L5
 adj. 三倍的；三重的 | triple jump 三級跳遠
 v. 使成三倍 |
 n. 三倍；（棒球）三壘安打 |
-例: The price of eggs has nearly tripled in the past few years. | 過去幾年蛋價幾乎漲了三倍。
+例: The price of eggs has nearly tripled in the past few years. | 過去幾年蛋價幾乎漲成原來的三倍。
 相關: double(相關字,兩倍的) / threefold(同義字,三倍的) / triangle(相關字,三角形) / triplet(衍生字,三胞胎之一)
 字根: tri-(三) + -ple(倍) | 三倍 | triangle, tripod
 

@@ -1001,6 +1001,7 @@ n. 時鐘 | around the clock 日以繼夜地
 close | L1
 v. 關；結束 | close down 停業
 adj. 靠近的；親密的；接近的 | be close to 接近；a close friend 密友
+adj. 仔細的；嚴密的；勢均力敵的 | pay close attention to 密切注意；take a closer look 仔細看；a close game 勢均力敵的比賽
 例: The bakery is close to my school, but it closes at six. | 那間麵包店離我學校很近，但六點就關門了。
 相關: open(反義字,打開) / shut(同義字,關閉) / near(同義字,靠近的) / closely(衍生字,密切地)
 
@@ -1483,7 +1484,7 @@ n. 八 |
 
 eighteen | L1
 n. 十八 |
-例: In Taiwan, people can vote at the age of eighteen in some elections. | 在台灣，某些選舉十八歲就能投票。
+例: In Taiwan, people can vote in referendums at the age of eighteen. | 在台灣，十八歲就可以在公民投票中投票。
 相關: eight(衍生字,八) / eighteenth(衍生字,第十八) / adult(相關字,成年人)
 
 eighty | L1
@@ -2439,7 +2440,7 @@ n. 果醬 | strawberry jam 草莓醬
 
 January/Jan. | L1
 n. 一月 |
-例: The new semester starts in late January. | 新學期一月下旬開始。
+例: Winter vacation in Taiwan usually starts in late January. | 台灣的寒假通常在一月下旬開始。
 相關: February(相關字,二月) / December(相關字,十二月) / winter(相關字,冬天)
 
 job | L1
@@ -2760,7 +2761,7 @@ n. 百合花 |
 相關: flower(相關字,花) / rose(相關字,玫瑰) / tulip(相關字,鬱金香)
 
 line | L1
-n. 線；行列；台詞；電話線 | stand in line 排隊；Hold the line. 請不要掛斷
+n. 線；行列；台詞；電話線；（交通）路線 | stand in line 排隊；Hold the line. 請不要掛斷；a bus／subway line 公車／捷運路線
 v. 排成一列 | line up 排隊
 例: We stood in line for an hour to buy concert tickets. | 我們排了一小時的隊買演唱會門票。
 相關: queue(同義字,隊伍) / row(同義字,一排) / linear(衍生字,線性的) / line up(片語,排隊)
@@ -3193,7 +3194,7 @@ n. 新聞；消息 | 不可數；a piece of news 一則消息；No news is good 
 newspaper | L1
 n. 報紙 |
 例: My grandfather reads the newspaper every morning. | 我爺爺每天早上看報紙。
-相關: magazine(相關字,雜誌) / journal(同義字,日報) / press(相關字,新聞界)
+相關: magazine(相關字,雜誌) / journal(相關字,期刊；日誌) / press(相關字,新聞界)
 字根: news(新聞) + paper(紙) | 印新聞的紙 | newsletter
 
 next | L1
@@ -3437,7 +3438,7 @@ adj. 外面的 |
 字根: out(外) + side(邊) | 在外側 | inside, outdoor
 
 over | L1
-prep. 在⋯上方；越過；超過；遍及 | all over the world 全世界；over the phone 透過電話
+prep. 在⋯上方；越過；超過；遍及；在⋯期間 | all over the world 全世界；over the phone 透過電話；over the past ten years 過去十年來
 adv. 結束；翻過來 | The game is over. 比賽結束了
 例: People from all over the world come to see the fireworks. | 世界各地的人來看煙火。
 相關: above(同義字,在⋯上方) / under(反義字,在⋯下方) / more than(同義字,超過)
@@ -3800,8 +3801,8 @@ adv. 相當；十分；完全 | quite a few 相當多；not quite 不完全
 相關: fairly(同義字,相當) / rather(同義字,相當) / quiet(易混淆字,安靜的) / completely(同義字,完全)
 
 race | L1
-n. 賽跑；競賽 | the human race 人類
-n. 種族 |
+n. 賽跑；競賽 | a race against time 與時間賽跑
+n. 種族；人種 | the human race 人類
 v. 賽跑；疾馳 |
 例: People of every race should be treated equally. | 每個種族的人都應被平等對待。
 相關: racial(衍生字,種族的) / racism(衍生字,種族歧視) / competition(同義字,競賽) / ethnic(相關字,民族的)
@@ -4032,6 +4033,7 @@ v. 統治；裁決 | rule out 排除
 run | L1
 v. 跑；經營；運轉；流 | run a business 經營事業；run out of 用完；run into 偶遇
 n. 跑步；連續 | in the long run 長遠來看
+v. 競選 | run for president 競選總統
 例: Her parents run a small restaurant near the station. | 她父母在車站附近經營一家小餐廳。
 相關: runner(衍生字,跑者) / manage(同義字,經營) / operate(同義字,運轉) / in the long run(片語,長遠來看)
 
@@ -5673,7 +5675,7 @@ pron. 你；你們；人們 |
 
 young | L1
 adj. 年輕的；幼小的 | the young 年輕人
-n. 幼崽 |
+n. （動物的）幼獸；幼雛 |
 例: She started learning ballet when she was very young. | 她很小就開始學芭蕾。
 相關: youth(衍生字,青春) / youngster(衍生字,年輕人) / old(反義字,老的) / junior(同義字,年少的)
 

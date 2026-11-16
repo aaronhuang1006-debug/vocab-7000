@@ -1050,7 +1050,7 @@ n. 作文；作品；組成 | the composition of 某物的組成
 字根: com-(一起) + posit(放置) + -ion(名詞字尾) | 放在一起的成品 | position, opposite
 
 concentrate | L4
-v. 專心；集中 | concentrate on 專心於；易混：focus on
+v. 專心；集中 | concentrate on 專心於；同 focus on
 例: It is hard to concentrate on my homework when the TV is on. | 電視開著時，我很難專心寫功課。
 相關: concentration(衍生字,專心) / focus(同義字,集中) / distract(反義字,使分心) / concentrate on(片語,專心於)
 字根: con-(一起) + centr(中心) + -ate(動詞字尾) | 一起朝中心聚集 | center, central
@@ -2230,7 +2230,7 @@ n. 評估；評價 | make an evaluation of 對⋯做評估
 字根: e-(向外) + valu(價值) + -ation(名詞字尾) | 找出價值的過程 | value, evaluate
 
 eve | L4
-n. （節日的）前夕 | Christmas Eve 平安夜；New Year's Eve 除夕
+n. （節日的）前夕 | Christmas Eve 平安夜；New Year's Eve 跨年夜（12月31日）；Lunar New Year's Eve 除夕
 例: Our family always has a big dinner together on Lunar New Year's Eve. | 我們家除夕夜總是一起吃團圓飯。
 相關: evening(相關字,傍晚) / holiday(相關字,節日) / Christmas Eve(片語,平安夜) / New Year's Eve(片語,除夕)
 
@@ -2971,6 +2971,7 @@ v. 用水管沖洗 |
 host | L4
 n. 主人；主持人；東道主 | host country 主辦國；host family 寄宿家庭
 v. 主辦；主持 | host a party 舉辦派對
+n. 一大群；許多 | a host of 許多的⋯
 例: Taipei hosted the Summer Universiade in 2017. | 台北在2017年主辦了世界大學運動會。
 相關: hostess(衍生字,女主人) / guest(反義字,客人) / organize(同義字,籌辦) / emcee(同義字,司儀)
 
@@ -3167,7 +3168,7 @@ n. 跡象；指示；表示 | There is every indication that⋯ 種種跡象顯�
 字根: in-(向) + dic(說；指) + -ation(名詞字尾) | 指出來的東西 | indicate, dictate
 
 industrialize | L4
-v. 使工業化 | industrialized countries 工業化國家
+v. （使）工業化 | industrialized countries 工業化國家
 例: Taiwan industrialized quickly in the 1960s and 1970s. | 台灣在1960和1970年代迅速工業化。
 相關: industrial(衍生字,工業的) / industrialization(衍生字,工業化) / industry(衍生字,工業) / modernize(相關字,使現代化)
 字根: industrial(工業的) + -ize(使⋯化) | 使變成工業的 | industrious, modernize
@@ -4299,7 +4300,7 @@ n. 氧；氧氣 | oxygen mask 氧氣面罩
 字根: oxy(酸) + gen(產生) | 早期被認為會產生酸的元素 | hydrogen, nitrogen
 
 p.m./pm/P.M./PM | L4
-adv. 下午；午後 | 放在時間後：3 p.m. 下午三點（不與 o'clock 連用）
+adv. 午後（中午十二點到午夜） | 放在時間後：3 p.m. 下午三點；9 p.m. 晚上九點（不與 o'clock 連用）
 例: The school bus leaves at 4:30 p.m. every day. | 校車每天下午四點半出發。
 相關: a.m.(相關字,上午) / afternoon(同義字,下午) / evening(相關字,晚上) / noon(相關字,中午)
 字根: post(在⋯之後) + meridiem(正午) | 拉丁文 post meridiem 的縮寫 | postpone, a.m.
@@ -5122,7 +5123,7 @@ n. 營救；救援 | come to the rescue 前來救援；rescue team 救難隊
 
 research | L4
 n. 研究；調查 | do research on 研究⋯（不可數）
-v. 研究；調查 | research into 研究⋯
+v. 研究；調查 | research sth 研究⋯（及物動詞，可直接接受詞）
 例: Scientists are doing research on new ways to fight cancer. | 科學家正在研究對抗癌症的新方法。
 相關: researcher(衍生字,研究者) / study(同義字,研究) / investigation(同義字,調查) / experiment(相關字,實驗)
 字根: re-(再) + search(尋找) | 反覆尋找 | search
@@ -6089,7 +6090,7 @@ n. 侵犯 | a violation of human rights 侵犯人權
 virgin | L4
 n. 處女 |
 adj. 未開發的；原始的 | virgin forest 原始森林
-adj. 首次的 | virgin voyage 處女航
+adj. 未使用過的；純淨的 | virgin snow 未被踩過的雪；virgin olive oil 初榨橄欖油
 例: Much of the virgin forest in the area has been cut down. | 這地區許多原始森林已被砍伐。
 相關: pure(同義字,純潔的) / untouched(同義字,未受破壞的) / natural(同義字,天然的) / virgin olive oil(片語,初榨橄欖油)
 

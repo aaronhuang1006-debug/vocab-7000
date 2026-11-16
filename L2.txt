@@ -1560,7 +1560,7 @@ v. 加點於；散布於 | be dotted with 散布著⋯
 
 double | L2
 adj. 兩倍的；雙的 | double room 雙人房
-v. 使加倍 |
+v. 加倍；使加倍 |
 n. 兩倍；替身 |
 例: The price of vegetables almost doubled after the typhoon. | 颱風過後菜價幾乎翻倍。
 相關: single(反義字,單一的) / twice(同義字,兩倍) / triple(相關字,三倍的) / pair(相關字,一對)
@@ -1934,7 +1934,7 @@ adj. 害怕的；可怕的 | be fearful of 害怕⋯
 
 fee | L2
 n. 費用（服務費、學費、入場費） | tuition fee 學費；entrance fee 入場費
-例: The entrance fee for the museum is free for students. | 博物館的入場費對學生免費。
+例: Students don't have to pay the entrance fee for the museum. | 學生參觀博物館不必付入場費。
 相關: charge(同義字,費用) / fare(易混淆字,車資) / cost(同義字,費用) / tuition(相關字,學費)
 
 fellow | L2
@@ -2821,7 +2821,7 @@ n. 瓢蟲 |
 
 lane | L2
 n. 巷；小路 | Lane 5 第五巷
-n. 車道；（泳池、跑道）水道 | bike lane 自行車道；fast lane 快車道
+n. 車道；（泳池的）水道；（田徑場的）跑道 | bike lane 自行車道；fast lane 快車道
 例: My house is in a quiet lane off Zhongshan Road. | 我家在中山路旁一條安靜的巷子裡。
 相關: alley(同義字,小巷) / path(同義字,小徑) / street(相關字,街道) / road(相關字,道路)
 
@@ -2984,7 +2984,7 @@ adj. 偏僻的；人跡罕至的 | a lonely road 偏僻的道路
 相關: loneliness(衍生字,寂寞) / alone(易混淆字,獨自一人) / lone(相關字,單獨的) / isolated(同義字,孤立的)
 
 lose | L2
-v. 遺失；失去 | lose one's way 迷路；lose weight 減重；lose temper 發脾氣
+v. 遺失；失去 | lose one's way 迷路；lose weight 減重；lose one's temper 發脾氣
 v. 輸掉 | lose the game 比賽輸了；lose to 敗給
 例: I lost my wallet on the bus and had to borrow money from a friend. | 我在公車上弄丟錢包，只好向朋友借錢。
 相關: loss(衍生字,損失) / loser(衍生字,輸家) / win(反義字,贏) / loose(易混淆字,鬆的) / find(反義字,找到)
@@ -3105,7 +3105,8 @@ n. 墊子；地墊 | a yoga mat 瑜伽墊；door mat 門口地墊
 match | L2
 n. 比賽 | a tennis match 網球比賽
 n. 火柴 | light a match 點火柴
-v. 相配；相稱 | match A with B 把 A 與 B 配對；be no match for 不是⋯的對手
+v. 相配；相稱；比得上 | match A with B 把 A 與 B 配對
+n. 對手；敵手 | be no match for 不是⋯的對手；meet one's match 遇到對手
 例: Your shoes match your dress perfectly. | 你的鞋子和洋裝非常相配。
 相關: game(同義字,比賽) / fit(易混淆字,尺寸合身) / suit(易混淆字,適合) / mismatch(反義字,不相配)
 
@@ -3977,7 +3978,7 @@ n. 明信片 | send a postcard 寄明信片
 
 pot | L2
 n. 鍋；壺；罐 | a pot of tea 一壺茶；hot pot 火鍋
-n. 盆栽 | flower pot 花盆
+n. 花盆 | flower pot 花盆
 例: We had hot pot together on a cold winter night. | 我們在寒冷的冬夜一起吃火鍋。
 相關: pan(相關字,平底鍋) / kettle(相關字,水壺) / teapot(衍生字,茶壺) / jar(相關字,罐子)
 
@@ -4125,6 +4126,7 @@ v. 展現（形象）；使（聲音）傳遠 | project a positive image 展現�
 promise | L2
 v. 答應；承諾 | promise to V 答應做⋯；promise sb sth
 n. 承諾；諾言 | keep／break a promise 守信／食言
+n. 前途；希望；可能性 | show (great) promise 很有前途；hold promise 有希望
 例: He promised to help me with my math homework, but he forgot. | 他答應要幫我寫數學作業，但他忘了。
 相關: promising(衍生字,有前途的) / vow(同義字,誓言) / swear(同義字,發誓) / keep one's word(同義字,守信)
 
@@ -4195,7 +4197,7 @@ n. 木偶；傀儡 | glove puppet show 布袋戲
 相關: doll(相關字,洋娃娃) / string(相關字,線) / puppy(易混淆字,小狗)
 
 puppy | L2
-n. 小狗 | puppy love 早戀
+n. 小狗 | puppy love 青澀的戀情；少男少女的初戀
 例: We adopted a puppy from the animal shelter. | 我們從動物收容所領養了一隻小狗。
 相關: dog(相關字,狗) / kitten(相關字,小貓) / pet(相關字,寵物)
 
@@ -4262,7 +4264,7 @@ adj. 快速的；迅速的 | rapid growth 快速成長；mass rapid transit 大�
 
 rare | L2
 adj. 罕見的；稀有的 | rare animals 稀有動物；It is rare for sb to V 某人很少⋯
-adj. （牛排）三分熟的 | medium rare 三分熟
+adj. （牛排）一分熟的；半生的 | medium rare 三分熟
 例: The Formosan black bear is a rare animal in Taiwan. | 台灣黑熊是台灣的稀有動物。
 相關: rarely(衍生字,很少) / uncommon(同義字,不常見的) / common(反義字,常見的) / scarce(同義字,稀少的)
 
@@ -4514,6 +4516,7 @@ n. 剪刀（用複數） | a pair of scissors 一把剪刀
 score | L2
 n. 分數；得分 | get a high score 得高分；keep score 記分
 v. 得分 | score a goal 進一球
+n. 二十；（scores of）許多 | scores of 許多的；a score of 二十個
 例: He scored the winning goal in the last minute of the game. | 他在比賽最後一分鐘踢進致勝的一球。
 相關: grade(同義字,成績) / mark(同義字,分數) / point(同義字,分) / scoreboard(衍生字,記分板)
 
@@ -4914,7 +4917,7 @@ adj. 標準的；一般的 | standard size 標準尺寸
 steak | L2
 n. 牛排 | How would you like your steak? 你的牛排要幾分熟？
 例: I'd like my steak medium, please. | 我的牛排要五分熟，謝謝。
-相關: beef(相關字,牛肉) / stake(易混淆字,樁；利害關係) / rare(相關字,三分熟的)
+相關: beef(相關字,牛肉) / stake(易混淆字,樁；利害關係) / rare(相關字,一分熟的)
 
 steal | L2
 v. 偷竊 | steal sth from sb 從某人那裡偷某物（不可接人當受詞）；三態 steal, stole, stolen
@@ -5460,6 +5463,7 @@ v. 對待；看待 | treat A as B 把 A 當作 B；treat sb well 善待某人
 v. 治療 | treat a patient 治療病人
 v. 請客 | treat sb to sth 請某人吃⋯；It's my treat. 我請客
 n. 治療；對待（treatment） | receive treatment 接受治療；medical treatment 醫療
+n. 請客；款待；樂事 | It's my treat. 我請客；a special treat 難得的享受
 例: Let me treat you to dinner to thank you for your help. | 讓我請你吃晚餐謝謝你的幫忙。
 相關: cure(同義字,治療) / handle(同義字,對待) / Trick or treat(片語,不給糖就搗蛋)
 
@@ -5659,7 +5663,7 @@ n. 投票者；選民 | young voters 年輕選民；first-time voters 首投族
 相關: vote(衍生字,投票) / citizen(相關字,公民) / candidate(相關字,候選人) / election(相關字,選舉)
 
 waist | L2
-n. 腰；腰部 | around the waist 腰圍
+n. 腰；腰部 | around the waist 在腰部；繞著腰；waist size 腰圍
 例: She tied a belt around her waist. | 她在腰上繫了一條腰帶。
 相關: belt(相關字,腰帶) / hip(相關字,臀部) / waste(易混淆字,浪費) / waistline(衍生字,腰圍)
 
@@ -5810,7 +5814,7 @@ adj. 有智慧的；明智的 | a wise decision 明智的決定；It is wise of 
 within | L2
 prep. 在⋯之內 | within a week 一週內；within walking distance 走路就能到
 例: The MRT station is within walking distance of my house. | 捷運站離我家走路就到得了。
-相關: inside(同義字,在⋯裡面) / without(反義字,沒有) / beyond(反義字,超出)
+相關: inside(同義字,在⋯裡面) / outside(反義字,在⋯之外) / beyond(反義字,超出)
 
 without | L2
 prep. 沒有；不 | without V-ing 沒有做⋯；do without 沒有⋯也行

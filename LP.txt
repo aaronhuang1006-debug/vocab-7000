@@ -753,7 +753,7 @@ v. 從⋯中獲益；受惠於 | benefit from + N／V-ing；主詞是受益者�
 相關: profit from(同義字,從⋯獲利) / gain from(同義字,從⋯得到) / suffer from(反義字,受⋯之苦) / beneficial(相關字,有益的)
 
 blame sb for | P
-v. 因⋯責怪某人；把⋯歸咎於某人 | blame sb for + N／V-ing；= blame sth on sb；被動 be to blame for（該為⋯負責，用主動式不定詞）
+v. 因⋯責怪某人；把⋯歸咎於某人 | blame sb for + N／V-ing；= blame sth on sb；被動 be blamed for；另有 be to blame for（該為⋯負責，以主動式不定詞表被動意思）
 例: Don't blame your little brother for breaking the vase; it was the cat. | 別因為花瓶破了而怪你弟弟，是貓弄的。
 相關: blame sth on sb(片語,把⋯怪到某人頭上) / accuse sb of(易混淆字,指控某人) / criticize(同義字,批評) / be to blame(片語,該負責)
 
@@ -855,8 +855,8 @@ adv. 相較之下；相反地 | 轉折語，常放句首加逗號；= in contras
 相關: in contrast(同義字,相反地) / on the other hand(同義字,另一方面) / similarly(反義字,同樣地) / likewise(反義字,同樣地)
 
 by far | P
-adv. 顯然；⋯得多 | 放在最高級或比較級前加強語氣：by far the best／by far the most popular
-例: This is by far the most interesting movie I have seen this year. | 這顯然是我今年看過最有趣的電影。
+adv. 遠遠地；（最高級前）無疑是；⋯得多 | 放在最高級或比較級前加強語氣：by far the best／by far the most popular
+例: This is by far the most interesting movie I have seen this year. | 這無疑是我今年看過最有趣的電影。
 相關: much(相關字,⋯得多) / far and away(同義字,遠遠地) / easily(同義字,無疑地)
 
 by means of | P
@@ -945,6 +945,7 @@ v. 趕上；追上 | catch up with + 人／事；= keep up with 是「跟上（�
 check out | P
 v. 查看；看看 | check out + N／check N out；口語「看一下」
 v. 退房；結帳離開 | check out of a hotel；反義 check in
+v. 借出（圖書館的書） | check out a book from the library
 例: You should check out the new night market near the station; the food is great. | 你應該去看看車站附近新開的夜市，東西很好吃。
 相關: check in(反義字,登記入住) / examine(同義字,檢查) / look into(相關字,調查)
 
