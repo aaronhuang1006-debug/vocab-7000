@@ -106,6 +106,19 @@ section h3{font:500 12px var(--f-mono);letter-spacing:.12em;text-transform:upper
 .ex .en{font-family:var(--f-head);font-size:17px;line-height:1.55}
 .ex .en mark{background:none;color:var(--accent);font-weight:700}
 .ex .cn{color:var(--muted);font-size:14px}
+.ex .en,.exsen{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.tapw{background:color-mix(in srgb,var(--accent) 22%,transparent);border-radius:3px;box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 22%,transparent)}
+.taphint{font-weight:400;font-size:12.5px;color:var(--muted);margin-left:8px;font-family:var(--f-body,inherit)}
+.peek{position:fixed;z-index:45;top:calc(env(safe-area-inset-top,0px) + 8px);left:50%;transform:translateX(-50%);width:min(560px,calc(100% - 24px));background:var(--surface);color:inherit;border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 32px rgba(0,0,0,.22);padding:12px 14px 12px;display:flex;flex-direction:column;gap:8px;max-height:55vh;overflow:auto}
+.peek[hidden]{display:none}
+.pk-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pk-w{font-family:var(--f-head);font-size:21px;font-weight:600;margin-right:2px}
+.pk-from{font-size:13px;color:var(--muted)}
+.pk-x{margin-left:auto;border:0;background:none;color:var(--muted);font-size:22px;line-height:1;width:34px;height:34px;border-radius:50%;cursor:pointer}
+.pk-senses{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:3px;font-size:15px}
+.pk-senses .pos{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);margin-right:6px}
+.pk-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pk-none{margin:0;color:var(--muted);font-size:14.5px}
 .rel{display:flex;flex-wrap:wrap;gap:8px}
 .chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:var(--bg);color:var(--fg);font:14px var(--f-body);text-align:left;max-width:100%}
 button.chip{cursor:pointer}
@@ -281,6 +294,7 @@ button.part:hover{border-color:var(--accent)}
 
   <div class="updbar" id="updBar" hidden role="status"><span>網站有新版本</span><button class="btn primary" type="button" id="updBtn">點這裡更新</button></div>
   <main id="out"></main>
+  <div class="peek" id="peek" hidden role="dialog" aria-label="單字簡要解釋" aria-live="polite"></div>
   <div class="floatnav" id="floatNav" hidden><span class="pospill" id="posPill" aria-live="off"></span><button class="totop" type="button" id="toTop" aria-label="回到最頂端"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></button></div>
   <div class="sheet" id="sheet" hidden role="dialog" aria-modal="true"><div class="panel" id="sheetPanel"></div></div>
 
@@ -529,7 +543,7 @@ function markWord(en, key) {
 }
 function bodyHTML(key, d) {
   const senses = d.senses.slice(0, 6).map(s => `<li><div class="sline"><span class="pos">${esc(s.pos)}</span><span class="zh">${esc(s.zh)}</span>${s.level ? lvBadge(+s.level) : ""}</div>${s.note ? `<div class="note">${esc(s.note)}</div>` : ""}</li>`).join("");
-  const ex = d.example && d.example.en ? `<section><h3>例句</h3><div class="ex"><div class="exrow"><div class="en">${markWord(d.example.en, key)}</div>${speakBtn(d.example.en, "唸出例句")}</div><div class="cn">${esc(d.example.zh)}</div></div></section>` : "";
+  const ex = d.example && d.example.en ? `<section><h3>例句<span class="taphint">點字可查意思</span></h3><div class="ex"><div class="exrow"><div class="en">${markWord(d.example.en, key)}</div>${speakBtn(d.example.en, "唸出例句")}</div><div class="cn">${esc(d.example.zh)}</div></div></section>` : "";
   const rel = Array.isArray(d.related) && d.related.length ? `<section><h3>相關字</h3><div class="rel">${d.related.slice(0, 8).map(r => {
     const lv = levelsOf(r.w); const inList = lv.length > 0;
     const inner = `<span class="cw">${esc(r.w)}</span>${inList ? lv.map(l => lvBadge(l)).join("") : ""}<span class="ct">${esc(r.type)}・${esc(r.zh)}</span>`;
@@ -571,7 +585,7 @@ async function fillExams(key) {
   const yearsHTML = [...byYear].map(([y, m]) => `<li><b>${d.years[y]}</b><span>${[...m].map(([s, n]) => `${d.sections[s]}${n > 1 ? ` <i>×${n}</i>` : ""}`).join("、")}</span></li>`).join("");
   const sent = i => { const [y, s, t] = d.sentences[i]; return `<li><span class="extag">${d.years[y]}｜${d.sections[s]}</span><span class="exsen">${markAll(t, key)}</span></li>`; };
   const SHOW = 4;
-  box.innerHTML = `<h3>歷屆試題</h3><p class="exsum">${range} 學測共出現 <b>${ids.length}</b> 次，分布在 <b>${byYear.size}</b> 個年度</p>
+  box.innerHTML = `<h3>歷屆試題<span class="taphint">點字可查意思</span></h3><p class="exsum">${range} 學測共出現 <b>${ids.length}</b> 次，分布在 <b>${byYear.size}</b> 個年度</p>
     <ul class="exyears">${yearsHTML}</ul>
     <ul class="exlist">${ids.slice(0, SHOW).map(sent).join("")}</ul>
     ${ids.length > SHOW ? `<button class="btn" type="button" data-act="exall" data-k="${esc(key)}">顯示全部 ${ids.length} 句</button>` : ""}`;
@@ -711,7 +725,91 @@ out.addEventListener("click", ev => {
   if (act) { onAct(act.dataset.act, act); return; }
   const go = ev.target.closest("[data-go]");
   if (go) { q.value = go.dataset.go; show(go.dataset.go); window.scrollTo({ top: 0, behavior: "smooth" }); return; }
+  if (ev.target.closest(".ex .en, .exsen") && !ev.target.closest("button, a")) { const sel = getSelection(); if (!sel || sel.isCollapsed) tapWord(ev); }
 });
+
+/* ---------- 點例句／歷屆試題裡的字：上方跳出簡要解釋 ---------- */
+const IRR = new Map();
+"go went gone|be am is are was were been|have has had|do does did done|see saw seen|take took taken|give gave given|come came|get got gotten|make made|know knew known|think thought|find found|tell told|become became|leave left|feel felt|bring brought|begin began begun|keep kept|hold held|write wrote written|stand stood|hear heard|mean meant|meet met|run ran|pay paid|sit sat|speak spoke spoken|lie lay lain|lay laid|lead led|grow grew grown|lose lost|fall fell fallen|send sent|build built|understand understood|draw drew drawn|break broke broken|spend spent|rise rose risen|drive drove driven|buy bought|wear wore worn|choose chose chosen|seek sought|throw threw thrown|catch caught|deal dealt|win won|forget forgot forgotten|sell sold|fight fought|teach taught|eat ate eaten|sing sang sung|swim swam swum|fly flew flown|drink drank drunk|ring rang rung|shoot shot|hide hid hidden|bite bit bitten|shake shook shaken|steal stole stolen|freeze froze frozen|forgive forgave forgiven|hang hung|feed fed|flee fled|bind bound|dig dug|stick stuck|strike struck|weep wept|sweep swept|sleep slept|lend lent|bend bent|beat beaten|blow blew blown|tear tore torn|swear swore sworn|bear bore born borne|ride rode ridden|arise arose arisen|sink sank sunk|shrink shrank shrunk|spring sprang sprung|withdraw withdrew withdrawn|overcome overcame|forbid forbade forbidden|mistake mistook mistaken|light lit|leap leapt|burn burnt|learn learnt|dream dreamt|say said|sell sold|child children|man men|woman women|foot feet|tooth teeth|mouse mice|goose geese|person people|leaf leaves|knife knives|wife wives|life lives|half halves|wolf wolves|shelf shelves|thief thieves|crisis crises|good better best|bad worse worst|many more most|little less least|far farther further farthest furthest|medium media|phenomenon phenomena|criterion criteria|analysis analyses|i me my mine myself|he him his himself|she her hers herself|we us our ours ourselves|they them their theirs themselves|you your yours yourself yourselves|it its itself"
+  .split("|").forEach(g => { const [b, ...fs] = g.split(" "); fs.forEach(f => { if (!IRR.has(f)) IRR.set(f, b); }); });
+function resolveWord(w) {
+  w = norm(w).replace(/[’]/g, "'").replace(/^['-]+|['-]+$/g, "").replace(/'s$/, "").replace(/s'$/, "s");
+  if (!w) return null;
+  if (IDX.has(w)) return w;
+  const ir = IRR.get(w); if (ir && IDX.has(ir)) return ir;
+  const neg = { "won't": "will", "can't": "can", "shan't": "shall", "ain't": "be" }[w];
+  if (neg) return IDX.has(neg) ? neg : null;
+  if (/n't$/.test(w)) return resolveWord(w.slice(0, -3));
+  if (/'(m|re|ve|ll|d)$/.test(w)) return resolveWord(w.replace(/'(m|re|ve|ll|d)$/, ""));
+  return lemmaCandidates(w)[0] || null;
+}
+function dispKey(key) {   // 用詞表原本的大小寫顯示，例如 october → October
+  const e = (IDX.get(key) || [])[0]; if (!e) return key;
+  for (let f of e.w.split("/")) {
+    f = f.trim(); const m = f.match(/^(.+?)\(([a-z]+)\)(.*)$/i);
+    for (const v of m ? [m[1] + m[3], m[1] + m[2] + m[3]] : [f]) if (norm(v) === key) return v.trim();
+  }
+  return key;
+}
+function wordAt(x, y) {
+  let node, off;
+  if (document.caretPositionFromPoint) { const p = document.caretPositionFromPoint(x, y); if (!p) return null; node = p.offsetNode; off = p.offset; }
+  else if (document.caretRangeFromPoint) { const r = document.caretRangeFromPoint(x, y); if (!r) return null; node = r.startContainer; off = r.startOffset; }
+  if (!node || node.nodeType !== 3) return null;
+  const t = node.data, W = /[A-Za-z'’-]/;
+  let a = off, b = off;
+  while (a > 0 && W.test(t[a - 1])) a--;
+  while (b < t.length && W.test(t[b])) b++;
+  while (a < b && /['’-]/.test(t[a])) a++;
+  while (b > a && /['’-]/.test(t[b - 1])) b--;
+  if (a >= b) return null;
+  // 若點在連字號複合字的某一段：完整的複合字在詞表裡就用完整的，否則只取點到的那一段
+  const full = t.slice(a, b);
+  if (full.includes("-") && !IDX.has(norm(full))) {
+    let a2 = off, b2 = off; while (a2 > a && /[A-Za-z'’]/.test(t[a2 - 1])) a2--; while (b2 < b && /[A-Za-z'’]/.test(t[b2])) b2++;
+    if (a2 < b2) { a = a2; b = b2; }
+  }
+  return { node, a, b, word: t.slice(a, b) };
+}
+const peek = document.getElementById("peek");
+let tapSpan = null, peekSeq = 0;
+function clearTap() {
+  if (!tapSpan) return;
+  const p = tapSpan.parentNode;
+  if (p) { p.replaceChild(document.createTextNode(tapSpan.textContent), tapSpan); p.normalize(); }
+  tapSpan = null;
+}
+function closePeek() { peek.hidden = true; peek.innerHTML = ""; clearTap(); }
+async function tapWord(ev) {
+  clearTap();
+  const hit = wordAt(ev.clientX, ev.clientY);
+  if (!hit || !/[A-Za-z]/.test(hit.word)) { closePeek(); return; }
+  try { const r = document.createRange(); r.setStart(hit.node, hit.a); r.setEnd(hit.node, hit.b); const sp = document.createElement("span"); sp.className = "tapw"; r.surroundContents(sp); tapSpan = sp; } catch {}
+  const word = hit.word, key = resolveWord(word), my = ++peekSeq;
+  if (!key) {
+    peek.innerHTML = `<div class="pk-head"><span class="pk-w">${esc(word)}</span><button class="pk-x" type="button" data-pk="x" aria-label="關閉">×</button></div><p class="pk-none">這個字不在七千單字和片語表裡（可能是人名、地名或較少見的字）。</p>`;
+    peek.hidden = false; return;
+  }
+  const entries = IDX.get(key);
+  const head = `<div class="pk-head"><span class="pk-w">${esc(dispKey(key))}</span>${levelsOf(key).map(l => lvBadge(l)).join("")}${norm(word).replace(/[’]/g, "'") !== key ? `<span class="pk-from">（${esc(word)} 的原形）</span>` : ""}${speakBtn(key, "唸出單字")}<button class="pk-x" type="button" data-pk="x" aria-label="關閉">×</button></div>`;
+  peek.innerHTML = head + `<p class="pk-none">載入中⋯</p>`; peek.hidden = false;
+  const r = await fetchEntry(key, entries);
+  if (my !== peekSeq) return;
+  const d = r.data;
+  const senses = d ? d.senses.slice(0, 3).map(s => `<li><span class="pos">${esc(s.pos)}</span>${esc(s.zh)}</li>`).join("") : "";
+  peek.innerHTML = head + (senses ? `<ol class="pk-senses">${senses}</ol>` : `<p class="pk-none">詞義還沒載入，請稍後再試。</p>`)
+    + `<div class="pk-row"><button class="btn primary" type="button" data-pk="go" data-k="${esc(key)}">看完整解釋</button>${starBtn(key)}</div>`;
+  track("tap-" + key, "點字查詢 " + key);
+}
+peek.addEventListener("click", ev => {
+  const sp = ev.target.closest("[data-say]"); if (sp) { speak(sp.dataset.say, sp); return; }
+  const st = ev.target.closest("[data-star]"); if (st) { toggleStar(st.dataset.star, st); return; }
+  const b = ev.target.closest("[data-pk]"); if (!b) return;
+  if (b.dataset.pk === "x") closePeek();
+  else if (b.dataset.pk === "go") { const k = b.dataset.k; closePeek(); q.value = k; show(k); window.scrollTo({ top: 0 }); }
+});
+document.addEventListener("click", ev => { if (!peek.hidden && !peek.contains(ev.target) && !ev.target.closest(".ex .en, .exsen")) closePeek(); });
+document.addEventListener("keydown", ev => { if (ev.key === "Escape" && !peek.hidden) closePeek(); });
 
 /* ---------- search box ---------- */
 const q = document.getElementById("q"), sugg = document.getElementById("sugg"), combo = document.getElementById("combo");
@@ -815,7 +913,7 @@ let view = "lookup";
 const bookBtn = document.getElementById("bookBtn");
 bookBtn.addEventListener("click", () => view === "book" ? (showDemoOrLast()) : showBook());
 document.getElementById("syncBtn").addEventListener("click", () => showSync());
-function setView(v) { view = v; bookBtn.classList.toggle("on", v === "book" || v === "review"); document.getElementById("syncBtn")?.classList.toggle("on", v === "sync"); if (typeof updateFloat === "function") updateFloat(); }
+function setView(v) { if (typeof closePeek === "function") closePeek(); view = v; bookBtn.classList.toggle("on", v === "book" || v === "review"); document.getElementById("syncBtn")?.classList.toggle("on", v === "sync"); if (typeof updateFloat === "function") updateFloat(); }
 let lastKey = null;
 function showDemoOrLast() { setView("lookup"); if (lastKey) show(lastKey); else showDemo(); }
 

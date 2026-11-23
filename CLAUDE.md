@@ -10,7 +10,8 @@
 - `exams.json`：108–115 學測歷屆試題比對結果（每個詞條出現在哪一年、哪個大題、哪一句），由 tools/exam_index.py 從試卷 PDF 文字產生（`python3 exam_index.py <試卷txt資料夾> exams.json phrases_list.txt`，需要旁邊有 words.json）；比對時略過閱讀測驗題目固定句型；170 個功能詞（冠詞、代名詞、介系詞、連接詞、be／助動詞等）列在 `skip`，不列出歷屆試題。
 - `qr.js`：QR code 產生器（qrcode-generator 1.4.4，MIT），只在單字本按「產生轉移連結」時載入。
 - `sw.js`、`manifest.webmanifest`、`icon-*.png`、`apple-touch-icon.png`：讓網站可加入手機主畫面（PWA）並離線使用。
-- 使用統計：GoatCounter（https://vocab7000.goatcounter.com，帳號是咨翰的），`index.html` 裡的 `GC_CODE` 與 `track()` 會送出 `word-…`、`phrase-…`、`list-L1`…`list-LP`、`root-…`、`zh-…`（中文反查）、`review` 事件；不用 cookie、不追蹤個人。只在 github.io 上啟用，本機測試不會送出。
+- 使用統計：GoatCounter（https://vocab7000.goatcounter.com，帳號是咨翰的），`index.html` 裡的 `GC_CODE` 與 `track()` 會送出 `word-…`、`phrase-…`、`list-L1`…`list-LP`、`root-…`、`zh-…`（中文反查）、`tap-…`（點例句／歷屆試題裡的字）、`review` 事件；不用 cookie、不追蹤個人。只在 github.io 上啟用，本機測試不會送出。
+- 點字查詢：例句（`.ex .en`）與歷屆試題句子（`.exsen`）裡的字可以點，上方跳出 `#peek` 小卡（級別、前 3 個詞義、發音、看完整解釋、加入單字本）；用 `resolveWord()` 把變化形導回原形（`IRR` 不規則表＋`lemmaCandidates`）。
 - 中文反查：輸入中文時，網頁載入全部 L?.txt／LP.txt，比對詞義行 `|` 前面的中文（以；、，／分詞），不比對用法欄；結果頁網址為 `#zh=中文`。不懂中文同義詞，所以詞義的中文寫法會直接影響查不查得到。
 - 單字本存在學生瀏覽器的 localStorage（`vocab7000.book.v1`），沒有伺服器。不要改這個 key 或網站網址，否則學生的單字本會消失。
 - 單字本轉移：轉移連結 `#import=V7K2.…`，每個字 10 個字元（詞表位置＋熟練度＋加入日＋複習日），詞表位置用 `index.html` 內 `IDX` 的原始順序並附檢查碼；所以 **RAW 新增詞條只能加在最後，不可插入或重排**，否則舊連結會失效。舊的 `V7K1.` 代碼仍可匯入。
