@@ -730,7 +730,7 @@ out.addEventListener("click", ev => {
 
 /* ---------- 點例句／歷屆試題裡的字：上方跳出簡要解釋 ---------- */
 const IRR = new Map();
-"go went gone|be am is are was were been|have has had|do does did done|see saw seen|take took taken|give gave given|come came|get got gotten|make made|know knew known|think thought|find found|tell told|become became|leave left|feel felt|bring brought|begin began begun|keep kept|hold held|write wrote written|stand stood|hear heard|mean meant|meet met|run ran|pay paid|sit sat|speak spoke spoken|lie lay lain|lay laid|lead led|grow grew grown|lose lost|fall fell fallen|send sent|build built|understand understood|draw drew drawn|break broke broken|spend spent|rise rose risen|drive drove driven|buy bought|wear wore worn|choose chose chosen|seek sought|throw threw thrown|catch caught|deal dealt|win won|forget forgot forgotten|sell sold|fight fought|teach taught|eat ate eaten|sing sang sung|swim swam swum|fly flew flown|drink drank drunk|ring rang rung|shoot shot|hide hid hidden|bite bit bitten|shake shook shaken|steal stole stolen|freeze froze frozen|forgive forgave forgiven|hang hung|feed fed|flee fled|bind bound|dig dug|stick stuck|strike struck|weep wept|sweep swept|sleep slept|lend lent|bend bent|beat beaten|blow blew blown|tear tore torn|swear swore sworn|bear bore born borne|ride rode ridden|arise arose arisen|sink sank sunk|shrink shrank shrunk|spring sprang sprung|withdraw withdrew withdrawn|overcome overcame|forbid forbade forbidden|mistake mistook mistaken|light lit|leap leapt|burn burnt|learn learnt|dream dreamt|say said|sell sold|child children|man men|woman women|foot feet|tooth teeth|mouse mice|goose geese|person people|leaf leaves|knife knives|wife wives|life lives|half halves|wolf wolves|shelf shelves|thief thieves|crisis crises|good better best|bad worse worst|many more most|little less least|far farther further farthest furthest|medium media|phenomenon phenomena|criterion criteria|analysis analyses|i me my mine myself|he him his himself|she her hers herself|we us our ours ourselves|they them their theirs themselves|you your yours yourself yourselves|it its itself"
+"go went gone|be am is are was were been|have has had|do does did done|see saw seen|take took taken|give gave given|come came|get got gotten|make made|know knew known|think thought|find found|tell told|become became|leave left|feel felt|bring brought|begin began begun|keep kept|hold held|write wrote written|stand stood|hear heard|mean meant|meet met|run ran|pay paid|sit sat|speak spoke spoken|lie lay lain|lay laid|lead led|grow grew grown|lose lost|fall fell fallen|send sent|build built|understand understood|draw drew drawn|break broke broken|spend spent|rise rose risen|drive drove driven|buy bought|wear wore worn|choose chose chosen|seek sought|throw threw thrown|catch caught|deal dealt|win won|forget forgot forgotten|sell sold|fight fought|teach taught|eat ate eaten|sing sang sung|swim swam swum|fly flew flown|drink drank drunk|ring rang rung|shoot shot|hide hid hidden|bite bit bitten|shake shook shaken|steal stole stolen|freeze froze frozen|forgive forgave forgiven|hang hung|feed fed|flee fled|bind bound|dig dug|stick stuck|strike struck|weep wept|sweep swept|sleep slept|lend lent|bend bent|beat beaten|blow blew blown|tear tore torn|swear swore sworn|bear bore born borne|ride rode ridden|arise arose arisen|sink sank sunk|shrink shrank shrunk|spring sprang sprung|withdraw withdrew withdrawn|overcome overcame|forbid forbade forbidden|mistake mistook mistaken|light lit|leap leapt|burn burnt|learn learnt|dream dreamt|say said|sell sold|show showed shown|wake woke woken|slay slew slain|spin spun|slide slid|swing swung|sting stung|string strung|sling slung|weave wove woven|wring wrung|kneel knelt|fling flung|cling clung|creep crept|breed bred|overhear overheard|oversleep overslept|overtake overtook overtaken|overthrow overthrew overthrown|undertake undertook undertaken|undergo underwent undergone|child children|man men|woman women|foot feet|tooth teeth|mouse mice|goose geese|person people|leaf leaves|knife knives|wife wives|life lives|half halves|wolf wolves|shelf shelves|thief thieves|crisis crises|good better best|bad worse worst|many more most|little less least|far farther further farthest furthest|medium media|phenomenon phenomena|criterion criteria|analysis analyses|i me my mine myself|he him his himself|she her hers herself|we us our ours ourselves|they them their theirs themselves|you your yours yourself yourselves|it its itself"
   .split("|").forEach(g => { const [b, ...fs] = g.split(" "); fs.forEach(f => { if (!IRR.has(f)) IRR.set(f, b); }); });
 function resolveWord(w) {
   w = norm(w).replace(/[’]/g, "'").replace(/^['-]+|['-]+$/g, "").replace(/'s$/, "").replace(/s'$/, "s");
@@ -741,7 +741,31 @@ function resolveWord(w) {
   if (neg) return IDX.has(neg) ? neg : null;
   if (/n't$/.test(w)) return resolveWord(w.slice(0, -3));
   if (/'(m|re|ve|ll|d)$/.test(w)) return resolveWord(w.replace(/'(m|re|ve|ll|d)$/, ""));
+  if (/ying$/.test(w) && IDX.has(w.slice(0, -4) + "ie")) return w.slice(0, -4) + "ie";
+  const plain = w.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  if (plain !== w) return resolveWord(plain);
   return lemmaCandidates(w)[0] || null;
+}
+/* 七千單字以外的字：extra.txt（例句與歷屆試題裡出現、但不在詞表的字的簡要解釋） */
+let EXTRA = null, extraLoading = null;
+function loadExtra() {
+  if (EXTRA) return Promise.resolve(EXTRA);
+  return extraLoading || (extraLoading = fetch("extra.txt").then(r => r.ok ? r.text() : "").then(t => {
+    EXTRA = new Map();
+    for (const ln of t.split("\n")) { const i = ln.indexOf("\t"); if (i > 0 && ln[0] !== "#") EXTRA.set(ln.slice(0, i), ln.slice(i + 1).trim()); }
+    return EXTRA;
+  }).catch(() => { extraLoading = null; return new Map(); }));
+}
+function resolveExtra(w) {
+  if (!EXTRA) return null;
+  w = norm(w).replace(/[’]/g, "'").replace(/^['-]+|['-]+$/g, "");
+  const tries = [w, w.replace(/'s$/, ""), w.replace(/s'$/, "s"), w.normalize("NFD").replace(/[\u0300-\u036f]/g, "")];
+  for (const t of tries) if (EXTRA.has(t)) return t;
+  const b = w.replace(/'s$/, "");
+  for (const [suf, rep] of [["ies", "y"], ["es", ""], ["s", ""], ["ied", "y"], ["ed", ""], ["ed", "e"], ["ing", ""], ["ing", "e"], ["er", ""], ["ers", ""]])
+    if (b.endsWith(suf) && EXTRA.has(b.slice(0, -suf.length) + rep)) return b.slice(0, -suf.length) + rep;
+  if (/(.)\1(ed|ing)$/.test(b)) { const t = b.replace(/(.)\1(ed|ing)$/, "$1"); if (EXTRA.has(t)) return t; }
+  return null;
 }
 function dispKey(key) {   // 用詞表原本的大小寫顯示，例如 october → October
   const e = (IDX.get(key) || [])[0]; if (!e) return key;
@@ -756,7 +780,7 @@ function wordAt(x, y) {
   if (document.caretPositionFromPoint) { const p = document.caretPositionFromPoint(x, y); if (!p) return null; node = p.offsetNode; off = p.offset; }
   else if (document.caretRangeFromPoint) { const r = document.caretRangeFromPoint(x, y); if (!r) return null; node = r.startContainer; off = r.startOffset; }
   if (!node || node.nodeType !== 3) return null;
-  const t = node.data, W = /[A-Za-z'’-]/;
+  const t = node.data, W = /[A-Za-zÀ-ÿ'’-]/;
   let a = off, b = off;
   while (a > 0 && W.test(t[a - 1])) a--;
   while (b < t.length && W.test(t[b])) b++;
@@ -766,7 +790,7 @@ function wordAt(x, y) {
   // 若點在連字號複合字的某一段：完整的複合字在詞表裡就用完整的，否則只取點到的那一段
   const full = t.slice(a, b);
   if (full.includes("-") && !IDX.has(norm(full))) {
-    let a2 = off, b2 = off; while (a2 > a && /[A-Za-z'’]/.test(t[a2 - 1])) a2--; while (b2 < b && /[A-Za-z'’]/.test(t[b2])) b2++;
+    let a2 = off, b2 = off; while (a2 > a && /[A-Za-zÀ-ÿ'’]/.test(t[a2 - 1])) a2--; while (b2 < b && /[A-Za-zÀ-ÿ'’]/.test(t[b2])) b2++;
     if (a2 < b2) { a = a2; b = b2; }
   }
   return { node, a, b, word: t.slice(a, b) };
@@ -787,8 +811,18 @@ async function tapWord(ev) {
   try { const r = document.createRange(); r.setStart(hit.node, hit.a); r.setEnd(hit.node, hit.b); const sp = document.createElement("span"); sp.className = "tapw"; r.surroundContents(sp); tapSpan = sp; } catch {}
   const word = hit.word, key = resolveWord(word), my = ++peekSeq;
   if (!key) {
-    peek.innerHTML = `<div class="pk-head"><span class="pk-w">${esc(word)}</span><button class="pk-x" type="button" data-pk="x" aria-label="關閉">×</button></div><p class="pk-none">這個字不在七千單字和片語表裡（可能是人名、地名或較少見的字）。</p>`;
-    peek.hidden = false; return;
+    const x = `<button class="pk-x" type="button" data-pk="x" aria-label="關閉">×</button>`;
+    peek.innerHTML = `<div class="pk-head"><span class="pk-w">${esc(word)}</span>${lvBadge(0)}${x}</div><p class="pk-none">載入中⋯</p>`; peek.hidden = false;
+    await loadExtra();
+    if (my !== peekSeq) return;
+    const ek = resolveExtra(word), g = ek ? EXTRA.get(ek) : "";
+    const m = g.match(/^((?:n|v|adj|adv|prep|conj|pron|aux|art|interj|num)\.(?:\/(?:n|v|adj|adv)\.)?)\s*(.*)$/);
+    const from = ek && norm(word).replace(/[’]/g, "'").replace(/'s$/, "") !== ek ? `<span class="pk-from">（${esc(word)} → ${esc(ek)}）</span>` : "";
+    peek.innerHTML = `<div class="pk-head"><span class="pk-w">${esc(word)}</span>${lvBadge(0)}${from}${speakBtn(word, "唸出單字")}${x}</div>`
+      + (g ? `<ol class="pk-senses"><li>${m ? `<span class="pos">${esc(m[1])}</span>${esc(m[2])}` : esc(g)}</li></ol><p class="pk-none">這個字不在大考中心的七千單字表裡。</p>`
+           : `<p class="pk-none">這個字不在七千單字和片語表裡（可能是人名、地名或較少見的字）。</p>`);
+    track("tap-x-" + (ek || norm(word)), "點字查詢（詞表外） " + word);
+    return;
   }
   const entries = IDX.get(key);
   const head = `<div class="pk-head"><span class="pk-w">${esc(dispKey(key))}</span>${levelsOf(key).map(l => lvBadge(l)).join("")}${norm(word).replace(/[’]/g, "'") !== key ? `<span class="pk-from">（${esc(word)} 的原形）</span>` : ""}${speakBtn(key, "唸出單字")}<button class="pk-x" type="button" data-pk="x" aria-label="關閉">×</button></div>`;
